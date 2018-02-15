@@ -14,15 +14,18 @@ export default class ConcentricPolygons2 extends Animation {
 
   }
 
-  draw (numPolygons, radius) {
+  draw () {
+
+		this.numPolygons = parseFloat(this.parameters.numPolygons.currentValue);
+		this.radius = parseFloat(this.parameters.radius.currentValue);
 
     let x = [0, 0];
     let t = 0;
     let col = 0xf00a00;
 
-    for (let i = 1; i <= numPolygons; ++i) {
+    for (let i = 1; i <= this.numPolygons; ++i) {
 
-      let r = radius * i / numPolygons;
+      let r = this.radius * i / this.numPolygons;
       let poly = new polygon(x, r, i + 2, t, col);
 
       this.scene.add(poly.line);

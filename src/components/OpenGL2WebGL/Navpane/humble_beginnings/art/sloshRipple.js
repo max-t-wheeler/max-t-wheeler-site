@@ -16,13 +16,16 @@ export default class SloshRipple extends Animation {
 
   }
 
-  draw (numPolygons, radius) {
+  draw () {
+
+		this.numPolygons = parseFloat(this.parameters.numPolygons.currentValue);
+		this.radius = parseFloat(this.parameters.radius.currentValue);
 
     let x = [0, 0];
 
-    for (let i = 1; i <= numPolygons; ++i) {
+    for (let i = 1; i <= this.numPolygons; ++i) {
 
-      let r = radius * i / 10;
+      let r = this.radius * i / 10;
       let poly = new polygon(x, r, 100, 0, colorNodes(i - 1));
 
       this.scene.add(poly.line);

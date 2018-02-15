@@ -16,20 +16,25 @@ export default class Apollo extends Animation {
 
   }
 
-  draw (numNodes, numPolygons, polyRadius, globalRadius) {
+  draw () {
+
+		this.numNodes = parseFloat(this.parameters.numNodes.currentValue);
+		this.numPolygons = parseFloat(this.parameters.numPolygons.currentValue);
+		this.polygonRadius = parseFloat(this.parameters.polygonRadius.currentValue);
+		this.globalRadius = parseFloat(this.parameters.globalRadius.currentValue);
 
     let x = [0, 0];
 
-    for (let i = 1; i < numNodes; ++i) {
+    for (let i = 1; i < this.numNodes; ++i) {
 
-        for (let j = 0; j < numNodes; ++j) {
+        for (let j = 0; j < this.numNodes; ++j) {
 
-          for (let k = 0; k < numPolygons; ++k) {
+          for (let k = 0; k < this.numPolygons; ++k) {
 
-            x[0] = globalRadius * (Math.cos(phi(i, numNodes)) + Math.cos(phi(j, numNodes))) * Math.sin(phi(k, numPolygons));
-            x[1] = globalRadius * (Math.sin(phi(i, numNodes)) + Math.sin(phi(j, numNodes))) * Math.cos(phi(k, numPolygons));
+            x[0] = this.globalRadius * (Math.cos(phi(i, this.numNodes)) + Math.cos(phi(j, this.numNodes))) * Math.sin(phi(k, this.numPolygons));
+            x[1] = this.globalRadius * (Math.sin(phi(i, this.numNodes)) + Math.sin(phi(j, this.numNodes))) * Math.cos(phi(k, this.numPolygons));
 
-            let poly = new polygon(x, polyRadius, numNodes, 0, colorNodes(i));
+            let poly = new polygon(x, this.polygonRadius, this.numNodes, 0, colorNodes(i));
             this.scene.add(poly.line);
 
           }

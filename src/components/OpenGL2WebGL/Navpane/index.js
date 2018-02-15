@@ -42,11 +42,12 @@ const ANIMATION_MAP = {
   'wriggling donut': WrigglingDonut,
   'apollo': Apollo,
   'sine wave': SineWave
-
 };
 
 export function generateAnimation (scene, animation) {
+
   if (ANIMATION_MAP[animation.name]) {
     return new ANIMATION_MAP[animation.name](scene, animation);
   }
+
 }

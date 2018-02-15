@@ -1,21 +1,62 @@
 <template>
+
     <div>
-      <b-navbar toggleable="md" type="dark" variant="success">
+      <b-navbar toggleable="md" type="dark">
         <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
-        <b-navbar-brand v-on:click="selectHome()">WebGL Projects</b-navbar-brand>
+        <b-navbar-brand v-on:click="selectHome()">
+          <span class="glyphicon glyphicon-home"></span>
+          {{ homeContents.name }}</b-navbar-brand>
         <b-collapse is-nav id="nav_collapse">
           <b-navbar-nav>
             <b-nav-item v-for="app in appContents" :key="app.name" v-on:click="selectApp(app)">{{ app.name }}</b-nav-item>
           </b-navbar-nav>
+          <b-navbar-nav class="ml-auto">
+            <b-nav-item right v-for="toolbarLink in toolbarLinks" :key="toolbarLink.name">
+              <a rel="noopener" class="toolbar-icon external" :href="toolbarLink.src" target="_blank" v-b-tooltip.hover :title="toolbarLink.tooltip">
+                <span class="fa" :class="toolbarLink.icon"/>
+              </a>
+            </b-nav-item>
+          </b-navbar-nav>
         </b-collapse>
       </b-navbar>
     </div>
+
 </template>
 
 <script>
 
 export default {
   props: ['homeContents', 'appContents'],
+  data () {
+    return {
+      toolbarLinks: [
+        {
+          name: 'github',
+          src: 'https://github.com/max-t-wheeler',
+          icon: 'fa-github',
+          tooltip: 'Must'
+        },
+        {
+          name: 'linkedin',
+          src: 'https://www.linkedin.com/in/max-wheeler-39557074/',
+          icon: 'fa-linkedin',
+          tooltip: 'use'
+        },
+        {
+          name: 'facebook',
+          src: 'https://www.facebook.com/max.wheeler.9',
+          icon: 'fa-facebook',
+          tooltip: 'right'
+        },
+        {
+          name: 'soundcloud',
+          src: 'https://soundcloud.com/the-dopest-kind',
+          icon: 'fa-soundcloud',
+          tooltip: 'click'
+        }
+      ]
+    }
+  },
   methods: {
     selectHome: function () {
       for (let i = 0; i < this.appContents.length; ++i) {
@@ -34,3 +75,17 @@ export default {
 }
 
 </script>
+
+<style>
+
+.toolbar-icon {
+
+  color: black;
+  text-decoration: none;
+}
+
+.toolbar-icon:hover, .toolbar-icon:active, .toolbar-icon:visited {
+  color: black;
+}
+
+</style>

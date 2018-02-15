@@ -15,19 +15,19 @@ export default class Polygon extends Animation {
 
 	}
 
-	draw (center, radius, numVertices, theta, color) {
+	draw () {
 
-	  this.center = center;
-	  this.radius = radius;
-	  this.numVertices = numVertices;
-	  this.theta = theta;
-	  this.color = color;
+		this.center = [0, 0];
+		this.radius = parseFloat(this.parameters.radius.currentValue);
+		this.numVertices = parseFloat(this.parameters.numVertices.currentValue);
+		this.theta = parseFloat(this.parameters.theta.currentValue);
+		this.color = 0xf00a00;
 
-	  this.vertices = new Float32Array(numVertices * 3);
+	  this.vertices = new Float32Array(this.numVertices * 3);
 
-	  for (let i = 0; i < numVertices; ++i) {
-	    this.vertices[3 * i + 0] = radius * Math.sin(phi(i, numVertices) + theta) + center[0];
-	    this.vertices[3 * i + 1] = radius * Math.cos(phi(i, numVertices) + theta) + center[1];
+	  for (let i = 0; i < this.numVertices; ++i) {
+	    this.vertices[3 * i + 0] = this.radius * Math.sin(phi(i, this.numVertices) + this.theta) + this.center[0];
+	    this.vertices[3 * i + 1] = this.radius * Math.cos(phi(i, this.numVertices) + this.theta) + this.center[1];
 	    this.vertices[3 * i + 2] = 0;
 	  }
 

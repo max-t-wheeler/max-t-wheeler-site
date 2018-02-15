@@ -16,11 +16,13 @@ export default class Gyr0scope extends Animation {
 
   }
 
-  draw (numCircles) {
+  draw () {
 
-    for (let i = 0; i < numCircles; ++i) {
+		this.numCircles = parseFloat(this.parameters.numCircles.currentValue);
 
-      let geometry = new THREE.CircleBufferGeometry(1 + (i / (10 * numCircles)), 10);
+    for (let i = 0; i < this.numCircles; ++i) {
+
+      let geometry = new THREE.CircleBufferGeometry(1 + (i / (10 * this.numCircles)), 10);
       let material = new THREE.MeshBasicMaterial({color: colorNodes(i), wireframe: true});
       let mesh = new THREE.Mesh(geometry, material);
 

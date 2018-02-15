@@ -12,9 +12,13 @@ export default class HomeAnimation {
 
     for (let i = 0; i < 100; ++i) {
 
-      let x = 5 * Math.random() - 5;
-      let y = 5 * Math.random() - 5;
-      let z = 5 * Math.random() - 5;
+      let r = 3 * Math.random() - 2;
+      let theta = 2 * Math.PI * Math.random();
+      let phi = Math.PI * Math.random();
+
+      let x = r * Math.cos(theta) * Math.sin(phi);
+      let y = r * Math.sin(theta) * Math.cos(phi);
+      let z = r * Math.cos(theta);
 
       geometry.vertices.push(new THREE.Vector3(x, y, z));
 

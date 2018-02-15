@@ -10,12 +10,15 @@ export default class Pearl extends Animation {
 
 	}
 
-	draw (numRidges, radius) {
+	draw () {
+
+		this.numRidges = parseFloat(this.parameters.numRidges.currentValue);
+    this.radius = parseFloat(this.parameters.radius.currentValue);
 
 	  let phi = [];
 
-	  for (let i = 0; i <= numRidges; ++i) {
-	    phi.push(2 * Math.PI * i / numRidges);
+	  for (let i = 0; i <= this.numRidges; ++i) {
+	    phi.push(2 * Math.PI * i / this.numRidges);
 	  }
 
 	  let vertices = new Float32Array(phi.length * 3);
@@ -23,9 +26,9 @@ export default class Pearl extends Animation {
 	  for (let i = 0; i < vertices.length; ++i) {
 
 	    if (i % 3 === 0) {
-	      vertices[i] = radius * Math.sqrt(1 - Math.pow(Math.cos(phi[i]), 2)) * Math.cos(phi[i]);
+	      vertices[i] = this.radius * Math.sqrt(1 - Math.pow(Math.cos(phi[i]), 2)) * Math.cos(phi[i]);
 	    } else if (i % 3 === 1) {
-	      vertices[i] = radius * Math.sqrt(1 - Math.pow(Math.cos(phi[i]), 2)) * Math.sin(phi[i]);
+	      vertices[i] = this.radius * Math.sqrt(1 - Math.pow(Math.cos(phi[i]), 2)) * Math.sin(phi[i]);
 	    } else if (i % 3 === 2) {
 	      vertices[i] = 0;
 	    }
@@ -49,7 +52,7 @@ export default class Pearl extends Animation {
 
 	  this.scene.add(line);
 
-	  for (let i = 0; i < numRidges; ++i) {
+	  for (let i = 0; i < this.numRidges; ++i) {
 
 	    let endpoints = new Float32Array(6);
 
@@ -79,7 +82,7 @@ export default class Pearl extends Animation {
 
 	  }
 
-	  let pearlGeometry = new THREE.CircleBufferGeometry(radius / 10, 32);
+	  let pearlGeometry = new THREE.CircleBufferGeometry(this.radius / 10, 32);
 
 	  let pearlMaterial = new THREE.MeshBasicMaterial(
 	    {

@@ -3,17 +3,21 @@ import * as THREE from 'three';
 import Animation from '../../animation';
 
 export default class SineWave extends Animation {
+
   constructor (scene, animation) {
     super(scene, animation);
   }
 
-  draw (numPoints) {
+  render () {
+
+    this.numPoints = this.parameters.numPoints.currentValue;
+
     let node_x = [];
     let node_y = [];
 
-    for (let i = -numPoints; i <= numPoints; ++i) {
+    for (let i = -this.numPoints; i <= this.numPoints; ++i) {
       node_x.push(i / 1000);
-      node_y.push(Math.sin(10 * node_x[i + numPoints]) / 2);
+      node_y.push(Math.sin(10 * node_x[i + this.numPoints]) / 2);
     }
 
     let vertices = new Float32Array(node_x.length * 3);
@@ -56,13 +60,16 @@ export default class SineWave extends Animation {
     }
   }
 
-  render (numPoints) {
+  draw () {
+
+    this.numPoints = parseFloat(this.parameters.numPoints.currentValue);
+
     let node_x = [];
     let node_y = [];
 
-    for (let i = -numPoints; i <= numPoints; ++i) {
+    for (let i = -this.numPoints; i <= this.numPoints; ++i) {
       node_x.push(i / 1000);
-      node_y.push(Math.sin(10 * node_x[i + numPoints]) / 2);
+      node_y.push(Math.sin(10 * node_x[i + this.numPoints]) / 2);
     }
 
     let vertices = new Float32Array(node_x.length * 3);

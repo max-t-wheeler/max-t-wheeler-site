@@ -16,11 +16,14 @@ export default class ConcentricPolygons extends Animation {
 
   }
 
-  draw (numPolygons, numFaces) {
+  draw () {
 
-    for (let i = numPolygons; i >= 1; i--) {
+		this.numPolygons = parseFloat(this.parameters.numPolygons.currentValue);
+		this.numFaces = parseFloat(this.parameters.numFaces.currentValue);
 
-      let geometry = new THREE.CircleBufferGeometry((10 / (numPolygons - i + 1)), numFaces);
+    for (let i = this.numPolygons; i >= 1; i--) {
+
+      let geometry = new THREE.CircleBufferGeometry((10 / (this.numPolygons - i + 1)), this.numFaces);
       let material = new THREE.MeshBasicMaterial({color: colorNodes(i), wireframe: false});
       let mesh = new THREE.Mesh(geometry, material);
 

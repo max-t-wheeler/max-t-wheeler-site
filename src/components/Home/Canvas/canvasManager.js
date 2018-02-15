@@ -3,7 +3,9 @@ import * as THREE from 'three';
 import HomeAnimation from '../Themes/homeAnimation';
 
 export default class CanvasManager {
+
   constructor (canvas) {
+
     // initialize canvas
 
     this.canvas = canvas;
@@ -25,26 +27,29 @@ export default class CanvasManager {
 
     this.dt = 0;
 
-    this.draw();
-
-    console.log(this.scene)
+    this.animation.draw();
 
     this.tick = this.tick.bind(this);
 
     // run animation
 
     this.tick();
+
   }
 
   setRenderer (backgroundColor) {
+
     this.renderer = new THREE.WebGLRenderer({canvas: this.canvas, antialias: true});
     this.renderer.setClearColor(backgroundColor);
     this.renderer.setPixelRatio(window.devicePixelRatio);
+
   }
 
   setCamera (offset) {
+
     this.camera = new THREE.PerspectiveCamera(75, this.canvasWidth / this.canvasHeight, 0.1, 1000);
     this.camera.position.z = offset;
+
   }
 
   checkCanvasSize () {
@@ -60,13 +65,11 @@ export default class CanvasManager {
       this.camera.aspect = this.canvasWidth / this.canvasHeight;
       this.camera.updateProjectionMatrix();
     }
-  }
 
-  draw () {
-    this.animation.draw();
   }
 
   tick () {
+
     this.animationId = requestAnimationFrame(this.tick);
 
     this.renderer.render(this.scene, this.camera);
@@ -80,4 +83,5 @@ export default class CanvasManager {
     this.animation.update(this.dt);
 
   }
+
 }

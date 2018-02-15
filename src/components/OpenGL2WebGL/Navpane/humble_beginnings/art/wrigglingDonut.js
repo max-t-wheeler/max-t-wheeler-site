@@ -16,18 +16,23 @@ export default class WrigglingDonut extends Animation {
 
   }
 
-  draw (numNodes, numPolygons, polyRadius, globalRadius) {
+  draw () {
+
+		this.numNodes = parseFloat(this.parameters.numNodes.currentValue);
+		this.numPolygons = parseFloat(this.parameters.numPolygons.currentValue);
+		this.polygonRadius = parseFloat(this.parameters.polygonRadius.currentValue);
+		this.globalRadius = parseFloat(this.parameters.globalRadius.currentValue);
 
     let x = [0, 0];
 
-    for (let i = 1; i < numNodes; ++i) {
+    for (let i = 1; i < this.numNodes; ++i) {
 
-        for (let j = 0; j < numNodes; ++j) {
+        for (let j = 0; j < this.numNodes; ++j) {
 
-          x[0] = globalRadius * (Math.cos(phi(i, numNodes)) + Math.cos(phi(j, numNodes)) * Math.sin(phi(i, numPolygons)));
-          x[1] = globalRadius * (Math.sin(phi(i, numNodes)) + Math.sin(phi(j, numNodes)) * Math.cos(phi(i, numPolygons)));
+          x[0] = this.globalRadius * (Math.cos(phi(i, this.numNodes)) + Math.cos(phi(j, this.numNodes)) * Math.sin(phi(i, this.numPolygons)));
+          x[1] = this.globalRadius * (Math.sin(phi(i, this.numNodes)) + Math.sin(phi(j, this.numNodes)) * Math.cos(phi(i, this.numPolygons)));
 
-          let poly = new polygon(x, polyRadius, numNodes, 0, colorNodes(1));
+          let poly = new polygon(x, this.polygonRadius, this.numNodes, 0, colorNodes(1));
           this.scene.add(poly.line);
 
       }
