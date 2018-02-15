@@ -7,7 +7,7 @@
         v-for='item in animations'
         :key='item.name'
         >
-        <b-row class="opengl2webgl-navpane-selector">
+        <b-row v-if="screenType === 'monitor'" class="opengl2webgl-navpane-selector">
           <b-col cols="10">
             <p class="opengl2webgl-navpane-text" :class='[{active: item.active}, screenType]' v-on:click='activate(item)'>{{ item.text }}</p>
           </b-col>
@@ -17,17 +17,27 @@
             </b-btn>
           </b-col>
         </b-row>
+        <b-row v-else class="opengl2webgl-navpane-selector">
+          <b-col cols="9">
+            <p class="opengl2webgl-navpane-text" :class='[{active: item.active}, screenType]' v-on:click='activate(item)'>{{ item.text }}</p>
+          </b-col>
+          <b-col cols="3">
+            <b-btn v-if="item.parameters.length !== 0 && item.active" v-b-toggle="item.name" class="opengl2webgl-navpane-button" :class="screenType">
+              <span class="glyphicon glyphicon-chevron-down"></span>
+            </b-btn>
+          </b-col>
+        </b-row>
         <div v-if="item.parameters.length !== 0 && item.active" class="opengl2webgl-navpane-options" :class="screenType">
           <b-collapse :id="item.name">
             <opengl2webgl-navpane-controls :animationParameters="item.parameters"/>
-            <br>
+            <br v-if="screenType === 'monitor'">
             <div>
               <b-button v-on:click="activate(item)">Submit</b-button>
               <b-button v-on:click="resetAnimation(item)">Reset</b-button>
             </div>
           </b-collapse>
         </div>
-        <br>
+        <br v-if="screenType === 'monitor'">
       </li>
     </ul>
   </div>
@@ -499,11 +509,6 @@ export default {
   float: right;
   position: relative;
   z-index: 10;
-}
-
-.opengl2webgl-navpane-button.tablet {
-  position: relative;
-  left: 90%;
 }
 
 .glyphicon-chevron-down {
