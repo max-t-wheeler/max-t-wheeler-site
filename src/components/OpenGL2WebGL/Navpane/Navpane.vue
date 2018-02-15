@@ -17,7 +17,7 @@
             </b-btn>
           </b-col>
         </b-row>
-        <div v-if="item.parameters.length !== 0 && item.active" class="opengl2webgl-navpane-options">
+        <div v-if="item.parameters.length !== 0 && item.active" class="opengl2webgl-navpane-options" :class="screenType">
           <b-collapse :id="item.name">
             <opengl2webgl-navpane-controls :animationParameters="item.parameters"/>
             <br>
@@ -508,6 +508,11 @@ export default {
 
 .glyphicon-chevron-down {
   color: purple;
+}
+
+.opengl2webgl-navpane-options.tablet {
+  position: relative;
+  right: 10%;
 }
 
 </style>

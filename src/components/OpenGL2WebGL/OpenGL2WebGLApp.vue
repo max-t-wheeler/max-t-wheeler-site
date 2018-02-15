@@ -56,6 +56,10 @@ export default {
   left: 5%;
 }
 
+#opengl2webgl-navpane-title.tablet {
+  position: relative;
+}
+
 #opengl2webgl-navpane-menu {
   height: 90vh;
   width: 100%;
