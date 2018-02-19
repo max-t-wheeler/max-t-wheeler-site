@@ -60,7 +60,7 @@
             <p class="cv-description">Chief Technical Officer, Head of Public Relations, Studio Musician (2015-2016)</p>
             <p class="cv-organization">Rensselaer Polytechnic Institute Department of Mathematics</p>
             <p class="cv-description">Research Student (2014-2015)</p>
-            <p class="cv-description">Teachers Assistant, Introduction to Differential Equations (2013-2014)</p>
+            <p class="cv-description">Teaching Assistant, Introduction to Differential Equations (2013-2014)</p>
           </b-col>
           <b-col cols="6" class="cv-section" :class="screenType">
             <h1>Accolades</h1> <br>

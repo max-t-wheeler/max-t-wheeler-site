@@ -48,6 +48,7 @@ export default {
 
 #opengl2webgl-navpane-title {
   position: relative;
+  right: 10%;
   text-align: center;
 }
 
