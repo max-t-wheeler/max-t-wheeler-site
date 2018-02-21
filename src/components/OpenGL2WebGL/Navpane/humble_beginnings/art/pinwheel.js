@@ -14,12 +14,12 @@ export default class Pinwheel extends Animation {
 
     super(scene, animation);
 
+		this.numPolygons = parseFloat(this.parameters.numPolygons.currentValue);
+		this.numFaces = parseFloat(this.parameters.numFaces.currentValue);
+
   }
 
   draw () {
-
-		this.numPolygons = parseFloat(this.parameters.numPolygons.currentValue);
-		this.numFaces = parseFloat(this.parameters.numFaces.currentValue);
 
     for (let i = 2 * this.numPolygons; i >= 1; i--) {
 

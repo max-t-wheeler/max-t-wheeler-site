@@ -13,15 +13,15 @@ export default class Polygon extends Animation {
 
 		super(scene, animation);
 
-	}
-
-	draw () {
-
 		this.center = [0, 0];
 		this.radius = parseFloat(this.parameters.radius.currentValue);
 		this.numVertices = parseFloat(this.parameters.numVertices.currentValue);
 		this.theta = parseFloat(this.parameters.theta.currentValue);
 		this.color = 0xf00a00;
+
+	}
+
+	draw () {
 
 	  this.vertices = new Float32Array(this.numVertices * 3);
 

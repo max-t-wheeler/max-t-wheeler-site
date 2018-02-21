@@ -8,12 +8,12 @@ export default class Circle extends Animation {
 
 		super(scene, animation);
 
+		this.numSpokes = parseFloat(this.parameters.numSpokes.currentValue);
+		this.radius = parseFloat(this.parameters.radius.currentValue);
+
 	}
 
 	draw () {
-
-			this.numSpokes = parseFloat(this.parameters.numSpokes.currentValue);
-			this.radius = parseFloat(this.parameters.radius.currentValue);
 
 		  let geometry = new THREE.CircleBufferGeometry(this.radius, this.numSpokes);
 		  let material = new THREE.MeshBasicMaterial({color: 0x00ffff, wireframe: true});

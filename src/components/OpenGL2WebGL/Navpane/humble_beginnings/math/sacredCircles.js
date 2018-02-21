@@ -11,16 +11,18 @@ import {
 export default class SacredCircles extends Animation {
 
 	constructor (scene, animation) {
-		super(scene, animation);
-	}
 
-	draw () {
+		super(scene, animation);
 
 		this.numLayers = parseFloat(this.parameters.numLayers.currentValue);
 		this.numCircles = parseFloat(this.parameters.numCircles.currentValue);
 		this.circleRadius = parseFloat(this.parameters.circleRadius.currentValue);
 		this.globalRadius = parseFloat(this.parameters.globalRadius.currentValue);
 		this.color = colorNodes(0);
+
+	}
+
+	draw () {
 
 	  let center = [0, 0];
 

@@ -14,12 +14,12 @@ export default class SloshRipple extends Animation {
 
     super(scene, animation);
 
+		this.numPolygons = parseFloat(this.parameters.numPolygons.currentValue);
+		this.radius = parseFloat(this.parameters.radius.currentValue);
+
   }
 
   draw () {
-
-		this.numPolygons = parseFloat(this.parameters.numPolygons.currentValue);
-		this.radius = parseFloat(this.parameters.radius.currentValue);
 
     let x = [0, 0];
 
@@ -37,7 +37,11 @@ export default class SloshRipple extends Animation {
   update (t) {
 
     for (let i = 0; i < this.scene.children.length; ++i) {
-      this.scene.children[i].scale.set(Math.cos(phi(i, 100) + t / 100), Math.cos(phi(i, 100) + t / 100), 1);
+			if (i % 2 === 0) {
+				this.scene.children[i].scale.set(Math.cos(phi(i, 100) + t / 100), Math.cos(phi(i, 100) + t / 100), 1);
+			} else {
+				this.scene.children[i].scale.set(Math.sin(phi(i, 100) + t / 100), Math.sin(phi(i, 100) + t / 100), 1);
+			}
     }
 
   }

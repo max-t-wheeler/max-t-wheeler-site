@@ -59,6 +59,7 @@ export default {
 
 #opengl2webgl-navpane-title.tablet {
   position: relative;
+  right: 10%;
 }
 
 #opengl2webgl-navpane-menu {

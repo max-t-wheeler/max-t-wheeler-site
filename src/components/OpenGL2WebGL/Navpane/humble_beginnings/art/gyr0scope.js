@@ -14,11 +14,11 @@ export default class Gyr0scope extends Animation {
 
     super(scene, animation);
 
+		this.numCircles = parseFloat(this.parameters.numCircles.currentValue);
+
   }
 
   draw () {
-
-		this.numCircles = parseFloat(this.parameters.numCircles.currentValue);
 
     for (let i = 0; i < this.numCircles; ++i) {
 

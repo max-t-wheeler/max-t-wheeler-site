@@ -8,14 +8,13 @@ import {
 
 } from '../../../utils';
 
-export default class WrigglingDonut extends Animation {
+export default class Apollo2 extends Animation {
 
   constructor (scene, animation) {
 
     super(scene, animation);
 
 		this.numNodes = parseFloat(this.parameters.numNodes.currentValue);
-		this.numPolygons = parseFloat(this.parameters.numPolygons.currentValue);
 		this.polygonRadius = parseFloat(this.parameters.polygonRadius.currentValue);
 		this.globalRadius = parseFloat(this.parameters.globalRadius.currentValue);
 
@@ -25,14 +24,14 @@ export default class WrigglingDonut extends Animation {
 
     let x = [0, 0];
 
-    for (let i = 1; i < this.numNodes; ++i) {
+    for (let i = 0; i < this.numNodes; ++i) {
 
         for (let j = 0; j < this.numNodes; ++j) {
 
-          x[0] = this.globalRadius * (Math.cos(phi(i, this.numNodes)) + Math.cos(phi(j, this.numNodes)) * Math.sin(phi(i, this.numPolygons)));
-          x[1] = this.globalRadius * (Math.sin(phi(i, this.numNodes)) + Math.sin(phi(j, this.numNodes)) * Math.cos(phi(i, this.numPolygons)));
+					x[0] = this.globalRadius * (Math.cos(phi(i, this.numNodes)) + Math.cos(phi(j, this.numNodes)));
+					x[1] = this.globalRadius * (Math.sin(phi(i, this.numNodes)) + Math.sin(phi(j, this.numNodes)));
 
-          let poly = new polygon(x, this.polygonRadius, this.numNodes, 0, colorNodes(1));
+          let poly = new polygon(x, this.polygonRadius, this.numNodes, 0, colorNodes(i));
           this.scene.add(poly.line);
 
       }
@@ -44,7 +43,13 @@ export default class WrigglingDonut extends Animation {
   update (t) {
 
     for (let i = 0; i < this.scene.children.length; ++i) {
-      this.scene.children[i].rotateZ(-10 * (Math.sin(t / 10) + Math.cos(t / 10)));
+
+      if (i % 2 === 0) {
+				this.scene.children[i].rotation.z -= 7.5e-4;
+      } else {
+				this.scene.children[i].rotation.z += 7.5e-4;
+      }
+
     }
 
   }

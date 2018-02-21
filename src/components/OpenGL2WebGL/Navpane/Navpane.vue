@@ -61,184 +61,62 @@ export default {
       display: false,
       animations: [
         {
-          text: 'shapes / triangle',
-          name: 'triangle',
+          text: 'art / blanket',
+          name: 'blanket',
           dynamic: false,
-          controllable: true,
-          address: '/opengl_webgl_conversion#shapes_triangle',
-          active: false,
-          parameters: []
-        },
-        {
-          text: 'shapes / rectangle',
-          name: 'rectangle',
-          dynamic: false,
-          controllable: true,
-          address: '/opengl_webgl_conversion#shapes_rectangle',
-          active: false,
-          parameters: []
-        },
-        {
-          text: 'shapes / cube',
-          name: 'cube',
-          dynamic: false,
-          controllable: true,
-          address: '/opengl_webgl_conversion#shapes_cube',
-          active: false,
-          parameters: []
-        },
-        {
-          text: 'shapes / circle',
-          name: 'circle',
-          dynamic: false,
-          controllable: true,
-          address: '/opengl_webgl_conversion#shapes_circle',
+          controllable: false,
+          address: '/opengl_webgl_conversion#art_blanket',
           active: false,
           parameters: {
-            numSpokes: {
-              label: 'Number of Spokes',
-              defaultValue: 5,
-              currentValue: 5
+            numPolygons: {
+              label: 'Number of Polygons',
+              defaultValue: 10,
+              currentValue: 10
             },
-            radius: {
-              label: 'Radius',
-              defaultValue: 1,
-              currentValue: 1
+            numFaces: {
+              label: 'Number of Faces',
+              defaultValue: 4,
+              currentValue: 4
             }
           }
         },
         {
-          text: 'shapes / clam',
-          name: 'clam',
-          dynamic: false,
-          controllable: true,
-          address: '/opengl_webgl_conversion#shapes_clam',
-          active: false,
-          parameters: {
-            numRidges: {
-              label: 'Number of Ridges',
-              defaultValue: 200,
-              currentValue: 200
-            },
-            radius: {
-              label: 'Radius',
-              defaultValue: 1,
-              currentValue: 1
-            }
-          }
-        },
-        {
-          text: 'shapes / pearl',
-          name: 'pearl',
-          dynamic: false,
-          controllable: true,
-          address: '/opengl_webgl_conversion#shapes_pearl',
-          active: false,
-          parameters: {
-            numRidges: {
-              label: 'Number of Ridges',
-              defaultValue: 200,
-              currentValue: 200
-            },
-            radius: {
-              label: 'Radius',
-              defaultValue: 1,
-              currentValue: 1
-            }
-          }
-        },
-        {
-          text: 'shapes / polystarter',
-          name: 'polystarter',
+          text: 'art / bounce ripple',
+          name: 'bounce ripple',
           dynamic: true,
-          controllable: true,
-          address: '/opengl_webgl_conversion#polystarter',
+          controllable: false,
+          address: '/opengl_webgl_conversion#art_bounce_ripple',
           active: false,
           parameters: {
-            radius: {
-              label: 'Radius',
-              defaultValue: 1,
-              currentValue: 1
-            },
-            numVertices: {
-              label: 'Number of Vertices',
-              defaultValue: 6,
-              currentValue: 6
-            },
-            theta: {
-              label: 'Theta',
-              defaultValue: 0,
-              currentValue: 0
-            }
-          }
-        },
-        {
-          text: 'shapes / sacred circles',
-          name: 'sacred circles',
-          dynamic: true,
-          controllable: true,
-          address: '/opengl_webgl_conversion#sacred_circles',
-          active: false,
-          parameters: {
-            numLayers: {
-              label: 'Number of Layers',
-              defaultValue: 12,
-              currentValue: 12
-            },
-            numCircles: {
-              label: 'Number of Circles',
-              defaultValue: 12,
-              currentValue: 12
-            },
-            circleRadius: {
-              label: 'Circle Radius',
-              defaultValue: 1,
-              currentValue: 1
-            },
-            globalRadius: {
-              label: 'Global Radius',
-              defaultValue: 1,
-              currentValue: 1
-            }
-          }
-        },
-        {
-          text: 'shapes / star',
-          name: 'star',
-          dynamic: true,
-          controllable: true,
-          address: '/opengl_webgl_conversion#star',
-          active: false,
-          parameters: {
-            numVertices: {
-              label: 'Number of Vertices',
+            numPolygons: {
+              label: 'Number of Polygons',
               defaultValue: 10,
               currentValue: 10
             },
             radius: {
               label: 'Radius',
-              defaultValue: 1,
-              currentValue: 1
-            },
-            offset: {
-              label: 'Offset',
-              defaultValue: 2,
-              currentValue: 2
+              defaultValue: 3,
+              currentValue: 3
             }
           }
         },
         {
-          text: 'physics / sine wave',
-          name: 'sine wave',
+          text: 'art / clam',
+          name: 'clam',
           dynamic: false,
           controllable: true,
-          address: '/opengl_webgl_conversion#physics_sine_wave',
+          address: '/opengl_webgl_conversion#art_clam',
           active: false,
           parameters: {
-            numPoints: {
-              label: 'Number of Points',
-              defaultValue: 1500,
-              currentValue: 1500
+            numRidges: {
+              label: 'Number of Ridges',
+              defaultValue: 200,
+              currentValue: 200
+            },
+            radius: {
+              label: 'Radius',
+              defaultValue: 1,
+              currentValue: 1
             }
           }
         },
@@ -248,21 +126,6 @@ export default {
           dynamic: true,
           controllable: true,
           address: '/opengl_webgl_conversion#art_collide0scope',
-          active: false,
-          parameters: {
-            numCircles: {
-              label: 'Number of Circles',
-              defaultValue: 20,
-              currentValue: 20
-            }
-          }
-        },
-        {
-          text: 'art / gyr0scope',
-          name: 'gyro',
-          dynamic: true,
-          controllable: true,
-          address: '/opengl_webgl_conversion#art_gyr0scope',
           active: false,
           parameters: {
             numCircles: {
@@ -313,6 +176,41 @@ export default {
           }
         },
         {
+          text: 'art / gyr0scope',
+          name: 'gyro',
+          dynamic: true,
+          controllable: true,
+          address: '/opengl_webgl_conversion#art_gyr0scope',
+          active: false,
+          parameters: {
+            numCircles: {
+              label: 'Number of Circles',
+              defaultValue: 20,
+              currentValue: 20
+            }
+          }
+        },
+        {
+          text: 'art / pearl',
+          name: 'pearl',
+          dynamic: false,
+          controllable: true,
+          address: '/opengl_webgl_conversion#art_pearl',
+          active: false,
+          parameters: {
+            numRidges: {
+              label: 'Number of Ridges',
+              defaultValue: 200,
+              currentValue: 200
+            },
+            radius: {
+              label: 'Radius',
+              defaultValue: 1,
+              currentValue: 1
+            }
+          }
+        },
+        {
           text: 'art / pinwheel',
           name: 'pinwheel',
           dynamic: true,
@@ -329,46 +227,6 @@ export default {
               label: 'Number of Faces',
               defaultValue: 4,
               currentValue: 4
-            }
-          }
-        },
-        {
-          text: 'art / blanket',
-          name: 'blanket',
-          dynamic: false,
-          controllable: false,
-          address: '/opengl_webgl_conversion#art_blanket',
-          active: false,
-          parameters: {
-            numPolygons: {
-              label: 'Number of Polygons',
-              defaultValue: 10,
-              currentValue: 10
-            },
-            numFaces: {
-              label: 'Number of Faces',
-              defaultValue: 4,
-              currentValue: 4
-            }
-          }
-        },
-        {
-          text: 'art / bounce ripple',
-          name: 'bounce ripple',
-          dynamic: true,
-          controllable: false,
-          address: '/opengl_webgl_conversion#art_bounce_ripple',
-          active: false,
-          parameters: {
-            numPolygons: {
-              label: 'Number of Polygons',
-              defaultValue: 10,
-              currentValue: 10
-            },
-            radius: {
-              label: 'Radius',
-              defaultValue: 3,
-              currentValue: 3
             }
           }
         },
@@ -423,11 +281,11 @@ export default {
           }
         },
         {
-          text: 'art / apollo',
+          text: 'math / apollo',
           name: 'apollo',
           dynamic: true,
           controllable: true,
-          address: '/opengl_webgl_conversion#art_apollo',
+          address: '/opengl_webgl_conversion#math_apollo',
           active: false,
           parameters: {
             numNodes: {
@@ -451,6 +309,353 @@ export default {
               currentValue: 2
             }
           }
+        },
+        {
+          text: 'math / apollo 2',
+          name: 'apollo2',
+          dynamic: true,
+          controllable: true,
+          address: '/opengl_webgl_conversion#math_apollo2',
+          active: false,
+          parameters: {
+            numNodes: {
+              label: 'Number of Nodes',
+              defaultValue: 12,
+              currentValue: 12
+            },
+            polygonRadius: {
+              label: 'Polygon Radius',
+              defaultValue: 2,
+              currentValue: 2
+            },
+            globalRadius: {
+              label: 'Global Radius',
+              defaultValue: 2,
+              currentValue: 2
+            }
+          }
+        },
+        {
+          text: 'math / apollo 3',
+          name: 'apollo3',
+          dynamic: true,
+          controllable: true,
+          address: '/opengl_webgl_conversion#math_apollo3',
+          active: false,
+          parameters: {
+            numNodes: {
+              label: 'Number of Nodes',
+              defaultValue: 12,
+              currentValue: 12
+            },
+            polygonRadius: {
+              label: 'Polygon Radius',
+              defaultValue: 2,
+              currentValue: 2
+            },
+            globalRadius: {
+              label: 'Global Radius',
+              defaultValue: 2,
+              currentValue: 2
+            }
+          }
+        },
+        {
+          text: 'math / apollo 4',
+          name: 'apollo4',
+          dynamic: true,
+          controllable: true,
+          address: '/opengl_webgl_conversion#math_apollo4',
+          active: false,
+          parameters: {
+            numNodes: {
+              label: 'Number of Nodes',
+              defaultValue: 8,
+              currentValue: 8
+            },
+            numPolygons: {
+              label: 'Number of Polygons',
+              defaultValue: 3,
+              currentValue: 3
+            },
+            polygonRadius: {
+              label: 'Polygon Radius',
+              defaultValue: 2,
+              currentValue: 2
+            },
+            globalRadius: {
+              label: 'Global Radius',
+              defaultValue: 3,
+              currentValue: 3
+            }
+          }
+        },
+        {
+          text: 'math / apollo 5',
+          name: 'apollo5',
+          dynamic: true,
+          controllable: true,
+          address: '/opengl_webgl_conversion#math_apollo5',
+          active: false,
+          parameters: {
+            numNodes: {
+              label: 'Number of Nodes',
+              defaultValue: 6,
+              currentValue: 6
+            },
+            numPolygons: {
+              label: 'Number of Polygons',
+              defaultValue: 6,
+              currentValue: 6
+            },
+            polygonRadius: {
+              label: 'Polygon Radius',
+              defaultValue: 2,
+              currentValue: 2
+            },
+            globalRadius: {
+              label: 'Global Radius',
+              defaultValue: 1,
+              currentValue: 1
+            }
+          }
+        },
+        {
+          text: 'math / apollo 6',
+          name: 'apollo6',
+          dynamic: true,
+          controllable: true,
+          address: '/opengl_webgl_conversion#math_apollo6',
+          active: false,
+          parameters: {
+            numNodes: {
+              label: 'Number of Nodes',
+              defaultValue: 8,
+              currentValue: 8
+            },
+            numPolygons: {
+              label: 'Number of Polygons',
+              defaultValue: 16,
+              currentValue: 16
+            },
+            polygonRadius: {
+              label: 'Polygon Radius',
+              defaultValue: 2,
+              currentValue: 2
+            },
+            globalRadius: {
+              label: 'Global Radius',
+              defaultValue: 2,
+              currentValue: 2
+            }
+          }
+        },
+        {
+          text: 'math / apollo 7',
+          name: 'apollo7',
+          dynamic: true,
+          controllable: true,
+          address: '/opengl_webgl_conversion#math_apollo7',
+          active: false,
+          parameters: {
+            numNodes: {
+              label: 'Number of Nodes',
+              defaultValue: 8,
+              currentValue: 8
+            },
+            numPolygons: {
+              label: 'Number of Polygons',
+              defaultValue: 8,
+              currentValue: 8
+            },
+            polygonRadius: {
+              label: 'Polygon Radius',
+              defaultValue: 2,
+              currentValue: 2
+            },
+            globalRadius: {
+              label: 'Global Radius',
+              defaultValue: 1,
+              currentValue: 1
+            }
+          }
+        },
+        {
+          text: 'math / mosaic',
+          name: 'mosaic',
+          dynamic: true,
+          controllable: true,
+          address: '/opengl_webgl_conversion#math_mosaic',
+          active: false,
+          parameters: {
+            numNodes: {
+              label: 'Number of Nodes',
+              defaultValue: 8,
+              currentValue: 8
+            },
+            numPolygons: {
+              label: 'Number of Polygons',
+              defaultValue: 6,
+              currentValue: 6
+            },
+            numLayers: {
+              label: 'Number of Layers',
+              defaultValue: 8,
+              currentValue: 8
+            },
+            polygonRadius: {
+              label: 'Polygon Radius',
+              defaultValue: 3,
+              currentValue: 3
+            },
+            globalRadius: {
+              label: 'Global Radius',
+              defaultValue: 2,
+              currentValue: 2
+            }
+          }
+        },
+        {
+          text: 'math / sacred circles',
+          name: 'sacred circles',
+          dynamic: true,
+          controllable: true,
+          address: '/opengl_webgl_conversion#math_sacred_circles',
+          active: false,
+          parameters: {
+            numLayers: {
+              label: 'Number of Layers',
+              defaultValue: 12,
+              currentValue: 12
+            },
+            numCircles: {
+              label: 'Number of Circles',
+              defaultValue: 12,
+              currentValue: 12
+            },
+            circleRadius: {
+              label: 'Circle Radius',
+              defaultValue: 1,
+              currentValue: 1
+            },
+            globalRadius: {
+              label: 'Global Radius',
+              defaultValue: 1,
+              currentValue: 1
+            }
+          }
+        },
+        {
+          text: 'math / star',
+          name: 'star',
+          dynamic: true,
+          controllable: true,
+          address: '/opengl_webgl_conversion#math_star',
+          active: false,
+          parameters: {
+            numVertices: {
+              label: 'Number of Vertices',
+              defaultValue: 10,
+              currentValue: 10
+            },
+            radius: {
+              label: 'Radius',
+              defaultValue: 1,
+              currentValue: 1
+            },
+            offset: {
+              label: 'Offset',
+              defaultValue: 2,
+              currentValue: 2
+            }
+          }
+        },
+        {
+          text: 'physics / sine wave',
+          name: 'sine wave',
+          dynamic: false,
+          controllable: true,
+          address: '/opengl_webgl_conversion#physics_sine_wave',
+          active: false,
+          parameters: {
+            numPoints: {
+              label: 'Number of Points',
+              defaultValue: 1500,
+              currentValue: 1500
+            }
+          }
+        },
+        {
+          text: 'shapes / circle',
+          name: 'circle',
+          dynamic: false,
+          controllable: true,
+          address: '/opengl_webgl_conversion#shapes_circle',
+          active: false,
+          parameters: {
+            numSpokes: {
+              label: 'Number of Spokes',
+              defaultValue: 5,
+              currentValue: 5
+            },
+            radius: {
+              label: 'Radius',
+              defaultValue: 1,
+              currentValue: 1
+            }
+          }
+        },
+        {
+          text: 'shapes / cube',
+          name: 'cube',
+          dynamic: false,
+          controllable: true,
+          address: '/opengl_webgl_conversion#shapes_cube',
+          active: false,
+          parameters: []
+        },
+        {
+          text: 'shapes / polystarter',
+          name: 'polystarter',
+          dynamic: true,
+          controllable: true,
+          address: '/opengl_webgl_conversion#polystarter',
+          active: false,
+          parameters: {
+            radius: {
+              label: 'Radius',
+              defaultValue: 1,
+              currentValue: 1
+            },
+            numVertices: {
+              label: 'Number of Vertices',
+              defaultValue: 6,
+              currentValue: 6
+            },
+            theta: {
+              label: 'Theta',
+              defaultValue: 0,
+              currentValue: 0
+            }
+          }
+        },
+        {
+          text: 'shapes / rectangle',
+          name: 'rectangle',
+          dynamic: false,
+          controllable: true,
+          address: '/opengl_webgl_conversion#shapes_rectangle',
+          active: false,
+          parameters: []
+        },
+        {
+          text: 'shapes / triangle',
+          name: 'triangle',
+          dynamic: false,
+          controllable: true,
+          address: '/opengl_webgl_conversion#shapes_triangle',
+          active: false,
+          parameters: []
         }
       ]
     }

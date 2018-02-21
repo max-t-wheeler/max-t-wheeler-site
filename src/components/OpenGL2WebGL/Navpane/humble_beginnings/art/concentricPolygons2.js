@@ -12,12 +12,12 @@ export default class ConcentricPolygons2 extends Animation {
 
     super(scene, animation);
 
+		this.numPolygons = parseFloat(this.parameters.numPolygons.currentValue);
+		this.radius = parseFloat(this.parameters.radius.currentValue);
+
   }
 
   draw () {
-
-		this.numPolygons = parseFloat(this.parameters.numPolygons.currentValue);
-		this.radius = parseFloat(this.parameters.radius.currentValue);
 
     let x = [0, 0];
     let t = 0;

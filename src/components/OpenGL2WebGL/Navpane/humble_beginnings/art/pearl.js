@@ -1,19 +1,19 @@
- import * as THREE from 'three';
+import * as THREE from 'three';
 
 import Animation from '../../animation';
 
-export default class Clam extends Animation {
+export default class Pearl extends Animation {
 
 	constructor (scene, animation) {
 
 		super(scene, animation);
 
+		this.numRidges = parseFloat(this.parameters.numRidges.currentValue);
+    this.radius = parseFloat(this.parameters.radius.currentValue);
+
 	}
 
 	draw () {
-
-    this.numRidges = parseFloat(this.parameters.numRidges.currentValue);
-    this.radius = parseFloat(this.parameters.radius.currentValue);
 
 	  let phi = [];
 
@@ -80,7 +80,19 @@ export default class Clam extends Animation {
 
 	    this.scene.add(line);
 
-  		}
+	  }
+
+	  let pearlGeometry = new THREE.CircleBufferGeometry(this.radius / 10, 32);
+
+	  let pearlMaterial = new THREE.MeshBasicMaterial(
+	    {
+	      color: 0xffffff
+	    }
+	  );
+
+	  let pearl = new THREE.Mesh(pearlGeometry, pearlMaterial);
+
+	  this.scene.add(pearl);
 
 	}
 

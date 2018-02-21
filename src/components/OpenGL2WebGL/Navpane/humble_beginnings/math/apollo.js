@@ -14,18 +14,18 @@ export default class Apollo extends Animation {
 
     super(scene, animation);
 
-  }
-
-  draw () {
-
 		this.numNodes = parseFloat(this.parameters.numNodes.currentValue);
 		this.numPolygons = parseFloat(this.parameters.numPolygons.currentValue);
 		this.polygonRadius = parseFloat(this.parameters.polygonRadius.currentValue);
 		this.globalRadius = parseFloat(this.parameters.globalRadius.currentValue);
 
+  }
+
+  draw () {
+
     let x = [0, 0];
 
-    for (let i = 1; i < this.numNodes; ++i) {
+    for (let i = 0; i < this.numNodes; ++i) {
 
         for (let j = 0; j < this.numNodes; ++j) {
 
@@ -51,14 +51,8 @@ export default class Apollo extends Animation {
 
       if (i % 2 === 0) {
         this.scene.children[i].rotation.z -= 1e-3;
-        // this.scene.children[i].rotation.z -= Math.sin(t/1000)/10;
-        // this.scene.children[i].scale.set(Math.cos(phi(i, 100) + t/10));
-        // this.scene.children[i].scale.set(Math.cos(phi(i, 100) + t/10), -Math.sin(phi(i, 100) + t/10), Math.cos(t));
       } else {
        this.scene.children[i].rotation.z += 1e-3;
-        // this.scene.children[i].rotation.z += Math.sin(t/1000)/5;
-        // this.scene.children[i].scale.set(-Math.cos(phi(i, 100) + t/10));
-        // this.scene.children[i].scale.set(-Math.sin(phi(i, 100) + t/10), Math.cos(phi(i, 100) + t/10), Math.sin(t));
       }
 
     }
