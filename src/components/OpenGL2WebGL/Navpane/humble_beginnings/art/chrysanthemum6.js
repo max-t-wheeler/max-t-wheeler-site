@@ -8,13 +8,14 @@ import {
 
 } from '../../../utils';
 
-export default class Apollo3 extends Animation {
+export default class Chrysanthemum6 extends Animation {
 
   constructor (scene, animation) {
 
     super(scene, animation);
 
 		this.numNodes = parseFloat(this.parameters.numNodes.currentValue);
+		this.numPolygons = parseFloat(this.parameters.numPolygons.currentValue);
 		this.polygonRadius = parseFloat(this.parameters.polygonRadius.currentValue);
 		this.globalRadius = parseFloat(this.parameters.globalRadius.currentValue);
 
@@ -22,19 +23,15 @@ export default class Apollo3 extends Animation {
 
   draw () {
 
-    let x = [0, 0];
+    for (let i = 0; i < this.numPolygons; ++i) {
 
-    for (let i = 0; i < 12; ++i) {
+			let polyCenter = [
+					this.globalRadius * Math.cos(phi(i, this.numPolygons)),
+					this.globalRadius * Math.sin(phi(i, this.numPolygons))
+			];
 
-        for (let j = 0; j < i; ++j) {
-
-					x[0] = this.globalRadius * Math.cos(phi(i, this.numNodes));
-					x[1] = this.globalRadius * Math.sin(phi(i, this.numNodes));
-
-          let poly = new polygon(x, this.polygonRadius, this.numNodes, 0, colorNodes(i * j));
-          this.scene.add(poly.line);
-
-      }
+			let poly = new polygon(polyCenter, this.polygonRadius, this.numNodes, 0, colorNodes(3), 'relative');
+			this.scene.add(poly.line);
 
     }
 
@@ -45,9 +42,9 @@ export default class Apollo3 extends Animation {
     for (let i = 0; i < this.scene.children.length; ++i) {
 
       if (i % 2 === 0) {
-				this.scene.children[i].rotation.z -= 7.5e-4;
+				this.scene.children[i].rotateZ(1e-2);
       } else {
-				this.scene.children[i].rotation.z += 7.5e-4;
+				this.scene.children[i].rotateZ(-5e-3);
       }
 
     }

@@ -8,7 +8,7 @@ import {
 
 } from '../../../utils';
 
-export default class Apollo7 extends Animation {
+export default class Chrysanthemum7 extends Animation {
 
   constructor (scene, animation) {
 
@@ -23,16 +23,16 @@ export default class Apollo7 extends Animation {
 
   draw () {
 
-    let x = [0, 0, 0];
-
     for (let i = 0; i < this.numPolygons; ++i) {
 
 			for (let j = 0; j < this.numPolygons; ++j) {
 
-				x[0] = this.globalRadius * (Math.sin(phi(i, this.numPolygons)) + Math.cos(phi(j, this.numNodes)));
-				x[1] = this.globalRadius * (Math.cos(phi(i, this.numPolygons)) + Math.sin(phi(j, this.numNodes)));
+				let polyCenter = [
+						this.globalRadius * (Math.sin(phi(i, this.numPolygons)) + Math.cos(phi(j, this.numNodes))),
+						this.globalRadius * (Math.cos(phi(i, this.numPolygons)) + Math.sin(phi(j, this.numNodes)))
+				];
 
-				let poly = new polygon(x, this.polygonRadius, this.numNodes, 0, colorNodes(3), 'relative');
+				let poly = new polygon(polyCenter, this.polygonRadius, this.numNodes, 0, colorNodes(3), 'relative');
 				this.scene.add(poly.line);
 
 			}

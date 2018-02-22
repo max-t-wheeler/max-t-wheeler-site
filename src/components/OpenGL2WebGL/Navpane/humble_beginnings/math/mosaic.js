@@ -24,20 +24,30 @@ export default class Mosaic extends Animation {
 
   draw () {
 
-    let x = [0, 0, 0];
-
 		for (let i = 0; i < this.numNodes; ++i) {
 
+			let polyClusterCenter = [
+				this.globalRadius * Math.cos(phi(i, this.numNodes)),
+				this.globalRadius * Math.sin(phi(i, this.numNodes))
+			];
+
 			for (let j = 0; j < this.numNodes; ++j) {
+
+				let polyCenterOffset = [
+					this.polygonRadius * Math.cos(phi(j, this.numNodes)),
+					this.polygonRadius * Math.sin(phi(j, this.numNodes))
+				];
 
 				for (let k = 0; k < this.numLayers; ++k) {
 
 			    for (let l = 0; l < this.numPolygons; ++l) {
 
-			      x[0] = k * (this.globalRadius * Math.cos(phi(i, this.numNodes)) + this.polygonRadius * Math.cos(phi(j, this.numNodes))) * Math.sin(phi(l, this.numPolygons));
-			      x[1] = k * (this.globalRadius * Math.sin(phi(i, this.numNodes)) + this.polygonRadius * Math.sin(phi(j, this.numNodes))) * Math.cos(phi(l, this.numPolygons));
+						let polyCenter = [
+							k * (polyClusterCenter[0] + polyCenterOffset[0]) * Math.sin(phi(l, this.numPolygons)),
+							k * (polyClusterCenter[1] + polyCenterOffset[1]) * Math.cos(phi(l, this.numPolygons))
+						];
 
-			      let poly = new polygon(x, this.polygonRadius, this.numNodes, 0, colorNodes(i, 'cool'), 'relative');
+			      let poly = new polygon(polyCenter, this.polygonRadius, this.numNodes, 0, colorNodes(i, 'cool'), 'relative');
 			      this.scene.add(poly.line);
 
 			    }

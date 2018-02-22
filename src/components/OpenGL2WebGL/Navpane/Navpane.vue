@@ -101,6 +101,331 @@ export default {
           }
         },
         {
+          text: 'art / chrysanthedad',
+          name: 'chrysanthedad',
+          dynamic: true,
+          controllable: true,
+          address: '/opengl_webgl_conversion#art_chrysanthedad',
+          active: false,
+          parameters: {
+            numCenters: {
+              label: 'Number of Centers',
+              defaultValue: 4,
+              currentValue: 4
+            },
+            numNodes: {
+              label: 'Number of Nodes',
+              defaultValue: 32,
+              currentValue: 32
+            },
+            numPolygons: {
+              label: 'Number of Polygons',
+              defaultValue: 30,
+              currentValue: 30
+            },
+            numLayers: {
+              label: 'Number of Layers',
+              defaultValue: 2,
+              currentValue: 2
+            },
+            polygonRadius: {
+              label: 'Polygon Radius',
+              defaultValue: 1,
+              currentValue: 1
+            },
+            globalRadius: {
+              label: 'Global Radius',
+              defaultValue: 2,
+              currentValue: 2
+            }
+          }
+        },
+        {
+          text: 'art / chrysanthemum',
+          name: 'chrysanthemum',
+          dynamic: true,
+          controllable: true,
+          address: '/opengl_webgl_conversion#art_chrysanthemum',
+          active: false,
+          parameters: {
+            numNodes: {
+              label: 'Number of Nodes',
+              defaultValue: 4,
+              currentValue: 4
+            },
+            numPolygons: {
+              label: 'Number of Polygons',
+              defaultValue: 12,
+              currentValue: 12
+            },
+            polygonRadius: {
+              label: 'Polygon Radius',
+              defaultValue: 1,
+              currentValue: 1
+            },
+            globalRadius: {
+              label: 'Global Radius',
+              defaultValue: 2,
+              currentValue: 2
+            }
+          }
+        },
+        {
+          text: 'art / chrysanthemum 2',
+          name: 'chrysanthemum2',
+          dynamic: true,
+          controllable: true,
+          address: '/opengl_webgl_conversion#art_chrysanthemum2',
+          active: false,
+          parameters: {
+            numNodes: {
+              label: 'Number of Nodes',
+              defaultValue: 12,
+              currentValue: 12
+            },
+            polygonRadius: {
+              label: 'Polygon Radius',
+              defaultValue: 2,
+              currentValue: 2
+            },
+            globalRadius: {
+              label: 'Global Radius',
+              defaultValue: 2,
+              currentValue: 2
+            }
+          }
+        },
+        {
+          text: 'art / chrysanthemum 3',
+          name: 'chrysanthemum3',
+          dynamic: true,
+          controllable: true,
+          address: '/opengl_webgl_conversion#art_chrysanthemum3',
+          active: false,
+          parameters: {
+            numNodes: {
+              label: 'Number of Nodes',
+              defaultValue: 12,
+              currentValue: 12
+            },
+            numPolygons: {
+              label: 'Number of Polygons',
+              defaultValue: 12,
+              currentValue: 12
+            },
+            polygonRadius: {
+              label: 'Polygon Radius',
+              defaultValue: 2,
+              currentValue: 2
+            },
+            globalRadius: {
+              label: 'Global Radius',
+              defaultValue: 2,
+              currentValue: 2
+            }
+          }
+        },
+        {
+          text: 'art / chrysanthemum 4',
+          name: 'chrysanthemum4',
+          dynamic: true,
+          controllable: true,
+          address: '/opengl_webgl_conversion#art_chrysanthemum4',
+          active: false,
+          parameters: {
+            numNodes: {
+              label: 'Number of Nodes',
+              defaultValue: 12,
+              currentValue: 12
+            },
+            numPolygons: {
+              label: 'Number of Polygons',
+              defaultValue: 10,
+              currentValue: 10
+            },
+            polygonRadius: {
+              label: 'Polygon Radius',
+              defaultValue: 2,
+              currentValue: 2
+            },
+            globalRadius: {
+              label: 'Global Radius',
+              defaultValue: 2,
+              currentValue: 2
+            }
+          }
+        },
+        {
+          text: 'art / chrysanthemum 5',
+          name: 'chrysanthemum5',
+          dynamic: true,
+          controllable: true,
+          address: '/opengl_webgl_conversion#art_chrysanthemum5',
+          active: false,
+          parameters: {
+            numNodes: {
+              label: 'Number of Nodes',
+              defaultValue: 6,
+              currentValue: 6
+            },
+            numPolygons: {
+              label: 'Number of Polygons',
+              defaultValue: 6,
+              currentValue: 6
+            },
+            polygonRadius: {
+              label: 'Polygon Radius',
+              defaultValue: 2,
+              currentValue: 2
+            },
+            globalRadius: {
+              label: 'Global Radius',
+              defaultValue: 1,
+              currentValue: 1
+            }
+          }
+        },
+        {
+          text: 'art / chrysanthemum 6',
+          name: 'chrysanthemum6',
+          dynamic: true,
+          controllable: true,
+          address: '/opengl_webgl_conversion#art_chrysanthemum6',
+          active: false,
+          parameters: {
+            numNodes: {
+              label: 'Number of Nodes',
+              defaultValue: 8,
+              currentValue: 8
+            },
+            numPolygons: {
+              label: 'Number of Polygons',
+              defaultValue: 16,
+              currentValue: 16
+            },
+            polygonRadius: {
+              label: 'Polygon Radius',
+              defaultValue: 2,
+              currentValue: 2
+            },
+            globalRadius: {
+              label: 'Global Radius',
+              defaultValue: 2,
+              currentValue: 2
+            }
+          }
+        },
+        {
+          text: 'art / chrysanthemum 7',
+          name: 'chrysanthemum7',
+          dynamic: true,
+          controllable: true,
+          address: '/opengl_webgl_conversion#art_chrysanthemum7',
+          active: false,
+          parameters: {
+            numNodes: {
+              label: 'Number of Nodes',
+              defaultValue: 8,
+              currentValue: 8
+            },
+            numPolygons: {
+              label: 'Number of Polygons',
+              defaultValue: 8,
+              currentValue: 8
+            },
+            polygonRadius: {
+              label: 'Polygon Radius',
+              defaultValue: 2,
+              currentValue: 2
+            },
+            globalRadius: {
+              label: 'Global Radius',
+              defaultValue: 1,
+              currentValue: 1
+            }
+          }
+        },
+        {
+          text: 'art / chrysanthemum8',
+          name: 'chrysanthemum8',
+          dynamic: true,
+          controllable: true,
+          address: '/opengl_webgl_conversion#art_chrysanthemum8',
+          active: false,
+          parameters: {
+            numCenters: {
+              label: 'Number of Centers',
+              defaultValue: 6,
+              currentValue: 6
+            },
+            numNodes: {
+              label: 'Number of Nodes',
+              defaultValue: 6,
+              currentValue: 6
+            },
+            numPolygons: {
+              label: 'Number of Polygons',
+              defaultValue: 30,
+              currentValue: 30
+            },
+            numLayers: {
+              label: 'Number of Layers',
+              defaultValue: 3,
+              currentValue: 3
+            },
+            polygonRadius: {
+              label: 'Polygon Radius',
+              defaultValue: 3,
+              currentValue: 3
+            },
+            globalRadius: {
+              label: 'Global Radius',
+              defaultValue: 2,
+              currentValue: 2
+            }
+          }
+        },
+        {
+          text: 'art / chrysanthemum 9',
+          name: 'chrysanthemum9',
+          dynamic: true,
+          controllable: true,
+          address: '/opengl_webgl_conversion#art_chrysanthemum9',
+          active: false,
+          parameters: {
+            numCenters: {
+              label: 'Number of Centers',
+              defaultValue: 6,
+              currentValue: 6
+            },
+            numNodes: {
+              label: 'Number of Nodes',
+              defaultValue: 32,
+              currentValue: 32
+            },
+            numPolygons: {
+              label: 'Number of Polygons',
+              defaultValue: 30,
+              currentValue: 30
+            },
+            numLayers: {
+              label: 'Number of Layers',
+              defaultValue: 6,
+              currentValue: 6
+            },
+            polygonRadius: {
+              label: 'Polygon Radius',
+              defaultValue: 2,
+              currentValue: 2
+            },
+            globalRadius: {
+              label: 'Global Radius',
+              defaultValue: 2,
+              currentValue: 2
+            }
+          }
+        },
+        {
           text: 'art / clam',
           name: 'clam',
           dynamic: false,
@@ -277,206 +602,6 @@ export default {
               label: 'Global Radius',
               defaultValue: 0.2,
               currentValue: 0.2
-            }
-          }
-        },
-        {
-          text: 'math / apollo',
-          name: 'apollo',
-          dynamic: true,
-          controllable: true,
-          address: '/opengl_webgl_conversion#math_apollo',
-          active: false,
-          parameters: {
-            numNodes: {
-              label: 'Number of Nodes',
-              defaultValue: 4,
-              currentValue: 4
-            },
-            numPolygons: {
-              label: 'Number of Polygons',
-              defaultValue: 12,
-              currentValue: 12
-            },
-            polygonRadius: {
-              label: 'Polygon Radius',
-              defaultValue: 1,
-              currentValue: 1
-            },
-            globalRadius: {
-              label: 'Global Radius',
-              defaultValue: 2,
-              currentValue: 2
-            }
-          }
-        },
-        {
-          text: 'math / apollo 2',
-          name: 'apollo2',
-          dynamic: true,
-          controllable: true,
-          address: '/opengl_webgl_conversion#math_apollo2',
-          active: false,
-          parameters: {
-            numNodes: {
-              label: 'Number of Nodes',
-              defaultValue: 12,
-              currentValue: 12
-            },
-            polygonRadius: {
-              label: 'Polygon Radius',
-              defaultValue: 2,
-              currentValue: 2
-            },
-            globalRadius: {
-              label: 'Global Radius',
-              defaultValue: 2,
-              currentValue: 2
-            }
-          }
-        },
-        {
-          text: 'math / apollo 3',
-          name: 'apollo3',
-          dynamic: true,
-          controllable: true,
-          address: '/opengl_webgl_conversion#math_apollo3',
-          active: false,
-          parameters: {
-            numNodes: {
-              label: 'Number of Nodes',
-              defaultValue: 12,
-              currentValue: 12
-            },
-            polygonRadius: {
-              label: 'Polygon Radius',
-              defaultValue: 2,
-              currentValue: 2
-            },
-            globalRadius: {
-              label: 'Global Radius',
-              defaultValue: 2,
-              currentValue: 2
-            }
-          }
-        },
-        {
-          text: 'math / apollo 4',
-          name: 'apollo4',
-          dynamic: true,
-          controllable: true,
-          address: '/opengl_webgl_conversion#math_apollo4',
-          active: false,
-          parameters: {
-            numNodes: {
-              label: 'Number of Nodes',
-              defaultValue: 8,
-              currentValue: 8
-            },
-            numPolygons: {
-              label: 'Number of Polygons',
-              defaultValue: 3,
-              currentValue: 3
-            },
-            polygonRadius: {
-              label: 'Polygon Radius',
-              defaultValue: 2,
-              currentValue: 2
-            },
-            globalRadius: {
-              label: 'Global Radius',
-              defaultValue: 3,
-              currentValue: 3
-            }
-          }
-        },
-        {
-          text: 'math / apollo 5',
-          name: 'apollo5',
-          dynamic: true,
-          controllable: true,
-          address: '/opengl_webgl_conversion#math_apollo5',
-          active: false,
-          parameters: {
-            numNodes: {
-              label: 'Number of Nodes',
-              defaultValue: 6,
-              currentValue: 6
-            },
-            numPolygons: {
-              label: 'Number of Polygons',
-              defaultValue: 6,
-              currentValue: 6
-            },
-            polygonRadius: {
-              label: 'Polygon Radius',
-              defaultValue: 2,
-              currentValue: 2
-            },
-            globalRadius: {
-              label: 'Global Radius',
-              defaultValue: 1,
-              currentValue: 1
-            }
-          }
-        },
-        {
-          text: 'math / apollo 6',
-          name: 'apollo6',
-          dynamic: true,
-          controllable: true,
-          address: '/opengl_webgl_conversion#math_apollo6',
-          active: false,
-          parameters: {
-            numNodes: {
-              label: 'Number of Nodes',
-              defaultValue: 8,
-              currentValue: 8
-            },
-            numPolygons: {
-              label: 'Number of Polygons',
-              defaultValue: 16,
-              currentValue: 16
-            },
-            polygonRadius: {
-              label: 'Polygon Radius',
-              defaultValue: 2,
-              currentValue: 2
-            },
-            globalRadius: {
-              label: 'Global Radius',
-              defaultValue: 2,
-              currentValue: 2
-            }
-          }
-        },
-        {
-          text: 'math / apollo 7',
-          name: 'apollo7',
-          dynamic: true,
-          controllable: true,
-          address: '/opengl_webgl_conversion#math_apollo7',
-          active: false,
-          parameters: {
-            numNodes: {
-              label: 'Number of Nodes',
-              defaultValue: 8,
-              currentValue: 8
-            },
-            numPolygons: {
-              label: 'Number of Polygons',
-              defaultValue: 8,
-              currentValue: 8
-            },
-            polygonRadius: {
-              label: 'Polygon Radius',
-              defaultValue: 2,
-              currentValue: 2
-            },
-            globalRadius: {
-              label: 'Global Radius',
-              defaultValue: 1,
-              currentValue: 1
             }
           }
         },

@@ -1,7 +1,17 @@
 // art
 import Blanket from './humble_beginnings/art/blanket';
-import Clam from './humble_beginnings/art/clam';
 import BounceRipple from './humble_beginnings/art/bounceRipple';
+import Chrysanthedad from './humble_beginnings/art/chrysanthedad';
+import Chrysanthemum from './humble_beginnings/art/chrysanthemum';
+import Chrysanthemum2 from './humble_beginnings/art/chrysanthemum2';
+import Chrysanthemum3 from './humble_beginnings/art/chrysanthemum3';
+import Chrysanthemum4 from './humble_beginnings/art/chrysanthemum4';
+import Chrysanthemum5 from './humble_beginnings/art/chrysanthemum5';
+import Chrysanthemum6 from './humble_beginnings/art/chrysanthemum6';
+import Chrysanthemum7 from './humble_beginnings/art/chrysanthemum7';
+import Chrysanthemum8 from './humble_beginnings/art/chrysanthemum8';
+import Chrysanthemum9 from './humble_beginnings/art/chrysanthemum9';
+import Clam from './humble_beginnings/art/clam';
 import Collide0scope from './humble_beginnings/art/collide0scope';
 import ConcentricPolygons from './humble_beginnings/art/concentricPolygons';
 import ConcentricPolygons2 from './humble_beginnings/art/concentricPolygons2';
@@ -12,13 +22,6 @@ import SloshRipple from './humble_beginnings/art/sloshRipple';
 import WrigglingDonut from './humble_beginnings/art/wrigglingDonut';
 
 // math
-import Apollo from './humble_beginnings/math/apollo';
-import Apollo2 from './humble_beginnings/math/apollo2';
-import Apollo3 from './humble_beginnings/math/apollo3';
-import Apollo4 from './humble_beginnings/math/apollo4';
-import Apollo5 from './humble_beginnings/math/apollo5';
-import Apollo6 from './humble_beginnings/math/apollo6';
-import Apollo7 from './humble_beginnings/math/apollo7';
 import Mosaic from './humble_beginnings/math/mosaic';
 import SacredCircles from './humble_beginnings/math/sacredCircles';
 import OffsetStar from './humble_beginnings/math/offsetStar';
@@ -37,6 +40,16 @@ const ANIMATION_MAP = {
   // art
   'blanket': Blanket,
   'bounce ripple': BounceRipple,
+  'chrysanthedad': Chrysanthedad,
+  'chrysanthemum': Chrysanthemum,
+  'chrysanthemum2': Chrysanthemum2,
+  'chrysanthemum3': Chrysanthemum3,
+  'chrysanthemum4': Chrysanthemum4,
+  'chrysanthemum5': Chrysanthemum5,
+  'chrysanthemum6': Chrysanthemum6,
+  'chrysanthemum7': Chrysanthemum7,
+  'chrysanthemum8': Chrysanthemum8,
+  'chrysanthemum9': Chrysanthemum9,
   'collide': Collide0scope,
   'concentric polygons': ConcentricPolygons,
   'concentric polygons 2': ConcentricPolygons2,
@@ -45,13 +58,6 @@ const ANIMATION_MAP = {
   'slosh ripple': SloshRipple,
   'wriggling donut': WrigglingDonut,
   // math
-  'apollo': Apollo,
-  'apollo2': Apollo2,
-  'apollo3': Apollo3,
-  'apollo4': Apollo4,
-  'apollo5': Apollo5,
-  'apollo6': Apollo6,
-  'apollo7': Apollo7,
   'mosaic': Mosaic,
   'sacred circles': SacredCircles,
   'star': OffsetStar,
