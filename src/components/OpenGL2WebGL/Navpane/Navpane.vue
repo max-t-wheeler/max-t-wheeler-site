@@ -61,46 +61,6 @@ export default {
       display: false,
       animations: [
         {
-          text: 'temp / temp',
-          name: 'temp',
-          dynamic: true,
-          controllable: true,
-          address: '/opengl_webgl_conversion#temp',
-          active: false,
-          parameters: {
-            numCenters: {
-              label: 'Number of Centers',
-              defaultValue: 6,
-              currentValue: 6
-            },
-            numNodes: {
-              label: 'Number of Nodes',
-              defaultValue: 6,
-              currentValue: 6
-            },
-            numPolygons: {
-              label: 'Number of Polygons',
-              defaultValue: 30,
-              currentValue: 30
-            },
-            numLayers: {
-              label: 'Number of Layers',
-              defaultValue: 3,
-              currentValue: 3
-            },
-            polygonRadius: {
-              label: 'Polygon Radius',
-              defaultValue: 3,
-              currentValue: 3
-            },
-            globalRadius: {
-              label: 'Global Radius',
-              defaultValue: 2,
-              currentValue: 2
-            }
-          }
-        },
-        {
           text: 'art / blanket',
           name: 'blanket',
           dynamic: false,
