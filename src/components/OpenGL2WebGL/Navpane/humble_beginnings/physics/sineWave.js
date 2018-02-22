@@ -20,18 +20,15 @@ export default class SineWave extends Animation {
     for (let i = -this.numPoints; i <= this.numPoints; ++i) {
       node_x.push(i / 1000);
       node_y.push(Math.sin(10 * node_x[i + this.numPoints]) / 2);
+
     }
 
     let vertices = new Float32Array(node_x.length * 3);
 
-    for (let i = 0; i < vertices.length; ++i) {
-      if (i % 3 === 0) {
-        vertices[i] = node_x[i];
-      } else if (i % 3 === 1) {
-        vertices[i] = node_y[i];
-      } else if (i % 3 === 2) {
-        vertices[i] = 0;
-      }
+    for (let i = 0; i < node_x.length; ++i) {
+      vertices[3 * i + 0] = node_x[i];
+      vertices[3 * i + 1] = node_y[i];
+      vertices[3 * i + 2] = 0;
     }
 
     let geometry = new THREE.BufferGeometry();
@@ -50,5 +47,6 @@ export default class SineWave extends Animation {
     let line = new THREE.Line(geometry, material);
 
     this.scene.add(line);
+
   }
 }

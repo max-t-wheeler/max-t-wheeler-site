@@ -23,17 +23,11 @@ export default class Clam extends Animation {
 
 	  let vertices = new Float32Array(phi.length * 3);
 
-	  for (let i = 0; i < vertices.length; ++i) {
-
-	    if (i % 3 === 0) {
-	      vertices[i] = this.radius * Math.sqrt(1 - Math.pow(Math.cos(phi[i]), 2)) * Math.cos(phi[i]);
-	    } else if (i % 3 === 1) {
-	      vertices[i] = this.radius * Math.sqrt(1 - Math.pow(Math.cos(phi[i]), 2)) * Math.sin(phi[i]);
-	    } else if (i % 3 === 2) {
-	      vertices[i] = 0;
-	    }
-
-	  }
+    for (let i = 0; i < phi.length; ++i) {
+      vertices[3 * i + 0] = this.radius * Math.sqrt(1 - Math.pow(Math.cos(phi[i]), 2)) * Math.cos(phi[i]);
+      vertices[3 * i + 1] = this.radius * Math.sqrt(1 - Math.pow(Math.cos(phi[i]), 2)) * Math.sin(phi[i]);
+      vertices[3 * i + 2] = 0;
+    }
 
 	  let geometry = new THREE.BufferGeometry();
 
