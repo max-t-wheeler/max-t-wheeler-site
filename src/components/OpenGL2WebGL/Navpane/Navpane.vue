@@ -827,7 +827,7 @@ export default {
   left: 12.5%;
 }
 
-.active {
+.opengl2webgl-navpane-text.active {
   color: purple;
 }
 
