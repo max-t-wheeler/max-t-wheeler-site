@@ -3,7 +3,7 @@
     <b-container fluid id="opengl2webgl-container">
       <b-row v-if="screenType === 'phone'">
         <b-col>
-          <h1 id="opengl2webgl-phone-message">FLIP ME</h1>
+          <h1 id="opengl2webgl-phone-message">ROTATE ME</h1>
         </b-col>
       </b-row>
       <b-row v-else>

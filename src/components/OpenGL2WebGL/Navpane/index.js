@@ -1,6 +1,3 @@
-// temp
-import Temp from './humble_beginnings/temp/temp';
-
 // art
 import Blanket from './humble_beginnings/art/blanket';
 import BounceRipple from './humble_beginnings/art/bounceRipple';
@@ -43,8 +40,6 @@ import Rectangle from './humble_beginnings/shapes/rectangle';
 import Triangle from './humble_beginnings/shapes/triangle';
 
 const ANIMATION_MAP = {
-  // temp
-  'temp': Temp,
   // art
   'blanket': Blanket,
   'bounce ripple': BounceRipple,

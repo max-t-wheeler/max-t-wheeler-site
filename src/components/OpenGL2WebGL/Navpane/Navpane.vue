@@ -55,99 +55,6 @@ export default {
       display: false,
       animations: [
         {
-          text: 'temp / temp',
-          name: 'temp',
-          dynamic: true,
-          controllable: true,
-          address: '/opengl_webgl_conversion#temp',
-          active: false,
-          parameters: {
-          // Snowflake
-          // numPistols: {
-          //   label: 'Number of Pistols',
-          //   defaultValue: 4,
-          //   currentValue: 4
-          // },
-          // numPetals: {
-          //   label: 'Number of Petals',
-          //   defaultValue: 12,
-          //   currentValue: 12
-          // },
-          // numNodes: {
-          //   label: 'Number of Nodes',
-          //   defaultValue: 4,
-          //   currentValue: 4
-          // },
-          // numPolygons: {
-          //   label: 'Number of Polygons',
-          //   defaultValue: 1,
-          //   currentValue: 1
-          // },
-          // numLayers: {
-          //   label: 'Number of Layers',
-          //   defaultValue: 1,
-          //   currentValue: 1
-          // },
-          // polygonRadius: {
-          //   label: 'Polygon Radius',
-          //   defaultValue: 2,
-          //   currentValue: 2
-          // },
-          // globalRadius: {
-          //   label: 'Global Radius',
-          //   defaultValue: 2,
-          //   currentValue: 2
-          // }
-          // temp
-          // numCenters: {
-          //   label: 'Number of Centers',
-          //   defaultValue: 4,
-          //   currentValue: 4
-          // },
-          // numNodes: {
-          //   label: 'Number of Nodes',
-          //   defaultValue: 4,
-          //   currentValue: 4
-          // },
-          // numPolygons: {
-          //   label: 'Number of Polygons',
-          //   defaultValue: 1,
-          //   currentValue: 1
-          // },
-          // numLayers: {
-          //   label: 'Number of Layers',
-          //   defaultValue: 1,
-          //   currentValue: 1
-          // },
-          // polygonRadius: {
-          //   label: 'Polygon Radius',
-          //   defaultValue: 2,
-          //   currentValue: 2
-          // },
-          // globalRadius: {
-          //   label: 'Global Radius',
-          //   defaultValue: 2,
-          //   currentValue: 2
-          // }
-          // NewTri
-          // numNodes: {
-          //   label: 'Number of Nodes',
-          //   defaultValue: 5,
-          //   currentValue: 5
-          // },
-          // innerRadius: {
-          //   label: 'Inner Radius',
-          //   defaultValue: 2,
-          //   currentValue: 2
-          // },
-          // outerRadius: {
-          //   label: 'Outer Radius',
-          //   defaultValue: 4,
-          //   currentValue: 4
-          // }
-          }
-        },
-        {
           text: 'art / blanket',
           name: 'blanket',
           dynamic: false,
@@ -299,16 +206,6 @@ export default {
               label: 'Number of Polygons',
               defaultValue: 12,
               currentValue: 12
-            },
-            polygonRadius: {
-              label: 'Polygon Radius',
-              defaultValue: 2,
-              currentValue: 2
-            },
-            globalRadius: {
-              label: 'Global Radius',
-              defaultValue: 2,
-              currentValue: 2
             }
           }
         },
@@ -1012,6 +909,7 @@ export default {
 .opengl2webgl-navpane-text {
   color: blue;
   text-decoration: underline;
+  font-family: "Arial";
   cursor: pointer;
   position: relative;
   margin: 0;

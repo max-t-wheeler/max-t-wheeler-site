@@ -16,8 +16,6 @@ export default class Chrysanthemum3 extends Animation {
 
 		this.numNodes = parseFloat(this.parameters.numNodes.currentValue);
 		this.numPolygons = parseFloat(this.parameters.numPolygons.currentValue);
-		this.polygonRadius = parseFloat(this.parameters.polygonRadius.currentValue);
-		this.globalRadius = parseFloat(this.parameters.globalRadius.currentValue);
 
   }
 
@@ -28,19 +26,19 @@ export default class Chrysanthemum3 extends Animation {
         for (let j = 0; j < i; ++j) {
 
 					let polyCenter = [
-							this.globalRadius * Math.cos(phi(i, this.numPolygons)),
-							this.globalRadius * Math.sin(phi(i, this.numPolygons)),
+							2 * Math.cos(phi(i, this.numPolygons)),
+							2 * Math.sin(phi(i, this.numPolygons)),
 							0
 					];
 
-          let poly = new polygon(polyCenter, this.polygonRadius, this.numNodes, 0, colorNodes(i * j));
+          let poly = new polygon(polyCenter, 2, this.numNodes, 0, colorNodes(i * j));
           this.scene.add(poly.line);
 
       }
 
     }
 
-		this.scene.position.set(0, 0, -this.polygonRadius - 0.5);
+		this.scene.position.set(0, 0, -2.5);
 
   }
 
