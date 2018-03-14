@@ -20,7 +20,7 @@ export default class BounceRipple extends Animation {
 
   draw () {
 
-    let x = [0, 0];
+    let x = [0, 0, 0];
     let col = 0xf00a00;
 
     for (let i = 1; i <= this.numPolygons; ++i) {

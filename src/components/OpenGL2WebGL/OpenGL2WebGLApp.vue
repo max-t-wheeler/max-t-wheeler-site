@@ -9,7 +9,8 @@
       <b-row v-else>
         <b-col id="opengl2webgl-navpane" md="2" sm="3">
           <h2 id="opengl2webgl-navpane-title" :class="screenType">Animations</h2>
-          <opengl2webgl-navpane id="opengl2webgl-navpane-menu" :screenType="screenType"/>
+          <input type="text" id="opengl2webgl-search-bar" placeholder="Search" onfocus="this.value=''" v-model="searchedText"/>
+          <opengl2webgl-navpane id="opengl2webgl-navpane-menu" :screenType="screenType" :searchedText="searchedText"/>
         </b-col>
         <b-col md="10" sm="9" id='opengl2webgl-display'>
           <canvas id='opengl2webgl-canvas'></canvas>
@@ -27,6 +28,11 @@ export default {
   name: 'OpenGL2WebGLApp',
   components: {
     'opengl2webgl-navpane': Navpane
+  },
+  data () {
+    return {
+      searchedText: ''
+    }
   }
 }
 </script>
@@ -48,26 +54,20 @@ export default {
 
 #opengl2webgl-navpane-title {
   position: relative;
-  right: 10%;
-  text-align: center;
 }
 
-#opengl2webgl-navpane-title.monitor {
+#opengl2webgl-search-bar {
   position: relative;
-  left: 5%;
-}
-
-#opengl2webgl-navpane-title.tablet {
-  position: relative;
-  right: 10%;
+  width: 100%;
 }
 
 #opengl2webgl-navpane-menu {
   height: 90vh;
   width: 100%;
   overflow-y: auto;
+  overflow-x: hidden;
   position: absolute;
-  text-align: center;
+  margin-top: 10px;
 }
 
 #opengl2webgl-display {

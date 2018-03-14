@@ -4,15 +4,15 @@
     <ul id="opengl2webgl-navpane-list" class="nav flex-column">
       <li
         class = "nav-link opengl2webgl-navpane-item"
-        v-for='item in animations'
+        v-for='item in filter'
         :key='item.name'
         >
         <b-row v-if="screenType === 'monitor'" class="opengl2webgl-navpane-selector">
           <b-col cols="10">
             <p class="opengl2webgl-navpane-text" :class='[{active: item.active}, screenType]' v-on:click='activate(item)'>{{ item.text }}</p>
           </b-col>
-          <b-col cols="2">
-            <b-btn v-if="item.parameters.length !== 0 && item.active" v-b-toggle="item.name" class="opengl2webgl-navpane-button" :class="screenType">
+          <b-col cols="2" v-if="item.parameters.length !== 0 && item.active">
+            <b-btn v-b-toggle="item.name" class="opengl2webgl-navpane-button" :class="screenType">
               <span class="glyphicon glyphicon-chevron-down"></span>
             </b-btn>
           </b-col>
@@ -21,23 +21,17 @@
           <b-col cols="9">
             <p class="opengl2webgl-navpane-text" :class='[{active: item.active}, screenType]' v-on:click='activate(item)'>{{ item.text }}</p>
           </b-col>
-          <b-col cols="3">
-            <b-btn v-if="item.parameters.length !== 0 && item.active" v-b-toggle="item.name" class="opengl2webgl-navpane-button" :class="screenType">
+          <b-col cols="3" v-if="item.parameters.length !== 0 && item.active">
+            <b-btn v-b-toggle="item.name" class="opengl2webgl-navpane-button" :class="screenType">
               <span class="glyphicon glyphicon-chevron-down"></span>
             </b-btn>
           </b-col>
         </b-row>
         <div v-if="item.parameters.length !== 0 && item.active" class="opengl2webgl-navpane-options" :class="screenType">
           <b-collapse :id="item.name">
-            <opengl2webgl-navpane-controls :animationParameters="item.parameters"/>
-            <br v-if="screenType === 'monitor'">
-            <div>
-              <b-button v-on:click="activate(item)">Submit</b-button>
-              <b-button v-on:click="resetAnimation(item)">Reset</b-button>
-            </div>
+            <opengl2webgl-navpane-controls :animation="item" v-bind="{activate, resetAnimation}"/>
           </b-collapse>
         </div>
-        <br v-if="screenType === 'monitor'">
       </li>
     </ul>
   </div>
@@ -52,7 +46,7 @@ import CanvasManager from './canvasManager';
 let canvasManager;
 
 export default {
-  props: ['screenType'],
+  props: ['screenType', 'searchedText'],
   components: {
     'opengl2webgl-navpane-controls': NavpaneControls
   },
@@ -60,6 +54,99 @@ export default {
     return {
       display: false,
       animations: [
+        {
+          text: 'temp / temp',
+          name: 'temp',
+          dynamic: true,
+          controllable: true,
+          address: '/opengl_webgl_conversion#temp',
+          active: false,
+          parameters: {
+          // Snowflake
+          // numPistols: {
+          //   label: 'Number of Pistols',
+          //   defaultValue: 4,
+          //   currentValue: 4
+          // },
+          // numPetals: {
+          //   label: 'Number of Petals',
+          //   defaultValue: 12,
+          //   currentValue: 12
+          // },
+          // numNodes: {
+          //   label: 'Number of Nodes',
+          //   defaultValue: 4,
+          //   currentValue: 4
+          // },
+          // numPolygons: {
+          //   label: 'Number of Polygons',
+          //   defaultValue: 1,
+          //   currentValue: 1
+          // },
+          // numLayers: {
+          //   label: 'Number of Layers',
+          //   defaultValue: 1,
+          //   currentValue: 1
+          // },
+          // polygonRadius: {
+          //   label: 'Polygon Radius',
+          //   defaultValue: 2,
+          //   currentValue: 2
+          // },
+          // globalRadius: {
+          //   label: 'Global Radius',
+          //   defaultValue: 2,
+          //   currentValue: 2
+          // }
+          // temp
+          // numCenters: {
+          //   label: 'Number of Centers',
+          //   defaultValue: 4,
+          //   currentValue: 4
+          // },
+          // numNodes: {
+          //   label: 'Number of Nodes',
+          //   defaultValue: 4,
+          //   currentValue: 4
+          // },
+          // numPolygons: {
+          //   label: 'Number of Polygons',
+          //   defaultValue: 1,
+          //   currentValue: 1
+          // },
+          // numLayers: {
+          //   label: 'Number of Layers',
+          //   defaultValue: 1,
+          //   currentValue: 1
+          // },
+          // polygonRadius: {
+          //   label: 'Polygon Radius',
+          //   defaultValue: 2,
+          //   currentValue: 2
+          // },
+          // globalRadius: {
+          //   label: 'Global Radius',
+          //   defaultValue: 2,
+          //   currentValue: 2
+          // }
+          // NewTri
+          // numNodes: {
+          //   label: 'Number of Nodes',
+          //   defaultValue: 5,
+          //   currentValue: 5
+          // },
+          // innerRadius: {
+          //   label: 'Inner Radius',
+          //   defaultValue: 2,
+          //   currentValue: 2
+          // },
+          // outerRadius: {
+          //   label: 'Outer Radius',
+          //   defaultValue: 4,
+          //   currentValue: 4
+          // }
+          }
+        },
         {
           text: 'art / blanket',
           name: 'blanket',
@@ -104,7 +191,7 @@ export default {
           text: 'art / chrysanthedad',
           name: 'chrysanthedad',
           dynamic: true,
-          controllable: true,
+          controllable: false,
           address: '/opengl_webgl_conversion#art_chrysanthedad',
           active: false,
           parameters: {
@@ -144,7 +231,7 @@ export default {
           text: 'art / chrysanthemum',
           name: 'chrysanthemum',
           dynamic: true,
-          controllable: true,
+          controllable: false,
           address: '/opengl_webgl_conversion#art_chrysanthemum',
           active: false,
           parameters: {
@@ -199,7 +286,7 @@ export default {
           text: 'art / chrysanthemum 3',
           name: 'chrysanthemum3',
           dynamic: true,
-          controllable: true,
+          controllable: false,
           address: '/opengl_webgl_conversion#art_chrysanthemum3',
           active: false,
           parameters: {
@@ -229,7 +316,7 @@ export default {
           text: 'art / chrysanthemum 4',
           name: 'chrysanthemum4',
           dynamic: true,
-          controllable: true,
+          controllable: false,
           address: '/opengl_webgl_conversion#art_chrysanthemum4',
           active: false,
           parameters: {
@@ -259,7 +346,7 @@ export default {
           text: 'art / chrysanthemum 5',
           name: 'chrysanthemum5',
           dynamic: true,
-          controllable: true,
+          controllable: false,
           address: '/opengl_webgl_conversion#art_chrysanthemum5',
           active: false,
           parameters: {
@@ -289,7 +376,7 @@ export default {
           text: 'art / chrysanthemum 6',
           name: 'chrysanthemum6',
           dynamic: true,
-          controllable: true,
+          controllable: false,
           address: '/opengl_webgl_conversion#art_chrysanthemum6',
           active: false,
           parameters: {
@@ -501,6 +588,36 @@ export default {
           }
         },
         {
+          text: 'art / flowers',
+          name: 'flowers',
+          dynamic: false,
+          controllable: true,
+          address: '/opengl_webgl_conversion#art_flowers',
+          active: false,
+          parameters: {
+            numFlowers: {
+              label: 'Number of Flowers',
+              defaultValue: 3,
+              currentValue: 3
+            },
+            numPetals: {
+              label: 'Number of Petals',
+              defaultValue: 8,
+              currentValue: 8
+            },
+            numNodes: {
+              label: 'Number of Nodes',
+              defaultValue: 8,
+              currentValue: 8
+            },
+            petalRadius: {
+              label: 'Petal Radius',
+              defaultValue: 1,
+              currentValue: 1
+            }
+          }
+        },
+        {
           text: 'art / gyr0scope',
           name: 'gyro',
           dynamic: true,
@@ -576,6 +693,36 @@ export default {
           }
         },
         {
+          text: 'art / starry night',
+          name: 'starry night',
+          dynamic: false,
+          controllable: true,
+          address: '/opengl_webgl_conversion#art_starry_night',
+          active: false,
+          parameters: {
+            numStars: {
+              label: 'Number of Stars',
+              defaultValue: 42,
+              currentValue: 42
+            },
+            numStems: {
+              label: 'Number of Stems',
+              defaultValue: 12,
+              currentValue: 12
+            },
+            numSplits: {
+              label: 'Number of Splits',
+              defaultValue: 8,
+              currentValue: 8
+            },
+            radius: {
+              label: 'Radius',
+              defaultValue: 42,
+              currentValue: 42
+            }
+          }
+        },
+        {
           text: 'art / wriggling donut',
           name: 'wriggling donut',
           dynamic: true,
@@ -643,7 +790,7 @@ export default {
         {
           text: 'math / sacred circles',
           name: 'sacred circles',
-          dynamic: true,
+          dynamic: false,
           controllable: true,
           address: '/opengl_webgl_conversion#math_sacred_circles',
           active: false,
@@ -673,7 +820,7 @@ export default {
         {
           text: 'math / star',
           name: 'star',
-          dynamic: true,
+          dynamic: false,
           controllable: true,
           address: '/opengl_webgl_conversion#math_star',
           active: false,
@@ -692,6 +839,41 @@ export default {
               label: 'Offset',
               defaultValue: 2,
               currentValue: 2
+            }
+          }
+        },
+        {
+          text: 'math / unoriginal',
+          name: 'unoriginal',
+          dynamic: true,
+          controllable: true,
+          address: '/opengl_webgl_conversion#math_unoriginal',
+          active: false,
+          parameters: {
+            numNodes: {
+              label: 'Number of Nodes',
+              defaultValue: 24,
+              currentValue: 24
+            },
+            nodeRadius: {
+              label: 'Node Radius',
+              defaultValue: 1,
+              currentValue: 1
+            },
+            globalRadius: {
+              label: 'Global Radius',
+              defaultValue: 2,
+              currentValue: 2
+            },
+            rate: {
+              label: 'Rate',
+              defaultValue: 4,
+              currentValue: 4
+            },
+            divisor: {
+              label: 'Divisor',
+              defaultValue: 1,
+              currentValue: 1
             }
           }
         },
@@ -807,6 +989,15 @@ export default {
       }
       this.activate(animation);
     }
+  },
+  computed: {
+    filter () {
+      return this.animations.filter(
+        animation => {
+          return animation.text.toLowerCase().includes(this.searchedText.toLowerCase())
+        }
+      );
+    }
   }
 }
 
@@ -814,20 +1005,19 @@ export default {
 
 <style>
 
+.opengl2webgl-navpane-item {
+  padding-left: 0;
+}
+
 .opengl2webgl-navpane-text {
   color: blue;
   text-decoration: underline;
   cursor: pointer;
   position: relative;
-  float: center;
+  margin: 0;
 }
 
-.opengl2webgl-navpane-text.monitor {
-  position: relative;
-  left: 12.5%;
-}
-
-.opengl2webgl-navpane-text.active {
+.active {
   color: purple;
 }
 
@@ -843,11 +1033,6 @@ export default {
 
 .glyphicon-chevron-down {
   color: purple;
-}
-
-.opengl2webgl-navpane-options.tablet {
-  position: relative;
-  right: 10%;
 }
 
 </style>

@@ -31,7 +31,8 @@ export default class Chrysanthemum8 extends Animation {
 
 			let polyCenterOffset = [
 					this.globalRadius * Math.cos(phi(i, this.numCenters)),
-					this.globalRadius * Math.sin(phi(i, this.numCenters))
+					this.globalRadius * Math.sin(phi(i, this.numCenters)),
+					0
 			];
 
 			for (let j = 0; j < this.numLayers; ++j) {
@@ -45,7 +46,8 @@ export default class Chrysanthemum8 extends Animation {
 
 					let polyCenter = [
 						polyClusterCenter[0] * Math.sin(phi(k, this.numPolygons)) + polyCenterOffset[0],
-						polyClusterCenter[1] * Math.cos(phi(k, this.numPolygons)) + polyCenterOffset[1]
+						polyClusterCenter[1] * Math.cos(phi(k, this.numPolygons)) + polyCenterOffset[1],
+						0
 					];
 
 		      let poly = new polygon(polyCenter, this.polygonRadius, this.numNodes, 0, colorNodes(j));
@@ -57,6 +59,8 @@ export default class Chrysanthemum8 extends Animation {
 			}
 
 		}
+
+		this.scene.position.set(0, 0, -5);
 
   }
 

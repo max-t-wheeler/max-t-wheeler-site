@@ -1,3 +1,6 @@
+// temp
+import Temp from './humble_beginnings/temp/temp';
+
 // art
 import Blanket from './humble_beginnings/art/blanket';
 import BounceRipple from './humble_beginnings/art/bounceRipple';
@@ -15,16 +18,19 @@ import Clam from './humble_beginnings/art/clam';
 import Collide0scope from './humble_beginnings/art/collide0scope';
 import ConcentricPolygons from './humble_beginnings/art/concentricPolygons';
 import ConcentricPolygons2 from './humble_beginnings/art/concentricPolygons2';
+import Flowers from './humble_beginnings/art/flowers';
 import Gyr0scope from './humble_beginnings/art/gyr0scope';
 import Pearl from './humble_beginnings/art/pearl';
 import Pinwheel from './humble_beginnings/art/pinwheel';
 import SloshRipple from './humble_beginnings/art/sloshRipple';
+import StarryNight from './humble_beginnings/art/starryNight';
 import WrigglingDonut from './humble_beginnings/art/wrigglingDonut';
 
 // math
 import Mosaic from './humble_beginnings/math/mosaic';
 import SacredCircles from './humble_beginnings/math/sacredCircles';
 import OffsetStar from './humble_beginnings/math/offsetStar';
+import Unoriginal from './humble_beginnings/math/unoriginal';
 
 // physics
 import SineWave from './humble_beginnings/physics/sineWave';
@@ -37,6 +43,8 @@ import Rectangle from './humble_beginnings/shapes/rectangle';
 import Triangle from './humble_beginnings/shapes/triangle';
 
 const ANIMATION_MAP = {
+  // temp
+  'temp': Temp,
   // art
   'blanket': Blanket,
   'bounce ripple': BounceRipple,
@@ -53,14 +61,17 @@ const ANIMATION_MAP = {
   'collide': Collide0scope,
   'concentric polygons': ConcentricPolygons,
   'concentric polygons 2': ConcentricPolygons2,
+  'flowers': Flowers,
   'gyro': Gyr0scope,
   'pinwheel': Pinwheel,
   'slosh ripple': SloshRipple,
+  'starry night': StarryNight,
   'wriggling donut': WrigglingDonut,
   // math
   'mosaic': Mosaic,
   'sacred circles': SacredCircles,
   'star': OffsetStar,
+  'unoriginal': Unoriginal,
   // physics
   'sine wave': SineWave,
   // shapes

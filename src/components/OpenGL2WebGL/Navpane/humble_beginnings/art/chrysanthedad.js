@@ -31,21 +31,24 @@ export default class Chrysanthedad extends Animation {
 
 			let polyCenterOffset = [
 					this.globalRadius * Math.cos(phi(i, this.numCenters)),
-					this.globalRadius * Math.sin(phi(i, this.numCenters))
+					this.globalRadius * Math.sin(phi(i, this.numCenters)),
+					0
 			];
 
 			for (let j = 0; j < this.numLayers; ++j) {
 
 				let polyClusterCenter = [
 					j * center[0],
-					j * center[1]
+					j * center[1],
+					0
 				];
 
 		    for (let k = 0; k < this.numPolygons; ++k) {
 
 					let polyCenter = [
 						polyClusterCenter[0] * Math.sin(phi(k, this.numPolygons)) + polyCenterOffset[0],
-						polyClusterCenter[1] * Math.cos(phi(k, this.numPolygons)) + polyCenterOffset[1]
+						polyClusterCenter[1] * Math.cos(phi(k, this.numPolygons)) + polyCenterOffset[1],
+						0
 					];
 
 		      let poly = new polygon(polyCenter, this.polygonRadius, this.numNodes, 0, colorNodes(j));
@@ -57,6 +60,8 @@ export default class Chrysanthedad extends Animation {
 			}
 
 		}
+
+		this.scene.position.set(0, 0, -5);
 
   }
 

@@ -1,11 +1,15 @@
 <template>
 
   <div>
-    <div v-for="parameter in animationParameters" :key="parameter.label" class="opengl2webgl-navpane-controls">
+    <div v-for="parameter in animation.parameters" :key="parameter.label" class="opengl2webgl-navpane-controls">
       <p> {{parameter.label }} </p>
-      <input class="opengl2webgl-navpane-input" type="number" v-model="parameter.currentValue">
+      <input class="opengl2webgl-navpane-input" type="number" v-model="parameter.currentValue"/>
       <br>
-      <br>
+    </div>
+    <br>
+    <div class="opengl2webgl-navpane-controls">
+      <b-button v-on:click="activate(animation)">Submit</b-button>
+      <b-button v-on:click="resetAnimation(animation)">Reset</b-button>
     </div>
   </div>
 
@@ -14,7 +18,7 @@
 <script>
 
 export default {
-  props: ['animationParameters']
+  props: ['animation', 'activate', 'resetAnimation']
 }
 
 </script>

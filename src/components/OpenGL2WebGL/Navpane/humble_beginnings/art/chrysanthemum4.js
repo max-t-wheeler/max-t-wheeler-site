@@ -29,14 +29,16 @@ export default class Chrysanthemum4 extends Animation {
 
 				let polyClusterCenter = [
 						this.globalRadius * (Math.cos(phi(i, this.numNodes)) + Math.cos(phi(j, this.numNodes))),
-						this.globalRadius * (Math.sin(phi(i, this.numNodes)) + Math.sin(phi(j, this.numNodes)))
+						this.globalRadius * (Math.sin(phi(i, this.numNodes)) + Math.sin(phi(j, this.numNodes))),
+						0
 				];
 
 				for (let k = 0; k < this.numPolygons; ++k) {
 
 					let polyCenter = [
 						polyClusterCenter[0] * Math.sin(phi(k, this.numPolygons)),
-						polyClusterCenter[1] * Math.cos(phi(k, this.numPolygons))
+						polyClusterCenter[1] * Math.cos(phi(k, this.numPolygons)),
+						0
 					];
 
 						let poly = new polygon(polyCenter, this.polygonRadius, this.numNodes, 0, colorNodes(3));

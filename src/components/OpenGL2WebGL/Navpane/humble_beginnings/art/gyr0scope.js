@@ -30,6 +30,8 @@ export default class Gyr0scope extends Animation {
 
     }
 
+		this.scene.position.set(0, 0, 1.5);
+
   }
 
   update (t) {

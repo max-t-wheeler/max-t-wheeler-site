@@ -19,7 +19,7 @@ export default class ConcentricPolygons2 extends Animation {
 
   draw () {
 
-    let x = [0, 0];
+    let x = [0, 0, 0];
     let t = 0;
     let col = 0xf00a00;
 
