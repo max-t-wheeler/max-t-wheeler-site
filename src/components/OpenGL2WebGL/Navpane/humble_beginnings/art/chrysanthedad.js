@@ -10,9 +10,9 @@ import {
 
 export default class Chrysanthedad extends Animation {
 
-  constructor (scene, animation) {
+	constructor (scene, camera, animation) {
 
-    super(scene, animation);
+		super(scene, camera, animation);
 
 		this.numCenters = parseFloat(this.parameters.numCenters.currentValue);
 		this.numNodes = parseFloat(this.parameters.numNodes.currentValue);

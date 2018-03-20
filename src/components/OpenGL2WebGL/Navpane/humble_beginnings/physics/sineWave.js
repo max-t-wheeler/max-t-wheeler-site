@@ -4,10 +4,14 @@ import Animation from '../../animation';
 
 export default class SineWave extends Animation {
 
-  constructor (scene, animation) {
+  constructor (scene, camera, animation) {
 
-    super(scene, animation);
+		super(scene, camera, animation);
 
+    this.amplitude = parseFloat(this.parameters.amplitude.currentValue);
+    this.frequency = parseFloat(this.parameters.frequency.currentValue);
+    this.phase = parseFloat(this.parameters.phase.currentValue);
+    this.displacement = parseFloat(this.parameters.displacement.currentValue);
     this.numPoints = parseFloat(this.parameters.numPoints.currentValue);
 
   }
@@ -19,7 +23,7 @@ export default class SineWave extends Animation {
 
     for (let i = -this.numPoints; i <= this.numPoints; ++i) {
       node_x.push(i / 1000);
-      node_y.push(Math.sin(10 * node_x[i + this.numPoints]) / 2);
+      node_y.push(this.amplitude * Math.sin(this.frequency * node_x[i + this.numPoints] + this.phase) + this.displacement);
 
     }
 

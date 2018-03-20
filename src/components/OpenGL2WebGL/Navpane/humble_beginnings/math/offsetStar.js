@@ -9,9 +9,9 @@ import {
 
 export default class OffsetStar extends Animation {
 
-	constructor (scene, animation) {
+	constructor (scene, camera, animation) {
 
-		super(scene, animation);
+		super(scene, camera, animation);
 
 		this.numVertices = parseFloat(this.parameters.numVertices.currentValue);
 		this.radius = parseFloat(this.parameters.radius.currentValue);

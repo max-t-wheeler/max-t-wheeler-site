@@ -9,9 +9,9 @@ import {
 
 export default class Polygon extends Animation {
 
-	constructor (scene, animation) {
+	constructor (scene, camera, animation) {
 
-		super(scene, animation);
+		super(scene, camera, animation);
 
 		this.center = [0, 0];
 		this.radius = parseFloat(this.parameters.radius.currentValue);

@@ -302,3 +302,30 @@ export function Flower (rootPosition, pistolPosition, petalRadius, numPetals, nu
   );
 
 }
+
+export function sacredGeometry (center, numPolygons, numNodes, polygonRadius, globalRadius, color) {
+
+  this.center = center;
+  this.numPolygons = numPolygons;
+  this.numNodes = numNodes;
+  this.polygonRadius = polygonRadius;
+  this.globalRadius = globalRadius;
+  this.color = color;
+
+  this.geomGroup = new THREE.Group();
+
+  for (let i = 0; i < this.numPolygons; ++i) {
+
+    let polyCenter = [
+      this.globalRadius * Math.cos(phi(i, this.numPolygons)) + this.center[0],
+      this.globalRadius * Math.sin(phi(i, this.numPolygons)) + this.center[1],
+      this.center[2]
+    ];
+
+    let poly = new polygon(polyCenter, this.polygonRadius, this.numNodes, phi(i, this.numNodes), this.color);
+
+    this.geomGroup.add(poly.line);
+
+  }
+
+}

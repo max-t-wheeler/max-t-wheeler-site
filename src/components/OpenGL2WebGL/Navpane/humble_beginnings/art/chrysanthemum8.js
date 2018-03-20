@@ -10,9 +10,9 @@ import {
 
 export default class Chrysanthemum8 extends Animation {
 
-  constructor (scene, animation) {
+	constructor (scene, camera, animation) {
 
-    super(scene, animation);
+		super(scene, camera, animation);
 
 		this.numCenters = parseFloat(this.parameters.numCenters.currentValue);
 		this.numNodes = parseFloat(this.parameters.numNodes.currentValue);
@@ -20,6 +20,8 @@ export default class Chrysanthemum8 extends Animation {
 		this.numLayers = parseFloat(this.parameters.numLayers.currentValue);
 		this.polygonRadius = parseFloat(this.parameters.polygonRadius.currentValue);
 		this.globalRadius = parseFloat(this.parameters.globalRadius.currentValue);
+
+		this.camera.position.set(0, 0, 10);
 
   }
 
@@ -59,8 +61,6 @@ export default class Chrysanthemum8 extends Animation {
 			}
 
 		}
-
-		this.scene.position.set(0, 0, -5);
 
   }
 

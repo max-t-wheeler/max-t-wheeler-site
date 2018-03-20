@@ -11,9 +11,9 @@ import {
 
 export default class Temp extends Animation {
 
-  constructor (scene, animation) {
+	constructor (scene, camera, animation) {
 
-    super(scene, animation);
+		super(scene, camera, animation);
 
 		this.numNodes = parseFloat(this.parameters.numNodes.currentValue);
 		this.nodeRadius = parseFloat(this.parameters.nodeRadius.currentValue);

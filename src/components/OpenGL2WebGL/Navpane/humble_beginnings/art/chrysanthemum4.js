@@ -10,9 +10,9 @@ import {
 
 export default class Chrysanthemum4 extends Animation {
 
-  constructor (scene, animation) {
+	constructor (scene, camera, animation) {
 
-    super(scene, animation);
+		super(scene, camera, animation);
 
 		this.numNodes = parseFloat(this.parameters.numNodes.currentValue);
 		this.numPolygons = parseFloat(this.parameters.numPolygons.currentValue);

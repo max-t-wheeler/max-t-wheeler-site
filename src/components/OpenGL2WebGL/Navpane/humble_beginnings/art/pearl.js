@@ -4,9 +4,9 @@ import Animation from '../../animation';
 
 export default class Pearl extends Animation {
 
-	constructor (scene, animation) {
+	constructor (scene, camera, animation) {
 
-		super(scene, animation);
+		super(scene, camera, animation);
 
 		this.numRidges = parseFloat(this.parameters.numRidges.currentValue);
     this.radius = parseFloat(this.parameters.radius.currentValue);

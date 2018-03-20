@@ -8,9 +8,9 @@ import {
 
 export default class ConcentricPolygons2 extends Animation {
 
-  constructor (scene, animation) {
+	constructor (scene, camera, animation) {
 
-    super(scene, animation);
+		super(scene, camera, animation);
 
 		this.numPolygons = parseFloat(this.parameters.numPolygons.currentValue);
 		this.radius = parseFloat(this.parameters.radius.currentValue);

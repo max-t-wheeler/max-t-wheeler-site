@@ -4,9 +4,9 @@ import Animation from '../../animation';
 
 export default class Circle extends Animation {
 
-	constructor (scene, animation) {
+	constructor (scene, camera, animation) {
 
-		super(scene, animation);
+		super(scene, camera, animation);
 
 		this.numSpokes = parseFloat(this.parameters.numSpokes.currentValue);
 		this.radius = parseFloat(this.parameters.radius.currentValue);

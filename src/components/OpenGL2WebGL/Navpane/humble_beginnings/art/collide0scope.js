@@ -10,9 +10,9 @@ import {
 
 export default class Collide0scope extends Animation {
 
-  constructor (scene, animation) {
+	constructor (scene, camera, animation) {
 
-    super(scene, animation);
+		super(scene, camera, animation);
 
 		this.numCircles = parseFloat(this.parameters.numCircles.currentValue);
 

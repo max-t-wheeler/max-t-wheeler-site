@@ -15,16 +15,19 @@ import Clam from './humble_beginnings/art/clam';
 import Collide0scope from './humble_beginnings/art/collide0scope';
 import ConcentricPolygons from './humble_beginnings/art/concentricPolygons';
 import ConcentricPolygons2 from './humble_beginnings/art/concentricPolygons2';
+import Fauxlidoscope from './humble_beginnings/art/fauxlidoscope';
 import Flowers from './humble_beginnings/art/flowers';
 import Gyr0scope from './humble_beginnings/art/gyr0scope';
 import Pearl from './humble_beginnings/art/pearl';
 import Pinwheel from './humble_beginnings/art/pinwheel';
+import Snowflake from './humble_beginnings/art/snowflake';
 import SloshRipple from './humble_beginnings/art/sloshRipple';
 import StarryNight from './humble_beginnings/art/starryNight';
 import WrigglingDonut from './humble_beginnings/art/wrigglingDonut';
 
 // math
 import Mosaic from './humble_beginnings/math/mosaic';
+import Mosaic2 from './humble_beginnings/math/mosaic2';
 import SacredCircles from './humble_beginnings/math/sacredCircles';
 import OffsetStar from './humble_beginnings/math/offsetStar';
 import Unoriginal from './humble_beginnings/math/unoriginal';
@@ -56,14 +59,17 @@ const ANIMATION_MAP = {
   'collide': Collide0scope,
   'concentric polygons': ConcentricPolygons,
   'concentric polygons 2': ConcentricPolygons2,
+  'fauxlidoscope': Fauxlidoscope,
   'flowers': Flowers,
   'gyro': Gyr0scope,
   'pinwheel': Pinwheel,
+  'snowflake': Snowflake,
   'slosh ripple': SloshRipple,
   'starry night': StarryNight,
   'wriggling donut': WrigglingDonut,
   // math
   'mosaic': Mosaic,
+  'mosaic2': Mosaic2,
   'sacred circles': SacredCircles,
   'star': OffsetStar,
   'unoriginal': Unoriginal,
@@ -79,10 +85,10 @@ const ANIMATION_MAP = {
   'triangle': Triangle
 };
 
-export function generateAnimation (scene, animation) {
+export function generateAnimation (scene, camera, animation) {
 
   if (ANIMATION_MAP[animation.name]) {
-    return new ANIMATION_MAP[animation.name](scene, animation);
+    return new ANIMATION_MAP[animation.name](scene, camera, animation);
   }
 
 }

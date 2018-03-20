@@ -10,15 +10,17 @@ import {
 
 export default class SacredCircles extends Animation {
 
-	constructor (scene, animation) {
+	constructor (scene, camera, animation) {
 
-		super(scene, animation);
+		super(scene, camera, animation);
 
 		this.numLayers = parseFloat(this.parameters.numLayers.currentValue);
 		this.numCircles = parseFloat(this.parameters.numCircles.currentValue);
 		this.circleRadius = parseFloat(this.parameters.circleRadius.currentValue);
 		this.globalRadius = parseFloat(this.parameters.globalRadius.currentValue);
 		this.color = colorNodes(0);
+
+		this.camera.position.set(0, 0, 4);
 
 	}
 
@@ -43,8 +45,6 @@ export default class SacredCircles extends Animation {
 	    }
 
 	  }
-
-		this.scene.position.set(0, 0, -1);
 
 	}
 

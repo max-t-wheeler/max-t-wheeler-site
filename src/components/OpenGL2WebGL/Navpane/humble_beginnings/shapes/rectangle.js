@@ -4,9 +4,9 @@ import Animation from '../../animation';
 
 export default class Rectangle extends Animation {
 
-	constructor (scene, animation) {
+	constructor (scene, camera, animation) {
 
-		super(scene, animation);
+		super(scene, camera, animation);
 
 	}
 

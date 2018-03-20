@@ -485,6 +485,47 @@ export default {
           }
         },
         {
+          text: 'art / fauxlidoscope',
+          name: 'fauxlidoscope',
+          dynamic: true,
+          controllable: false,
+          address: '/opengl_webgl_conversion#art_fauxlidoscope',
+          cameraZoomMax: 100,
+          cameraZoomMin: 1,
+          parameters: {
+            numSteps: {
+              label: 'Number of Steps',
+              defaultValue: 12,
+              currentValue: 12
+            },
+            numLayers: {
+              label: 'Number of Layers',
+              defaultValue: 20,
+              currentValue: 20
+            },
+            numNodes: {
+              label: 'Number of Nodes',
+              defaultValue: 6,
+              currentValue: 6
+            },
+            numLanes: {
+              label: 'Number of Lanes',
+              defaultValue: 6,
+              currentValue: 6
+            },
+            polygonRadius: {
+              label: 'Polygon Radius',
+              defaultValue: 1,
+              currentValue: 1
+            },
+            globalRadius: {
+              label: 'Global Radius',
+              defaultValue: 1,
+              currentValue: 1
+            }
+          }
+        },
+        {
           text: 'art / flowers',
           name: 'flowers',
           dynamic: false,
@@ -546,6 +587,51 @@ export default {
               label: 'Radius',
               defaultValue: 1,
               currentValue: 1
+            }
+          }
+        },
+        {
+          text: 'art / snowflake',
+          name: 'snowflake',
+          dynamic: true,
+          controllable: true,
+          address: '/opengl_webgl_conversion#art_snowflake',
+          active: false,
+          parameters: {
+            numLayers: {
+              label: 'Number of Layers',
+              defaultValue: 1,
+              currentValue: 1
+            },
+            numLanes: {
+              label: 'Number of Lanes',
+              defaultValue: 12,
+              currentValue: 12
+            },
+            numPolygons: {
+              label: 'Number of Polygons',
+              defaultValue: 12,
+              currentValue: 12
+            },
+            numNodes: {
+              label: 'Number of Nodes',
+              defaultValue: 6,
+              currentValue: 6
+            },
+            polygonRadius: {
+              label: 'Polygon Radius',
+              defaultValue: 1,
+              currentValue: 1
+            },
+            globalRadius: {
+              label: 'Global Radius',
+              defaultValue: 2,
+              currentValue: 2
+            },
+            rate: {
+              label: 'Rate',
+              defaultValue: 10,
+              currentValue: 10
             }
           }
         },
@@ -685,6 +771,41 @@ export default {
           }
         },
         {
+          text: 'math / mosaic2',
+          name: 'mosaic2',
+          dynamic: true,
+          controllable: false,
+          address: '/opengl_webgl_conversion#math_mosaic2',
+          active: false,
+          parameters: {
+            numLayers: {
+              label: 'Number of Layers',
+              defaultValue: 40,
+              currentValue: 40
+            },
+            numNodes: {
+              label: 'Number of Nodes',
+              defaultValue: 40,
+              currentValue: 40
+            },
+            numLanes: {
+              label: 'Number of Lanes',
+              defaultValue: 24,
+              currentValue: 24
+            },
+            polygonRadius: {
+              label: 'Polygon Radius',
+              defaultValue: 1,
+              currentValue: 1
+            },
+            globalRadius: {
+              label: 'Global Radius',
+              defaultValue: 0.5,
+              currentValue: 0.5
+            }
+          }
+        },
+        {
           text: 'math / sacred circles',
           name: 'sacred circles',
           dynamic: false,
@@ -782,6 +903,26 @@ export default {
           address: '/opengl_webgl_conversion#physics_sine_wave',
           active: false,
           parameters: {
+            amplitude: {
+              label: 'Amplitude',
+              defaultValue: 0.5,
+              currentValue: 0.5
+            },
+            frequency: {
+              label: 'Frequency',
+              defaultValue: 10,
+              currentValue: 10
+            },
+            phase: {
+              label: 'Phase',
+              defaultValue: 0,
+              currentValue: 0
+            },
+            displacement: {
+              label: 'Displacement',
+              defaultValue: 0,
+              currentValue: 0
+            },
             numPoints: {
               label: 'Number of Points',
               defaultValue: 1500,

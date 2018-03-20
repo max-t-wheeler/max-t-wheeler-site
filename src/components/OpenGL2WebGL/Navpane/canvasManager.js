@@ -24,7 +24,7 @@ export default class CanvasManager {
 
     this.scene = new THREE.Scene();
 
-    this.animation = generateAnimation(this.scene, animation);
+    this.animation = generateAnimation(this.scene, this.camera, animation);
 
     if (this.animation.controllable) {
       this.controls = new OrbitControls(this.camera, this.renderer.domElement);

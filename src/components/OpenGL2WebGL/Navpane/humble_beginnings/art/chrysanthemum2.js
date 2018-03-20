@@ -10,9 +10,9 @@ import {
 
 export default class Chrysanthemum2 extends Animation {
 
-  constructor (scene, animation) {
+	constructor (scene, camera, animation) {
 
-    super(scene, animation);
+		super(scene, camera, animation);
 
 		this.numNodes = parseFloat(this.parameters.numNodes.currentValue);
 		this.polygonRadius = parseFloat(this.parameters.polygonRadius.currentValue);

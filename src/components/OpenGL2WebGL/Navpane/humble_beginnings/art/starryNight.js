@@ -10,9 +10,9 @@ import {
 
 export default class StarryNight extends Animation {
 
-  constructor (scene, animation) {
+	constructor (scene, camera, animation) {
 
-    super(scene, animation);
+		super(scene, camera, animation);
 
 		this.numStars = parseFloat(this.parameters.numStars.currentValue);
 		this.numStems = parseFloat(this.parameters.numStems.currentValue);
