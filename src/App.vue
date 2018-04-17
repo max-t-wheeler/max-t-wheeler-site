@@ -61,11 +61,13 @@ export default {
           display: false
         }
       ],
-      screenType: ''
+      screenType: '',
+      screenAspectRatio: ''
     }
   },
   methods: {
     checkScreenSize: function () {
+
       if (window.innerWidth < 576) {
         this.screenType = 'phone';
       } else if (window.innerWidth < 768) {
@@ -73,6 +75,13 @@ export default {
       } else {
         this.screenType = 'monitor';
       }
+
+      if (window.innerWidth / window.innerHeight > 2) {
+        this.screenAspectRatio = 'widescreen';
+      } else {
+        this.screenAspectRatio = 'normal';
+      }
+
     },
     resizeApp: function () {
       window.addEventListener('resize', () => this.checkScreenSize());

@@ -10,7 +10,7 @@
         <b-col id="opengl2webgl-navpane" md="2" sm="3">
           <h2 id="opengl2webgl-navpane-title" :class="screenType">Animations</h2>
           <input type="text" id="opengl2webgl-search-bar" placeholder="Search" onfocus="this.value=''" v-model="searchedText"/>
-          <opengl2webgl-navpane id="opengl2webgl-navpane-menu" :screenType="screenType" :searchedText="searchedText"/>
+          <opengl2webgl-navpane-menu id="opengl2webgl-navpane-menu" :class="[screenAspectRatio, screenType]" :screenType="screenType" :searchedText="searchedText"/>
         </b-col>
         <b-col md="10" sm="9" id='opengl2webgl-display'>
           <canvas id='opengl2webgl-canvas'></canvas>
@@ -24,10 +24,10 @@
 import Navpane from './Navpane/Navpane';
 
 export default {
-  props: ['screenType'],
+  props: ['screenType', 'screenAspectRatio'],
   name: 'OpenGL2WebGLApp',
   components: {
-    'opengl2webgl-navpane': Navpane
+    'opengl2webgl-navpane-menu': Navpane
   },
   data () {
     return {
@@ -62,7 +62,7 @@ export default {
 }
 
 #opengl2webgl-navpane-menu {
-  height: 90vh;
+  height: 87%;
   width: 100%;
   overflow-y: auto;
   overflow-x: hidden;
@@ -70,9 +70,21 @@ export default {
   margin-top: 10px;
 }
 
+#opengl2webgl-navpane-menu.tablet, #opengl2webgl-navpane-menu.phone {
+  height: 80%;
+}
+
+#opengl2webgl-navpane-menu.widescreen {
+  height: 75%;
+}
+
 #opengl2webgl-display {
   height:90vh;
   overflow: hidden;
+}
+
+#opengl2webgl-display.tablet, #opengl2webgl-display.phone {
+  height:85vh;
 }
 
 </style>

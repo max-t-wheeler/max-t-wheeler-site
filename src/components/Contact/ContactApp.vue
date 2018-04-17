@@ -12,7 +12,7 @@
           <p>{{ contactInfoItem.text }}</p>
         </b-col>
       </b-row>
-      <b-row>
+      <b-row>z
         <b-col>
           <a v-for="contactLink in contactLinks" :key="contactLink.icon" rel="noopener" class="contact-icon" :href="contactLink.src" target="_blank">
             <span class="fa" :class="contactLink.icon"/>

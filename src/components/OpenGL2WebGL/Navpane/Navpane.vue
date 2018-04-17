@@ -1,39 +1,33 @@
 <template>
 
   <div>
-    <ul id="opengl2webgl-navpane-list" class="nav flex-column">
-      <li
-        class = "nav-link opengl2webgl-navpane-item"
-        v-for='item in filter'
-        :key='item.name'
-        >
-        <b-row v-if="screenType === 'monitor'" class="opengl2webgl-navpane-selector">
-          <b-col cols="10">
-            <p class="opengl2webgl-navpane-text" :class='[{active: item.active}, screenType]' v-on:click='activate(item)'>{{ item.text }}</p>
-          </b-col>
-          <b-col cols="2" v-if="item.parameters.length !== 0 && item.active">
-            <b-btn v-b-toggle="item.name" class="opengl2webgl-navpane-button" :class="screenType">
-              <span class="glyphicon glyphicon-chevron-down"></span>
-            </b-btn>
-          </b-col>
-        </b-row>
-        <b-row v-else class="opengl2webgl-navpane-selector">
-          <b-col cols="9">
-            <p class="opengl2webgl-navpane-text" :class='[{active: item.active}, screenType]' v-on:click='activate(item)'>{{ item.text }}</p>
-          </b-col>
-          <b-col cols="3" v-if="item.parameters.length !== 0 && item.active">
-            <b-btn v-b-toggle="item.name" class="opengl2webgl-navpane-button" :class="screenType">
-              <span class="glyphicon glyphicon-chevron-down"></span>
-            </b-btn>
-          </b-col>
-        </b-row>
-        <div v-if="item.parameters.length !== 0 && item.active" class="opengl2webgl-navpane-options" :class="screenType">
-          <b-collapse :id="item.name">
-            <opengl2webgl-navpane-controls :animation="item" v-bind="{activate, resetAnimation}"/>
-          </b-collapse>
-        </div>
-      </li>
-    </ul>
+    <div v-for="category in categories" :key="category.name" class="opengl2webgl-navpane-category" >
+      <p v-b-toggle="'category-' + category.name" class="opengl2webgl-navpane-category-text"> {{ category.name }} </p>
+      <b-collapse :id="'category-' + category.name">
+        <ul class="opengl2webgl-navpane-list">
+          <li
+            v-if='item.category == category.name'
+            v-for='item in filter'
+            :key='item.name'
+            class = "opengl2webgl-navpane-item"
+            >
+            <p
+              v-b-toggle="item.name"
+              class="opengl2webgl-navpane-text"
+              :class='{active: item.active}'
+              v-on:click='activate(item)'
+              > {{ item.text }}
+            </p>
+            <opengl2webgl-navpane-controls
+              v-if="item.parameters.length !== 0 && item.active"
+              :animation="item"
+              :screenType="screenType"
+              v-bind="{activate, resetAnimation, toFullScreen}"
+              />
+          </li>
+        </ul>
+      </b-collapse>
+    </div>
   </div>
 
 </template>
@@ -53,14 +47,32 @@ export default {
   data () {
     return {
       display: false,
+      categories: [
+        {
+          active: false,
+          name: 'art'
+        },
+        {
+          active: false,
+          name: 'math'
+        },
+        {
+          active: false,
+          name: 'physics'
+        },
+        {
+          active: false,
+          name: 'shapes'
+        }
+      ],
       animations: [
         {
-          text: 'art / blanket',
-          name: 'blanket',
-          dynamic: false,
-          controllable: false,
-          address: '/opengl_webgl_conversion#art_blanket',
           active: false,
+          address: '/opengl_webgl_conversion#art_blanket',
+          category: 'art',
+          controllable: false,
+          dynamic: false,
+          name: 'blanket',
           parameters: {
             numPolygons: {
               label: 'Number of Polygons',
@@ -72,15 +84,16 @@ export default {
               defaultValue: 4,
               currentValue: 4
             }
-          }
+          },
+          text: 'blanket'
         },
         {
-          text: 'art / bounce ripple',
-          name: 'bounce ripple',
-          dynamic: true,
-          controllable: false,
-          address: '/opengl_webgl_conversion#art_bounce_ripple',
           active: false,
+          address: '/opengl_webgl_conversion#art_bounce_ripple',
+          category: 'art',
+          controllable: false,
+          dynamic: true,
+          name: 'bounce ripple',
           parameters: {
             numPolygons: {
               label: 'Number of Polygons',
@@ -92,15 +105,16 @@ export default {
               defaultValue: 3,
               currentValue: 3
             }
-          }
+          },
+          text: 'bounce ripple'
         },
         {
-          text: 'art / chrysanthedad',
-          name: 'chrysanthedad',
-          dynamic: true,
-          controllable: false,
-          address: '/opengl_webgl_conversion#art_chrysanthedad',
           active: false,
+          address: '/opengl_webgl_conversion#art_chrysanthedad',
+          category: 'art',
+          controllable: false,
+          dynamic: true,
+          name: 'chrysanthedad',
           parameters: {
             numCenters: {
               label: 'Number of Centers',
@@ -132,15 +146,16 @@ export default {
               defaultValue: 2,
               currentValue: 2
             }
-          }
+          },
+          text: 'chrysanthedad'
         },
         {
-          text: 'art / chrysanthemum',
-          name: 'chrysanthemum',
-          dynamic: true,
-          controllable: false,
-          address: '/opengl_webgl_conversion#art_chrysanthemum',
           active: false,
+          address: '/opengl_webgl_conversion#art_chrysanthemum',
+          category: 'art',
+          controllable: false,
+          dynamic: true,
+          name: 'chrysanthemum',
           parameters: {
             numNodes: {
               label: 'Number of Nodes',
@@ -162,15 +177,16 @@ export default {
               defaultValue: 2,
               currentValue: 2
             }
-          }
+          },
+          text: 'chrysanthemum'
         },
         {
-          text: 'art / chrysanthemum 2',
-          name: 'chrysanthemum2',
-          dynamic: true,
-          controllable: true,
-          address: '/opengl_webgl_conversion#art_chrysanthemum2',
           active: false,
+          address: '/opengl_webgl_conversion#art_chrysanthemum2',
+          category: 'art',
+          controllable: true,
+          dynamic: true,
+          name: 'chrysanthemum2',
           parameters: {
             numNodes: {
               label: 'Number of Nodes',
@@ -187,15 +203,16 @@ export default {
               defaultValue: 2,
               currentValue: 2
             }
-          }
+          },
+          text: 'chrysanthemum 2'
         },
         {
-          text: 'art / chrysanthemum 3',
-          name: 'chrysanthemum3',
-          dynamic: true,
-          controllable: false,
-          address: '/opengl_webgl_conversion#art_chrysanthemum3',
           active: false,
+          address: '/opengl_webgl_conversion#art_chrysanthemum3',
+          category: 'art',
+          controllable: false,
+          dynamic: true,
+          name: 'chrysanthemum3',
           parameters: {
             numNodes: {
               label: 'Number of Nodes',
@@ -207,15 +224,16 @@ export default {
               defaultValue: 12,
               currentValue: 12
             }
-          }
+          },
+          text: 'chrysanthemum 3'
         },
         {
-          text: 'art / chrysanthemum 4',
-          name: 'chrysanthemum4',
-          dynamic: true,
-          controllable: false,
-          address: '/opengl_webgl_conversion#art_chrysanthemum4',
           active: false,
+          address: '/opengl_webgl_conversion#art_chrysanthemum4',
+          category: 'art',
+          controllable: false,
+          dynamic: true,
+          name: 'chrysanthemum4',
           parameters: {
             numNodes: {
               label: 'Number of Nodes',
@@ -237,15 +255,16 @@ export default {
               defaultValue: 2,
               currentValue: 2
             }
-          }
+          },
+          text: 'chrysanthemum 4'
         },
         {
-          text: 'art / chrysanthemum 5',
-          name: 'chrysanthemum5',
-          dynamic: true,
-          controllable: false,
-          address: '/opengl_webgl_conversion#art_chrysanthemum5',
           active: false,
+          address: '/opengl_webgl_conversion#art_chrysanthemum5',
+          category: 'art',
+          controllable: false,
+          dynamic: true,
+          name: 'chrysanthemum5',
           parameters: {
             numNodes: {
               label: 'Number of Nodes',
@@ -267,15 +286,16 @@ export default {
               defaultValue: 1,
               currentValue: 1
             }
-          }
+          },
+          text: 'chrysanthemum 5'
         },
         {
-          text: 'art / chrysanthemum 6',
-          name: 'chrysanthemum6',
-          dynamic: true,
-          controllable: false,
-          address: '/opengl_webgl_conversion#art_chrysanthemum6',
           active: false,
+          address: '/opengl_webgl_conversion#art_chrysanthemum6',
+          category: 'art',
+          controllable: false,
+          dynamic: true,
+          name: 'chrysanthemum6',
           parameters: {
             numNodes: {
               label: 'Number of Nodes',
@@ -297,15 +317,16 @@ export default {
               defaultValue: 2,
               currentValue: 2
             }
-          }
+          },
+          text: 'chrysanthemum 6'
         },
         {
-          text: 'art / chrysanthemum 7',
-          name: 'chrysanthemum7',
-          dynamic: true,
-          controllable: true,
-          address: '/opengl_webgl_conversion#art_chrysanthemum7',
           active: false,
+          address: '/opengl_webgl_conversion#art_chrysanthemum7',
+          category: 'art',
+          controllable: true,
+          dynamic: true,
+          name: 'chrysanthemum7',
           parameters: {
             numNodes: {
               label: 'Number of Nodes',
@@ -327,15 +348,16 @@ export default {
               defaultValue: 1,
               currentValue: 1
             }
-          }
+          },
+          text: 'chrysanthemum 7'
         },
         {
-          text: 'art / chrysanthemum8',
-          name: 'chrysanthemum8',
-          dynamic: true,
-          controllable: true,
-          address: '/opengl_webgl_conversion#art_chrysanthemum8',
           active: false,
+          address: '/opengl_webgl_conversion#art_chrysanthemum8',
+          category: 'art',
+          controllable: true,
+          dynamic: true,
+          name: 'chrysanthemum8',
           parameters: {
             numCenters: {
               label: 'Number of Centers',
@@ -367,15 +389,16 @@ export default {
               defaultValue: 2,
               currentValue: 2
             }
-          }
+          },
+          text: 'chrysanthemum8'
         },
         {
-          text: 'art / chrysanthemum 9',
-          name: 'chrysanthemum9',
-          dynamic: true,
-          controllable: true,
-          address: '/opengl_webgl_conversion#art_chrysanthemum9',
           active: false,
+          address: '/opengl_webgl_conversion#art_chrysanthemum9',
+          category: 'art',
+          controllable: true,
+          dynamic: true,
+          name: 'chrysanthemum9',
           parameters: {
             numCenters: {
               label: 'Number of Centers',
@@ -407,15 +430,16 @@ export default {
               defaultValue: 2,
               currentValue: 2
             }
-          }
+          },
+          text: 'chrysanthemum 9'
         },
         {
-          text: 'art / clam',
-          name: 'clam',
-          dynamic: false,
-          controllable: true,
-          address: '/opengl_webgl_conversion#art_clam',
           active: false,
+          address: '/opengl_webgl_conversion#art_clam',
+          category: 'art',
+          controllable: true,
+          dynamic: false,
+          name: 'clam',
           parameters: {
             numRidges: {
               label: 'Number of Ridges',
@@ -427,30 +451,32 @@ export default {
               defaultValue: 1,
               currentValue: 1
             }
-          }
+          },
+          text: 'clam'
         },
         {
-          text: 'art / collide0scope',
-          name: 'collide',
-          dynamic: true,
-          controllable: true,
-          address: '/opengl_webgl_conversion#art_collide0scope',
           active: false,
+          address: '/opengl_webgl_conversion#art_collide0scope',
+          category: 'art',
+          controllable: true,
+          dynamic: true,
+          name: 'collide',
           parameters: {
             numCircles: {
               label: 'Number of Circles',
               defaultValue: 20,
               currentValue: 20
             }
-          }
+          },
+          text: 'collide0scope'
         },
         {
-          text: 'art / concentric polygons',
-          name: 'concentric polygons',
-          dynamic: true,
-          controllable: false,
-          address: '/opengl_webgl_conversion#art_concentric_polygons',
           active: false,
+          address: '/opengl_webgl_conversion#art_concentric_polygons',
+          category: 'art',
+          controllable: false,
+          dynamic: true,
+          name: 'concentric polygons',
           parameters: {
             numPolygons: {
               label: 'Number of Polygons',
@@ -462,15 +488,16 @@ export default {
               defaultValue: 4,
               currentValue: 4
             }
-          }
+          },
+          text: 'concentric polygons'
         },
         {
-          text: 'art / concentric polygons 2',
-          name: 'concentric polygons 2',
-          dynamic: true,
-          controllable: false,
-          address: '/opengl_webgl_conversion#art_concentric_polygons2',
           active: false,
+          address: '/opengl_webgl_conversion#art_concentric_polygons2',
+          category: 'art',
+          controllable: false,
+          dynamic: true,
+          name: 'concentric polygons 2',
           parameters: {
             numPolygons: {
               label: 'Number of Polygons',
@@ -482,16 +509,18 @@ export default {
               defaultValue: 5,
               currentValue: 5
             }
-          }
+          },
+          text: 'concentric polygons 2'
         },
         {
-          text: 'art / fauxlidoscope',
-          name: 'fauxlidoscope',
-          dynamic: true,
-          controllable: false,
+          active: false,
           address: '/opengl_webgl_conversion#art_fauxlidoscope',
           cameraZoomMax: 100,
           cameraZoomMin: 1,
+          category: 'art',
+          controllable: false,
+          dynamic: true,
+          name: 'fauxlidoscope',
           parameters: {
             numSteps: {
               label: 'Number of Steps',
@@ -523,15 +552,16 @@ export default {
               defaultValue: 1,
               currentValue: 1
             }
-          }
+          },
+          text: 'fauxlidoscope'
         },
         {
-          text: 'art / flowers',
-          name: 'flowers',
-          dynamic: false,
-          controllable: true,
-          address: '/opengl_webgl_conversion#art_flowers',
           active: false,
+          address: '/opengl_webgl_conversion#art_flowers',
+          category: 'art',
+          controllable: true,
+          dynamic: false,
+          name: 'flowers',
           parameters: {
             numFlowers: {
               label: 'Number of Flowers',
@@ -553,30 +583,32 @@ export default {
               defaultValue: 1,
               currentValue: 1
             }
-          }
+          },
+          text: 'flowers'
         },
         {
-          text: 'art / gyr0scope',
-          name: 'gyro',
-          dynamic: true,
-          controllable: true,
-          address: '/opengl_webgl_conversion#art_gyr0scope',
           active: false,
+          address: '/opengl_webgl_conversion#art_gyr0scope',
+          category: 'art',
+          controllable: true,
+          dynamic: true,
+          name: 'gyro',
           parameters: {
             numCircles: {
               label: 'Number of Circles',
               defaultValue: 20,
               currentValue: 20
             }
-          }
+          },
+          text: 'gyr0scope'
         },
         {
-          text: 'art / pearl',
-          name: 'pearl',
-          dynamic: false,
-          controllable: true,
-          address: '/opengl_webgl_conversion#art_pearl',
           active: false,
+          address: '/opengl_webgl_conversion#art_pearl',
+          category: 'art',
+          controllable: true,
+          dynamic: false,
+          name: 'pearl',
           parameters: {
             numRidges: {
               label: 'Number of Ridges',
@@ -588,15 +620,16 @@ export default {
               defaultValue: 1,
               currentValue: 1
             }
-          }
+          },
+          text: 'pearl'
         },
         {
-          text: 'art / snowflake',
-          name: 'snowflake',
-          dynamic: true,
-          controllable: true,
-          address: '/opengl_webgl_conversion#art_snowflake',
           active: false,
+          address: '/opengl_webgl_conversion#art_snowflake',
+          category: 'art',
+          controllable: true,
+          dynamic: true,
+          name: 'snowflake',
           parameters: {
             numLayers: {
               label: 'Number of Layers',
@@ -633,15 +666,16 @@ export default {
               defaultValue: 10,
               currentValue: 10
             }
-          }
+          },
+          text: 'snowflake'
         },
         {
-          text: 'art / pinwheel',
-          name: 'pinwheel',
-          dynamic: true,
-          controllable: false,
-          address: '/opengl_webgl_conversion#art_pinwheel',
           active: false,
+          address: '/opengl_webgl_conversion#art_pinwheel',
+          category: 'art',
+          controllable: false,
+          dynamic: true,
+          name: 'pinwheel',
           parameters: {
             numPolygons: {
               label: 'Number of Polygons',
@@ -653,15 +687,16 @@ export default {
               defaultValue: 4,
               currentValue: 4
             }
-          }
+          },
+          text: 'pinwheel'
         },
         {
-          text: 'art / slosh ripple',
-          name: 'slosh ripple',
-          dynamic: true,
-          controllable: false,
-          address: '/opengl_webgl_conversion#art_slosh_ripple',
           active: false,
+          address: '/opengl_webgl_conversion#art_slosh_ripple',
+          category: 'art',
+          controllable: false,
+          dynamic: true,
+          name: 'slosh ripple',
           parameters: {
             numPolygons: {
               label: 'Number of Polygons',
@@ -673,15 +708,16 @@ export default {
               defaultValue: 3,
               currentValue: 3
             }
-          }
+          },
+          text: 'slosh ripple'
         },
         {
-          text: 'art / starry night',
-          name: 'starry night',
-          dynamic: false,
-          controllable: true,
-          address: '/opengl_webgl_conversion#art_starry_night',
           active: false,
+          address: '/opengl_webgl_conversion#art_starry_night',
+          category: 'art',
+          controllable: true,
+          dynamic: false,
+          name: 'starry night',
           parameters: {
             numStars: {
               label: 'Number of Stars',
@@ -703,15 +739,16 @@ export default {
               defaultValue: 42,
               currentValue: 42
             }
-          }
+          },
+          text: 'starry night'
         },
         {
-          text: 'art / wriggling donut',
-          name: 'wriggling donut',
-          dynamic: true,
-          controllable: false,
-          address: '/opengl_webgl_conversion#art_wriggling_donut',
           active: false,
+          address: '/opengl_webgl_conversion#art_wriggling_donut',
+          category: 'art',
+          controllable: false,
+          dynamic: true,
+          name: 'wriggling donut',
           parameters: {
             numNodes: {
               label: 'Number of Nodes',
@@ -733,15 +770,16 @@ export default {
               defaultValue: 0.2,
               currentValue: 0.2
             }
-          }
+          },
+          text: 'wriggling donut'
         },
         {
-          text: 'math / mosaic',
-          name: 'mosaic',
-          dynamic: true,
-          controllable: true,
-          address: '/opengl_webgl_conversion#math_mosaic',
           active: false,
+          address: '/opengl_webgl_conversion#math_mosaic',
+          category: 'math',
+          controllable: true,
+          dynamic: true,
+          name: 'mosaic',
           parameters: {
             numNodes: {
               label: 'Number of Nodes',
@@ -768,15 +806,16 @@ export default {
               defaultValue: 2,
               currentValue: 2
             }
-          }
+          },
+          text: 'mosaic'
         },
         {
-          text: 'math / mosaic2',
-          name: 'mosaic2',
-          dynamic: true,
-          controllable: false,
-          address: '/opengl_webgl_conversion#math_mosaic2',
           active: false,
+          address: '/opengl_webgl_conversion#math_mosaic2',
+          category: 'math',
+          controllable: false,
+          dynamic: true,
+          name: 'mosaic2',
           parameters: {
             numLayers: {
               label: 'Number of Layers',
@@ -803,15 +842,16 @@ export default {
               defaultValue: 0.5,
               currentValue: 0.5
             }
-          }
+          },
+          text: 'mosaic2'
         },
         {
-          text: 'math / sacred circles',
-          name: 'sacred circles',
-          dynamic: false,
-          controllable: true,
-          address: '/opengl_webgl_conversion#math_sacred_circles',
           active: false,
+          address: '/opengl_webgl_conversion#math_sacred_circles',
+          category: 'math',
+          controllable: true,
+          dynamic: false,
+          name: 'sacred circles',
           parameters: {
             numLayers: {
               label: 'Number of Layers',
@@ -833,15 +873,16 @@ export default {
               defaultValue: 1,
               currentValue: 1
             }
-          }
+          },
+          text: 'sacred circles'
         },
         {
-          text: 'math / star',
-          name: 'star',
-          dynamic: false,
-          controllable: true,
-          address: '/opengl_webgl_conversion#math_star',
           active: false,
+          address: '/opengl_webgl_conversion#math_star',
+          category: 'math',
+          controllable: true,
+          dynamic: false,
+          name: 'star',
           parameters: {
             numVertices: {
               label: 'Number of Vertices',
@@ -858,15 +899,16 @@ export default {
               defaultValue: 2,
               currentValue: 2
             }
-          }
+          },
+          text: 'star'
         },
         {
-          text: 'math / unoriginal',
-          name: 'unoriginal',
-          dynamic: true,
-          controllable: true,
-          address: '/opengl_webgl_conversion#math_unoriginal',
           active: false,
+          address: '/opengl_webgl_conversion#math_unoriginal',
+          category: 'math',
+          controllable: true,
+          dynamic: true,
+          name: 'unoriginal',
           parameters: {
             numNodes: {
               label: 'Number of Nodes',
@@ -893,15 +935,16 @@ export default {
               defaultValue: 1,
               currentValue: 1
             }
-          }
+          },
+          text: 'unoriginal'
         },
         {
-          text: 'physics / sine wave',
-          name: 'sine wave',
-          dynamic: false,
-          controllable: true,
-          address: '/opengl_webgl_conversion#physics_sine_wave',
           active: false,
+          address: '/opengl_webgl_conversion#physics_sine_wave',
+          category: 'physics',
+          controllable: true,
+          dynamic: false,
+          name: 'sine wave',
           parameters: {
             amplitude: {
               label: 'Amplitude',
@@ -928,15 +971,16 @@ export default {
               defaultValue: 1500,
               currentValue: 1500
             }
-          }
+          },
+          text: 'sine wave'
         },
         {
-          text: 'shapes / circle',
-          name: 'circle',
-          dynamic: false,
-          controllable: true,
-          address: '/opengl_webgl_conversion#shapes_circle',
           active: false,
+          address: '/opengl_webgl_conversion#shapes_circle',
+          category: 'shapes',
+          controllable: true,
+          dynamic: false,
+          name: 'circle',
           parameters: {
             numSpokes: {
               label: 'Number of Spokes',
@@ -948,24 +992,26 @@ export default {
               defaultValue: 1,
               currentValue: 1
             }
-          }
+          },
+          text: 'circle'
         },
         {
-          text: 'shapes / cube',
-          name: 'cube',
-          dynamic: false,
-          controllable: true,
+          active: false,
           address: '/opengl_webgl_conversion#shapes_cube',
-          active: false,
-          parameters: []
+          category: 'shapes',
+          controllable: true,
+          dynamic: false,
+          name: 'cube',
+          parameters: [],
+          text: 'cube'
         },
         {
-          text: 'shapes / polystarter',
-          name: 'polystarter',
-          dynamic: true,
-          controllable: true,
-          address: '/opengl_webgl_conversion#polystarter',
           active: false,
+          address: '/opengl_webgl_conversion#polystarter',
+          category: 'shapes',
+          controllable: true,
+          dynamic: true,
+          name: 'polystarter',
           parameters: {
             radius: {
               label: 'Radius',
@@ -982,25 +1028,28 @@ export default {
               defaultValue: 0,
               currentValue: 0
             }
-          }
+          },
+          text: 'polystarter'
         },
         {
-          text: 'shapes / rectangle',
-          name: 'rectangle',
-          dynamic: false,
-          controllable: true,
+          active: false,
           address: '/opengl_webgl_conversion#shapes_rectangle',
-          active: false,
-          parameters: []
+          category: 'shapes',
+          controllable: true,
+          dynamic: false,
+          name: 'rectangle',
+          parameters: [],
+          text: 'rectangle'
         },
         {
-          text: 'shapes / triangle',
-          name: 'triangle',
-          dynamic: false,
-          controllable: true,
-          address: '/opengl_webgl_conversion#shapes_triangle',
           active: false,
-          parameters: []
+          address: '/opengl_webgl_conversion#shapes_triangle',
+          category: 'shapes',
+          controllable: true,
+          dynamic: false,
+          name: 'triangle',
+          parameters: [],
+          text: 'triangle'
         }
       ]
     }
@@ -1026,6 +1075,18 @@ export default {
         param.currentValue = param.defaultValue;
       }
       this.activate(animation);
+    },
+    toFullScreen: function () {
+      let canvas = document.getElementById('opengl2webgl-canvas');
+      if (canvas.requestFullscreen) {
+      	canvas.requestFullscreen();
+      } else if (canvas.webkitRequestFullscreen) {
+      	canvas.webkitRequestFullscreen();
+      } else if (canvas.mozRequestFullScreen) {
+      	canvas.mozRequestFullScreen();
+      } else if (canvas.msRequestFullscreen) {
+      	canvas.msRequestFullscreen();
+      }
     }
   },
   computed: {
@@ -1043,8 +1104,17 @@ export default {
 
 <style>
 
-.opengl2webgl-navpane-item {
-  padding-left: 0;
+.opengl2webgl-navpane-category-text {
+  font-family: "Arial";
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  margin: 0;
+}
+
+.opengl2webgl-navpane-list {
+  list-style-type: none;
+  padding: 0;
 }
 
 .opengl2webgl-navpane-text {
@@ -1057,20 +1127,6 @@ export default {
 }
 
 .active {
-  color: purple;
-}
-
-.opengl2webgl-navpane-button, .opengl2webgl-navpane-button:hover, .opengl2webgl-navpane-button:active, .opengl2webgl-navpane-button:focus, .opengl2webgl-navpane-button:visited {
-  background: none;
-  border: none;
-  outline: none;
-  box-shadow: none;
-  float: right;
-  position: relative;
-  z-index: 10;
-}
-
-.glyphicon-chevron-down {
   color: purple;
 }
 
