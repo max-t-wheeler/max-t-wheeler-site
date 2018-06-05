@@ -42,7 +42,7 @@ export default {
           text: 'Max T. Wheeler'
         },
         {
-          text: 'max-t-wheeler@gmail.com'
+          text: 'max.t.wheeler@gmail.com'
         },
         {
           text: 'CT | MA | NY'
