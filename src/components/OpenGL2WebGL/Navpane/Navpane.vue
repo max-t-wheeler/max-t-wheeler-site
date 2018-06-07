@@ -63,6 +63,10 @@ export default {
         {
           active: false,
           name: 'shapes'
+        },
+        {
+          active: false,
+          name: 'simulations'
         }
       ],
       animations: [
@@ -1050,6 +1054,520 @@ export default {
           name: 'triangle',
           parameters: [],
           text: 'triangle'
+        },
+        {
+          active: false,
+          address: '/opengl_webgl_conversion#simulations_amparo',
+          category: 'simulations',
+          controllable: true,
+          dynamic: true,
+          name: 'amparo',
+          parameters: {
+            numPartitions: {
+              label: 'Number of Partitions',
+              defaultValue: 10,
+              currentValue: 10
+            },
+            numVertices: {
+              label: 'Number of Vertices',
+              defaultValue: 1000,
+              currentValue: 1000
+            },
+            graphRadius: {
+              label: 'Graph Radius',
+              defaultValue: 10,
+              currentValue: 10
+            },
+            vertexRadius: {
+              label: 'Vertex Radius',
+              defaultValue: 10,
+              currentValue: 10
+            },
+            rate: {
+              label: 'Rate',
+              defaultValue: 2,
+              currentValue: 2
+            }
+          },
+          text: 'amparo'
+        },
+        {
+          active: false,
+          address: '/opengl_webgl_conversion#simulations_andorinha',
+          category: 'simulations',
+          controllable: true,
+          dynamic: true,
+          name: 'andorinha',
+          parameters: {
+            numPartitions: {
+              label: 'Number of Partitions',
+              defaultValue: 6,
+              currentValue: 6
+            },
+            numVertices: {
+              label: 'Number of Vertices',
+              defaultValue: 1000,
+              currentValue: 1000
+            },
+            graphRadius: {
+              label: 'Graph Radius',
+              defaultValue: 2.25,
+              currentValue: 2.25
+            },
+            vertexRadius: {
+              label: 'Vertex Radius',
+              defaultValue: 5,
+              currentValue: 5
+            },
+            rate: {
+              label: 'Rate',
+              defaultValue: 1,
+              currentValue: 1
+            }
+          },
+          text: 'andorinha'
+        },
+        {
+          active: false,
+          address: '/opengl_webgl_conversion#simulations_antigua',
+          category: 'simulations',
+          controllable: true,
+          dynamic: true,
+          name: 'antigua',
+          parameters: {
+            numPartitions: {
+              label: 'Number of Partitions',
+              defaultValue: 50,
+              currentValue: 50
+            },
+            numVertices: {
+              label: 'Number of Vertices',
+              defaultValue: 1000,
+              currentValue: 1000
+            },
+            graphRadius: {
+              label: 'Graph Radius',
+              defaultValue: 5,
+              currentValue: 5
+            },
+            vertexRadius: {
+              label: 'Vertex Radius',
+              defaultValue: 20,
+              currentValue: 20
+            },
+            rate: {
+              label: 'Rate',
+              defaultValue: 5,
+              currentValue: 5
+            }
+          },
+          text: 'antigua'
+        },
+        {
+          active: false,
+          address: '/opengl_webgl_conversion#simulations_batidinha',
+          category: 'simulations',
+          controllable: true,
+          dynamic: true,
+          name: 'batidinha',
+          parameters: {
+            numPartitions: {
+              label: 'Number of Partitions',
+              defaultValue: 40,
+              currentValue: 40
+            },
+            numVertices: {
+              label: 'Number of Vertices',
+              defaultValue: 1000,
+              currentValue: 1000
+            },
+            graphRadius: {
+              label: 'Graph Radius',
+              defaultValue: 2,
+              currentValue: 2
+            },
+            vertexRadius: {
+              label: 'Vertex Radius',
+              defaultValue: 10,
+              currentValue: 10
+            },
+            rate: {
+              label: 'Rate',
+              defaultValue: 2,
+              currentValue: 2
+            }
+          },
+          text: 'batidinha'
+        },
+        {
+          active: false,
+          address: '/opengl_webgl_conversion#simulations_bicardi',
+          category: 'simulations',
+          controllable: true,
+          dynamic: true,
+          name: 'bicardi',
+          parameters: {
+            numPartitions: {
+              label: 'Number of Partitions',
+              defaultValue: 8,
+              currentValue: 8
+            },
+            numVertices: {
+              label: 'Number of Vertices',
+              defaultValue: 1000,
+              currentValue: 1000
+            },
+            graphRadius: {
+              label: 'Graph Radius',
+              defaultValue: 2,
+              currentValue: 2
+            },
+            vertexRadius: {
+              label: 'Vertex Radius',
+              defaultValue: 10,
+              currentValue: 10
+            },
+            rate: {
+              label: 'Rate',
+              defaultValue: 5,
+              currentValue: 5
+            }
+          },
+          text: 'bicardi'
+        },
+        {
+          active: false,
+          address: '/opengl_webgl_conversion#simulations_brazil',
+          category: 'simulations',
+          controllable: true,
+          dynamic: true,
+          name: 'brazil',
+          parameters: {
+            numPartitions: {
+              label: 'Number of Partitions',
+              defaultValue: 6,
+              currentValue: 6
+            },
+            numVertices: {
+              label: 'Number of Vertices',
+              defaultValue: 1000,
+              currentValue: 1000
+            },
+            graphRadius: {
+              label: 'Graph Radius',
+              defaultValue: 2,
+              currentValue: 2
+            },
+            vertexRadius: {
+              label: 'Vertex Radius',
+              defaultValue: 5,
+              currentValue: 5
+            },
+            divisor: {
+              label: 'Divisor',
+              defaultValue: 20,
+              currentValue: 20
+            },
+            rate: {
+              label: 'Rate',
+              defaultValue: 1,
+              currentValue: 1
+            }
+          },
+          text: 'brazil'
+        },
+        {
+          active: false,
+          address: '/opengl_webgl_conversion#simulations_choro',
+          category: 'simulations',
+          controllable: true,
+          dynamic: true,
+          name: 'choro',
+          parameters: {
+            numPartitions: {
+              label: 'Number of Partitions',
+              defaultValue: 5,
+              currentValue: 5
+            },
+            numVertices: {
+              label: 'Number of Vertices',
+              defaultValue: 200,
+              currentValue: 200
+            },
+            graphRadius: {
+              label: 'Graph Radius',
+              defaultValue: 2,
+              currentValue: 2
+            },
+            vertexRadius: {
+              label: 'Vertex Radius',
+              defaultValue: 5,
+              currentValue: 5
+            },
+            rate: {
+              label: 'Rate',
+              defaultValue: 1,
+              currentValue: 1
+            }
+          },
+          text: 'choro'
+        },
+        {
+          active: false,
+          address: '/opengl_webgl_conversion#simulations_dialogo',
+          category: 'simulations',
+          controllable: true,
+          dynamic: true,
+          name: 'dialogo',
+          parameters: {
+            numPartitions: {
+              label: 'Number of Partitions',
+              defaultValue: 40,
+              currentValue: 40
+            },
+            numVertices: {
+              label: 'Number of Vertices',
+              defaultValue: 1000,
+              currentValue: 1000
+            },
+            graphRadius: {
+              label: 'Graph Radius',
+              defaultValue: 2,
+              currentValue: 2
+            },
+            vertexRadius: {
+              label: 'Vertex Radius',
+              defaultValue: 10,
+              currentValue: 10
+            },
+            rate: {
+              label: 'Rate',
+              defaultValue: 2,
+              currentValue: 2
+            }
+          },
+          text: 'dialogo'
+        },
+        {
+          active: false,
+          address: '/opengl_webgl_conversion#simulations_flower',
+          category: 'simulations',
+          controllable: true,
+          dynamic: true,
+          name: 'flower',
+          parameters: {
+            numPartitions: {
+              label: 'Number of Partitions',
+              defaultValue: 6,
+              currentValue: 6
+            },
+            numVertices: {
+              label: 'Number of Vertices',
+              defaultValue: 200,
+              currentValue: 200
+            },
+            graphRadius: {
+              label: 'Graph Radius',
+              defaultValue: 2,
+              currentValue: 2
+            },
+            vertexRadius: {
+              label: 'Vertex Radius',
+              defaultValue: 2,
+              currentValue: 2
+            },
+            rate: {
+              label: 'Rate',
+              defaultValue: 20,
+              currentValue: 20
+            }
+          },
+          text: 'flower'
+        },
+        {
+          active: false,
+          address: '/opengl_webgl_conversion#simulations_mojave',
+          category: 'simulations',
+          controllable: true,
+          dynamic: true,
+          name: 'mojave',
+          parameters: {
+            numPartitions: {
+              label: 'Number of Partitions',
+              defaultValue: 8,
+              currentValue: 8
+            },
+            numVertices: {
+              label: 'Number of Vertices',
+              defaultValue: 200,
+              currentValue: 200
+            },
+            graphRadius: {
+              label: 'Graph Radius',
+              defaultValue: 2,
+              currentValue: 2
+            },
+            vertexRadius: {
+              label: 'Vertex Radius',
+              defaultValue: 2,
+              currentValue: 2
+            },
+            rate: {
+              label: 'Rate',
+              defaultValue: 10,
+              currentValue: 10
+            }
+          },
+          text: 'mojave'
+        },
+        {
+          active: false,
+          address: '/opengl_webgl_conversion#simulations_sabia',
+          category: 'simulations',
+          controllable: true,
+          dynamic: true,
+          name: 'sabia',
+          parameters: {
+            numPartitions: {
+              label: 'Number of Partitions',
+              defaultValue: 8,
+              currentValue: 8
+            },
+            numVertices: {
+              label: 'Number of Vertices',
+              defaultValue: 200,
+              currentValue: 200
+            },
+            graphRadius: {
+              label: 'Graph Radius',
+              defaultValue: 1,
+              currentValue: 1
+            },
+            vertexRadius: {
+              label: 'Vertex Radius',
+              defaultValue: 2,
+              currentValue: 2
+            },
+            rate: {
+              label: 'Rate',
+              defaultValue: 10,
+              currentValue: 10
+            }
+          },
+          text: 'sabia'
+        },
+        {
+          active: false,
+          address: '/opengl_webgl_conversion#simulations_tereza',
+          category: 'simulations',
+          controllable: true,
+          dynamic: true,
+          name: 'tereza',
+          parameters: {
+            numPartitions: {
+              label: 'Number of Partitions',
+              defaultValue: 8,
+              currentValue: 8
+            },
+            numVertices: {
+              label: 'Number of Vertices',
+              defaultValue: 200,
+              currentValue: 200
+            },
+            graphRadius: {
+              label: 'Graph Radius',
+              defaultValue: 2,
+              currentValue: 2
+            },
+            vertexRadius: {
+              label: 'Vertex Radius',
+              defaultValue: 2,
+              currentValue: 2
+            },
+            rate: {
+              label: 'Rate',
+              defaultValue: 1,
+              currentValue: 1
+            }
+          },
+          text: 'tereza'
+        },
+        {
+          active: false,
+          address: '/opengl_webgl_conversion#simulations_triste',
+          category: 'simulations',
+          controllable: true,
+          dynamic: true,
+          name: 'triste',
+          parameters: {
+            numPartitions: {
+              label: 'Number of Partitions',
+              defaultValue: 100,
+              currentValue: 100
+            },
+            numVertices: {
+              label: 'Number of Vertices',
+              defaultValue: 200,
+              currentValue: 200
+            },
+            graphRadius: {
+              label: 'Graph Radius',
+              defaultValue: 1,
+              currentValue: 1
+            },
+            vertexRadius: {
+              label: 'Vertex Radius',
+              defaultValue: 2,
+              currentValue: 2
+            },
+            divisor: {
+              label: 'Divisor',
+              defaultValue: 20,
+              currentValue: 20
+            },
+            rate: {
+              label: 'Rate',
+              defaultValue: 3,
+              currentValue: 3
+            }
+          },
+          text: 'triste'
+        },
+        {
+          active: false,
+          address: '/opengl_webgl_conversion#simulations_wave',
+          category: 'simulations',
+          controllable: true,
+          dynamic: true,
+          name: 'wave',
+          parameters: {
+            numPartitions: {
+              label: 'Number of Partitions',
+              defaultValue: 2,
+              currentValue: 2
+            },
+            numVertices: {
+              label: 'Number of Vertices',
+              defaultValue: 120,
+              currentValue: 120
+            },
+            graphRadius: {
+              label: 'Graph Radius',
+              defaultValue: 4,
+              currentValue: 4
+            },
+            vertexRadius: {
+              label: 'Vertex Radius',
+              defaultValue: 10,
+              currentValue: 10
+            },
+            rate: {
+              label: 'Rate',
+              defaultValue: 5,
+              currentValue: 5
+            }
+          },
+          text: 'wave'
         }
       ]
     }

@@ -42,6 +42,22 @@ import Polygon from './humble_beginnings/shapes/polygon';
 import Rectangle from './humble_beginnings/shapes/rectangle';
 import Triangle from './humble_beginnings/shapes/triangle';
 
+// simulations
+import Amparo from './simulations/amparo';
+import Andorinha from './simulations/andorinha';
+import Antigua from './simulations/antigua';
+import Batidinha from './simulations/batidinha';
+import Bicardi from './simulations/bicardi';
+import Brazil from './simulations/brazil';
+import Choro from './simulations/choro';
+import Dialogo from './simulations/dialogo';
+import Flower from './simulations/flower';
+import Mojave from './simulations/mojave';
+import Sabia from './simulations/sabia';
+import Tereza from './simulations/tereza';
+import Triste from './simulations/triste';
+import Wave from './simulations/wave';
+
 const ANIMATION_MAP = {
   // art
   'blanket': Blanket,
@@ -82,7 +98,22 @@ const ANIMATION_MAP = {
   'pearl': Pearl,
   'polystarter': Polygon,
   'rectangle': Rectangle,
-  'triangle': Triangle
+  'triangle': Triangle,
+  // simulations
+  'amparo': Amparo,
+  'andorinha': Andorinha,
+  'antigua': Antigua,
+  'batidinha': Batidinha,
+  'bicardi': Bicardi,
+  'brazil': Brazil,
+  'choro': Choro,
+  'dialogo': Dialogo,
+  'flower': Flower,
+  'mojave': Mojave,
+  'sabia': Sabia,
+  'tereza': Tereza,
+  'triste': Triste,
+  'wave': Wave
 };
 
 export function generateAnimation (scene, camera, animation) {

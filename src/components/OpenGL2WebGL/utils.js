@@ -329,3 +329,244 @@ export function sacredGeometry (center, numPolygons, numNodes, polygonRadius, gl
   }
 
 }
+
+export function Graph (partitionSizes, center, radius, vertexRadius, type, color) {
+
+  this.partitionSizes = partitionSizes;
+  this.center = center;
+  this.radius = radius;
+  this.vertexRadius = vertexRadius;
+  this.type = type;
+
+  this.numVertices = 0;
+
+  for (let i = 0; i < this.partitionSizes.length; ++i) {
+    this.numVertices = this.numVertices + this.partitionSizes[i];
+  }
+
+  this.vertexGroup = new THREE.Group();
+
+  let vertexCenter = [0, 0, 0];
+
+  if (color === 'sequence') {
+
+    for (let i = 0; i < this.numVertices; ++i) {
+
+      if (this.type === 'ball') {
+
+        let vertexGeometry = new THREE.CircleBufferGeometry(this.vertexRadius, 32);
+        let vertexMaterial = new THREE.MeshBasicMaterial({color: colorNodes(i), wireframe: false});
+        let vertex = new THREE.Mesh(vertexGeometry, vertexMaterial);
+
+        this.vertexGroup.add(vertex);
+
+      } else if (this.type === 'point') {
+
+        let vertex = new polygon(vertexCenter, this.vertexRadius, 100, phi(i, 100), colorNodes(i));
+
+        this.vertexGroup.add(vertex.line);
+
+      }
+
+    }
+
+  } else if (color === 'partite') {
+
+    for (let i = 0; i < this.partitionSizes.length; ++i) {
+
+      for (let j = 0; j < this.partitionSizes[i]; ++j) {
+
+        if (this.type === 'ball') {
+
+          let vertexGeometry = new THREE.CircleBufferGeometry(this.vertexRadius / this.numVertices, 32);
+          let vertexMaterial = new THREE.MeshBasicMaterial({color: colorNodes(i), wireframe: false});
+          let vertex = new THREE.Mesh(vertexGeometry, vertexMaterial);
+
+          this.vertexGroup.add(vertex);
+
+        } else if (this.type === 'point') {
+
+          let vertex = new polygon(vertexCenter, this.vertexRadius, 100, phi(i, 100), colorNodes(i));
+
+          this.vertexGroup.add(vertex.line);
+
+        }
+
+      }
+
+    }
+
+  }
+
+}
+
+// assign coords to vertices in graph
+export function AssignVertexCoordinates (graph, layout, angle = 0) {
+
+   if (layout === 'polar') {
+
+       let n = graph.numVertices;
+
+       for (let i = 0; i < n; ++i) {
+
+         graph.vertexGroup.children[i].position.set(
+           graph.center[0] + graph.radius * Math.cos(phi(i, n) + angle),
+           graph.center[1] + graph.radius * Math.sin(phi(i, n) + angle),
+           0
+         );
+
+       }
+
+   } else if (layout === 'partite') {
+
+       let count = 0;
+       let numSides = graph.partitionSizes.length;
+
+       if (numSides === 1) {
+
+         let sideScale = (2 * graph.radius / (graph.partitionSizes[0] + 1));
+
+         if (graph.partitionSizes[0] % 2 === 1) {
+
+             for (let j = 0; j < graph.partitionSizes[0]; ++j) {
+
+               let sideSpacing = j - Math.floor(graph.partitionSizes[0] / 2)
+
+               graph.vertexGroup.children[j].position.set(
+                 graph.center[0] + sideScale * sideSpacing * Math.sin(-angle),
+                 graph.center[1] + sideScale * sideSpacing * Math.cos(-angle),
+                 0
+               );
+
+             }
+
+         } else {
+
+             for (let j = 0; j < graph.partitionSizes[0]; ++j) {
+
+               let sideSpacing = (j + ((1 - graph.partitionSizes[0]) / 2));
+
+               graph.vertexGroup.children[j].position.set(
+                 graph.center[0] + sideScale * sideSpacing * Math.sin(-angle),
+                 graph.center[1] + sideScale * sideSpacing * Math.cos(-angle),
+                 0
+               );
+
+             }
+
+         }
+
+       } else {
+
+         for (let i = 0; i < numSides; ++i) {
+
+             let sideAngle = phi(i, numSides) + angle;
+             let sideScale = (2 * graph.radius * Math.sin(Math.PI / numSides) / (graph.partitionSizes[i] + 1));
+
+             if (graph.partitionSizes[i] % 2 === 1) {
+
+                 for (let j = 0; j < graph.partitionSizes[i]; ++j) {
+
+                   let sideSpacing = j - Math.floor(graph.partitionSizes[i] / 2)
+
+                   graph.vertexGroup.children[count + j].position.set(
+                     graph.center[0] + graph.radius * Math.cos(sideAngle) + sideScale * sideSpacing * Math.sin(-sideAngle),
+                     graph.center[1] + graph.radius * Math.sin(sideAngle) + sideScale * sideSpacing * Math.cos(-sideAngle),
+                     0
+                   );
+
+                 }
+
+             } else {
+
+                 for (let j = 0; j < graph.partitionSizes[i]; ++j) {
+
+                   let sideSpacing = (j + ((1 - graph.partitionSizes[i]) / 2));
+
+                   graph.vertexGroup.children[count + j].position.set(
+                     graph.center[0] + graph.radius * Math.cos(sideAngle) + sideScale * sideSpacing * Math.sin(-sideAngle),
+                     graph.center[1] + graph.radius * Math.sin(sideAngle) + sideScale * sideSpacing * Math.cos(-sideAngle),
+                     0
+                   );
+
+                 }
+
+             }
+
+             count += graph.partitionSizes[i];
+
+         }
+
+       }
+
+   } else if (layout === 'concentric') {
+
+       let count = 0;
+
+       for (let i = 0; i < graph.partitionSizes.length; ++i) {
+
+           for (let j = 0; j < graph.partitionSizes[i]; ++j) {
+
+               if (graph.partitionSizes[i] !== 1) {
+
+                 graph.vertexGroup.children[count + j].position.set(
+                   graph.center[0] + graph.radius * (graph.radius + i) * Math.cos(phi(j, graph.partitionSizes[i]) + angle) / graph.partitionSizes.length,
+                   graph.center[1] + graph.radius * (graph.radius + i) * Math.sin(phi(j, graph.partitionSizes[i]) + angle) / graph.partitionSizes.length,
+                   0
+                 );
+
+               }
+
+           }
+
+           count += graph.partitionSizes[i];
+
+       }
+
+   } else if (layout === 'grid') {
+
+       let count = 0;
+       let numLevels = graph.partitionSizes.length;
+
+       for (let i = 0; i < numLevels; ++i) {
+
+           let levelScale = (2 * graph.radius * Math.sin(Math.PI / numLevels) / (graph.partitionSizes[i] + 1));
+           let interLevelSpacing = (i - Math.floor(numLevels / 2)) / numLevels;
+
+           if (graph.partitionSizes[i] % 2 === 1) {
+
+               for (let j = 0; j < graph.partitionSizes[i]; ++j) {
+
+                 let intraLevelSpacing = j - Math.floor(graph.partitionSizes[i] / 2)
+
+                 graph.vertexGroup.children[count + j].position.set(
+                   levelScale * intraLevelSpacing,
+                   interLevelSpacing,
+                   0
+                 );
+
+               }
+
+           } else {
+
+               for (let j = 0; j < graph.partitionSizes[i]; ++j) {
+
+                   let intraLevelSpacing = (j + ((1 - graph.partitionSizes[i]) / 2));
+
+                   graph.vertexGroup.children[count + j].position.set(
+                     levelScale * intraLevelSpacing,
+                     interLevelSpacing,
+                     0
+                   );
+
+               }
+
+           }
+
+           count += graph.partitionSizes[i];
+
+       }
+
+   }
+
+}
