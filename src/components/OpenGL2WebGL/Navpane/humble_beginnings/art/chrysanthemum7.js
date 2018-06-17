@@ -48,12 +48,8 @@ export default class Chrysanthemum7 extends Animation {
 
       if (i % 2 === 0) {
 				this.scene.children[i].rotateZ(1e-3);
-        // this.scene.children[i].rotation.z -= Math.sin(t/1000)/10;
-        // this.scene.children[i].scale.set(2 + (1.3 * Math.cos(t / 2)), 2 + (1.3 * Math.cos(t / 2)), 1);
       } else {
 				this.scene.children[i].rotateZ(-5e-4);
-        // this.scene.children[i].rotation.z += Math.sin(t/1000)/5;
-        // this.scene.children[i].scale.set(2 + (1.3 * Math.cos(t / 2)), 2 + (1.3 * Math.cos(t / 2)), 1);
       }
 
     }

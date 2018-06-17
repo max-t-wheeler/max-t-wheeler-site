@@ -1237,6 +1237,42 @@ export default {
         },
         {
           active: false,
+          address: '/opengl_webgl_conversion#simulations_blouse',
+          category: 'simulations',
+          controllable: true,
+          dynamic: true,
+          name: 'blouse',
+          parameters: {
+            numPartitions: {
+              label: 'Number of Partitions',
+              defaultValue: 6,
+              currentValue: 6
+            },
+            numVertices: {
+              label: 'Number of Vertices',
+              defaultValue: 1000,
+              currentValue: 1000
+            },
+            graphRadius: {
+              label: 'Graph Radius',
+              defaultValue: 2,
+              currentValue: 2
+            },
+            vertexRadius: {
+              label: 'Vertex Radius',
+              defaultValue: 5,
+              currentValue: 5
+            },
+            rate: {
+              label: 'Rate',
+              defaultValue: 100,
+              currentValue: 100
+            }
+          },
+          text: 'blouse'
+        },
+        {
+          active: false,
           address: '/opengl_webgl_conversion#simulations_brazil',
           category: 'simulations',
           controllable: true,
@@ -1383,6 +1419,119 @@ export default {
             }
           },
           text: 'flower'
+        },
+        {
+          active: false,
+          address: '/opengl_webgl_conversion#simulations_games',
+          category: 'simulations',
+          controllable: true,
+          dynamic: true,
+          name: 'games',
+          parameters: {
+            numPartitions: {
+              label: 'Number of Partitions',
+              defaultValue: 6,
+              currentValue: 6
+            },
+            numVertices: {
+              label: 'Number of Vertices',
+              defaultValue: 1000,
+              currentValue: 1000
+            },
+            graphRadius: {
+              label: 'Graph Radius',
+              defaultValue: 1,
+              currentValue: 1
+            },
+            vertexRadius: {
+              label: 'Vertex Radius',
+              defaultValue: 5,
+              currentValue: 5
+            },
+            rate: {
+              label: 'Rate',
+              defaultValue: 10,
+              currentValue: 10
+            }
+          },
+          text: 'games'
+        },
+        {
+          active: false,
+          address: '/opengl_webgl_conversion#simulations_lamento',
+          category: 'simulations',
+          controllable: true,
+          dynamic: true,
+          name: 'lamento',
+          parameters: {
+            numPartitions: {
+              label: 'Number of Partitions',
+              defaultValue: 6,
+              currentValue: 6
+            },
+            numVertices: {
+              label: 'Number of Vertices',
+              defaultValue: 1000,
+              currentValue: 1000
+            },
+            graphRadius: {
+              label: 'Graph Radius',
+              defaultValue: 2,
+              currentValue: 2
+            },
+            vertexRadius: {
+              label: 'Vertex Radius',
+              defaultValue: 5,
+              currentValue: 5
+            },
+            rate: {
+              label: 'Rate',
+              defaultValue: 100,
+              currentValue: 100
+            }
+          },
+          text: 'lamento'
+        },
+        {
+          active: false,
+          address: '/opengl_webgl_conversion#simulations_look',
+          category: 'simulations',
+          controllable: true,
+          dynamic: true,
+          name: 'look',
+          parameters: {
+            numPartitions: {
+              label: 'Number of Partitions',
+              defaultValue: 6,
+              currentValue: 6
+            },
+            numVertices: {
+              label: 'Number of Vertices',
+              defaultValue: 1000,
+              currentValue: 1000
+            },
+            graphRadius: {
+              label: 'Graph Radius',
+              defaultValue: 2,
+              currentValue: 2
+            },
+            vertexRadius: {
+              label: 'Vertex Radius',
+              defaultValue: 10,
+              currentValue: 10
+            },
+            dampening: {
+              label: 'Dampening',
+              defaultValue: 10,
+              currentValue: 10
+            },
+            rate: {
+              label: 'Rate',
+              defaultValue: 10,
+              currentValue: 10
+            }
+          },
+          text: 'look'
         },
         {
           active: false,

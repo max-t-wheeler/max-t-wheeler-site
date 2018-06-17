@@ -48,10 +48,14 @@ import Andorinha from './simulations/andorinha';
 import Antigua from './simulations/antigua';
 import Batidinha from './simulations/batidinha';
 import Bicardi from './simulations/bicardi';
+import Blouse from './simulations/blouse';
 import Brazil from './simulations/brazil';
 import Choro from './simulations/choro';
 import Dialogo from './simulations/dialogo';
 import Flower from './simulations/flower';
+import Games from './simulations/games';
+import Lamento from './simulations/lamento';
+import Look from './simulations/look';
 import Mojave from './simulations/mojave';
 import Sabia from './simulations/sabia';
 import Tereza from './simulations/tereza';
@@ -105,10 +109,14 @@ const ANIMATION_MAP = {
   'antigua': Antigua,
   'batidinha': Batidinha,
   'bicardi': Bicardi,
+  'blouse': Blouse,
   'brazil': Brazil,
   'choro': Choro,
   'dialogo': Dialogo,
   'flower': Flower,
+  'games': Games,
+  'lamento': Lamento,
+  'look': Look,
   'mojave': Mojave,
   'sabia': Sabia,
   'tereza': Tereza,

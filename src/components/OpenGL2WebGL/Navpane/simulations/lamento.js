@@ -7,7 +7,7 @@ import {
 
 } from '../../utils';
 
-export default class Brazil extends Animation {
+export default class Lamento extends Animation {
 
 	constructor (scene, camera, animation) {
 
@@ -17,7 +17,6 @@ export default class Brazil extends Animation {
     this.numVertices = parseFloat(this.parameters.numVertices.currentValue);
     this.graphRadius = parseFloat(this.parameters.graphRadius.currentValue);
     this.vertexRadius = parseFloat(this.parameters.vertexRadius.currentValue);
-    this.divisor = parseFloat(this.parameters.divisor.currentValue);
     this.rate = parseFloat(this.parameters.rate.currentValue);
 
   }
@@ -49,8 +48,8 @@ export default class Brazil extends Animation {
 		for (let i = 0; i < this.graph.numVertices; ++i) {
 
       this.graph.vertexGroup.children[i].position.set(
-        this.graph.vertexGroup.children[i].position.x * (1 + this.rate * Math.cos(t) * Math.sin((i % this.divisor + 1) * t / 10) / 100),
-        this.graph.vertexGroup.children[i].position.y * (1 + this.rate * Math.cos(t) * Math.sin((i % this.divisor + 1) * t / 10) / 100),
+        this.graph.vertexGroup.children[i].position.x * (1 - Math.cos(t) * Math.cos(this.rate * i) / 1000),
+        this.graph.vertexGroup.children[i].position.y * (1 + Math.cos(t) * Math.cos(this.rate * i) / 1000),
         0
       );
 
