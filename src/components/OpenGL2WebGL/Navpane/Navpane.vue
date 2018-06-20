@@ -629,6 +629,27 @@ export default {
         },
         {
           active: false,
+          address: '/opengl_webgl_conversion#art_pinwheel',
+          category: 'art',
+          controllable: false,
+          dynamic: true,
+          name: 'pinwheel',
+          parameters: {
+            numPolygons: {
+              label: 'Number of Polygons',
+              defaultValue: 10,
+              currentValue: 10
+            },
+            numFaces: {
+              label: 'Number of Faces',
+              defaultValue: 4,
+              currentValue: 4
+            }
+          },
+          text: 'pinwheel'
+        },
+        {
+          active: false,
           address: '/opengl_webgl_conversion#art_snowflake',
           category: 'art',
           controllable: true,
@@ -672,27 +693,6 @@ export default {
             }
           },
           text: 'snowflake'
-        },
-        {
-          active: false,
-          address: '/opengl_webgl_conversion#art_pinwheel',
-          category: 'art',
-          controllable: false,
-          dynamic: true,
-          name: 'pinwheel',
-          parameters: {
-            numPolygons: {
-              label: 'Number of Polygons',
-              defaultValue: 10,
-              currentValue: 10
-            },
-            numFaces: {
-              label: 'Number of Faces',
-              defaultValue: 4,
-              currentValue: 4
-            }
-          },
-          text: 'pinwheel'
         },
         {
           active: false,

@@ -330,55 +330,37 @@ export function sacredGeometry (center, numPolygons, numNodes, polygonRadius, gl
 
 }
 
-export function Graph (partitionSizes, center, radius, vertexRadius, type, color) {
+export class Graph {
 
-  this.partitionSizes = partitionSizes;
-  this.center = center;
-  this.radius = radius;
-  this.vertexRadius = vertexRadius;
-  this.type = type;
+  constructor (partitionSizes, center, radius, vertexRadius, type) {
 
-  this.numVertices = 0;
+    this.partitionSizes = partitionSizes;
+    this.center = center;
+    this.radius = radius;
+    this.vertexRadius = vertexRadius;
+    this.type = type;
+    this.numVertices = 0;
+    this.numEdges = 0;
+    this.vertexGroup = new THREE.Group();
+    this.edgeGroup = new THREE.Group();
 
-  for (let i = 0; i < this.partitionSizes.length; ++i) {
-    this.numVertices = this.numVertices + this.partitionSizes[i];
   }
 
-  this.vertexGroup = new THREE.Group();
-
-  let vertexCenter = [0, 0, 0];
-
-  if (color === 'sequence') {
-
-    for (let i = 0; i < this.numVertices; ++i) {
-
-      if (this.type === 'ball') {
-
-        let vertexGeometry = new THREE.CircleBufferGeometry(this.vertexRadius, 32);
-        let vertexMaterial = new THREE.MeshBasicMaterial({color: colorNodes(i), wireframe: false});
-        let vertex = new THREE.Mesh(vertexGeometry, vertexMaterial);
-
-        this.vertexGroup.add(vertex);
-
-      } else if (this.type === 'point') {
-
-        let vertex = new polygon(vertexCenter, this.vertexRadius, 100, phi(i, 100), colorNodes(i));
-
-        this.vertexGroup.add(vertex.line);
-
-      }
-
-    }
-
-  } else if (color === 'partite') {
+  createVertexSet (color) {
 
     for (let i = 0; i < this.partitionSizes.length; ++i) {
+      this.numVertices = this.numVertices + this.partitionSizes[i];
+    }
 
-      for (let j = 0; j < this.partitionSizes[i]; ++j) {
+    let vertexCenter = [0, 0, 0];
+
+    if (color === 'sequence') {
+
+      for (let i = 0; i < this.numVertices; ++i) {
 
         if (this.type === 'ball') {
 
-          let vertexGeometry = new THREE.CircleBufferGeometry(this.vertexRadius / this.numVertices, 32);
+          let vertexGeometry = new THREE.CircleBufferGeometry(this.vertexRadius, 32);
           let vertexMaterial = new THREE.MeshBasicMaterial({color: colorNodes(i), wireframe: false});
           let vertex = new THREE.Mesh(vertexGeometry, vertexMaterial);
 
@@ -394,154 +376,71 @@ export function Graph (partitionSizes, center, radius, vertexRadius, type, color
 
       }
 
+    } else if (color === 'partite') {
+
+      for (let i = 0; i < this.partitionSizes.length; ++i) {
+
+        for (let j = 0; j < this.partitionSizes[i]; ++j) {
+
+          if (this.type === 'ball') {
+
+            let vertexGeometry = new THREE.CircleBufferGeometry(this.vertexRadius / this.numVertices, 32);
+            let vertexMaterial = new THREE.MeshBasicMaterial({color: colorNodes(i), wireframe: false});
+            let vertex = new THREE.Mesh(vertexGeometry, vertexMaterial);
+
+            this.vertexGroup.add(vertex);
+
+          } else if (this.type === 'point') {
+
+            let vertex = new polygon(vertexCenter, this.vertexRadius, 100, phi(i, 100), colorNodes(i));
+
+            this.vertexGroup.add(vertex.line);
+
+          }
+
+        }
+
+      }
+
     }
 
   }
 
-}
+  // assign coords to vertices in graph
+  assignVertexCoordinates (layout, angle = 0) {
 
-// assign coords to vertices in graph
-export function AssignVertexCoordinates (graph, layout, angle = 0) {
+     if (layout === 'polar') {
 
-   if (layout === 'polar') {
+         let n = this.numVertices;
 
-       let n = graph.numVertices;
+         for (let i = 0; i < n; ++i) {
 
-       for (let i = 0; i < n; ++i) {
-
-         graph.vertexGroup.children[i].position.set(
-           graph.center[0] + graph.radius * Math.cos(phi(i, n) + angle),
-           graph.center[1] + graph.radius * Math.sin(phi(i, n) + angle),
-           0
-         );
-
-       }
-
-   } else if (layout === 'partite') {
-
-       let count = 0;
-       let numSides = graph.partitionSizes.length;
-
-       if (numSides === 1) {
-
-         let sideScale = (2 * graph.radius / (graph.partitionSizes[0] + 1));
-
-         if (graph.partitionSizes[0] % 2 === 1) {
-
-             for (let j = 0; j < graph.partitionSizes[0]; ++j) {
-
-               let sideSpacing = j - Math.floor(graph.partitionSizes[0] / 2)
-
-               graph.vertexGroup.children[j].position.set(
-                 graph.center[0] + sideScale * sideSpacing * Math.sin(-angle),
-                 graph.center[1] + sideScale * sideSpacing * Math.cos(-angle),
-                 0
-               );
-
-             }
-
-         } else {
-
-             for (let j = 0; j < graph.partitionSizes[0]; ++j) {
-
-               let sideSpacing = (j + ((1 - graph.partitionSizes[0]) / 2));
-
-               graph.vertexGroup.children[j].position.set(
-                 graph.center[0] + sideScale * sideSpacing * Math.sin(-angle),
-                 graph.center[1] + sideScale * sideSpacing * Math.cos(-angle),
-                 0
-               );
-
-             }
+           this.vertexGroup.children[i].position.set(
+             this.center[0] + this.radius * Math.cos(phi(i, n) + angle),
+             this.center[1] + this.radius * Math.sin(phi(i, n) + angle),
+             0
+           );
 
          }
 
-       } else {
+     } else if (layout === 'partite') {
 
-         for (let i = 0; i < numSides; ++i) {
+         let count = 0;
+         let numSides = this.partitionSizes.length;
 
-             let sideAngle = phi(i, numSides) + angle;
-             let sideScale = (2 * graph.radius * Math.sin(Math.PI / numSides) / (graph.partitionSizes[i] + 1));
+         if (numSides === 1) {
 
-             if (graph.partitionSizes[i] % 2 === 1) {
+           let sideScale = (2 * this.radius / (this.partitionSizes[0] + 1));
 
-                 for (let j = 0; j < graph.partitionSizes[i]; ++j) {
+           if (this.partitionSizes[0] % 2 === 1) {
 
-                   let sideSpacing = j - Math.floor(graph.partitionSizes[i] / 2)
+               for (let j = 0; j < this.partitionSizes[0]; ++j) {
 
-                   graph.vertexGroup.children[count + j].position.set(
-                     graph.center[0] + graph.radius * Math.cos(sideAngle) + sideScale * sideSpacing * Math.sin(-sideAngle),
-                     graph.center[1] + graph.radius * Math.sin(sideAngle) + sideScale * sideSpacing * Math.cos(-sideAngle),
-                     0
-                   );
+                 let sideSpacing = j - Math.floor(this.partitionSizes[0] / 2)
 
-                 }
-
-             } else {
-
-                 for (let j = 0; j < graph.partitionSizes[i]; ++j) {
-
-                   let sideSpacing = (j + ((1 - graph.partitionSizes[i]) / 2));
-
-                   graph.vertexGroup.children[count + j].position.set(
-                     graph.center[0] + graph.radius * Math.cos(sideAngle) + sideScale * sideSpacing * Math.sin(-sideAngle),
-                     graph.center[1] + graph.radius * Math.sin(sideAngle) + sideScale * sideSpacing * Math.cos(-sideAngle),
-                     0
-                   );
-
-                 }
-
-             }
-
-             count += graph.partitionSizes[i];
-
-         }
-
-       }
-
-   } else if (layout === 'concentric') {
-
-       let count = 0;
-
-       for (let i = 0; i < graph.partitionSizes.length; ++i) {
-
-           for (let j = 0; j < graph.partitionSizes[i]; ++j) {
-
-               if (graph.partitionSizes[i] !== 1) {
-
-                 graph.vertexGroup.children[count + j].position.set(
-                   graph.center[0] + graph.radius * (graph.radius + i) * Math.cos(phi(j, graph.partitionSizes[i]) + angle) / graph.partitionSizes.length,
-                   graph.center[1] + graph.radius * (graph.radius + i) * Math.sin(phi(j, graph.partitionSizes[i]) + angle) / graph.partitionSizes.length,
-                   0
-                 );
-
-               }
-
-           }
-
-           count += graph.partitionSizes[i];
-
-       }
-
-   } else if (layout === 'grid') {
-
-       let count = 0;
-       let numLevels = graph.partitionSizes.length;
-
-       for (let i = 0; i < numLevels; ++i) {
-
-           let levelScale = (2 * graph.radius * Math.sin(Math.PI / numLevels) / (graph.partitionSizes[i] + 1));
-           let interLevelSpacing = (i - Math.floor(numLevels / 2)) / numLevels;
-
-           if (graph.partitionSizes[i] % 2 === 1) {
-
-               for (let j = 0; j < graph.partitionSizes[i]; ++j) {
-
-                 let intraLevelSpacing = j - Math.floor(graph.partitionSizes[i] / 2)
-
-                 graph.vertexGroup.children[count + j].position.set(
-                   levelScale * intraLevelSpacing,
-                   interLevelSpacing,
+                 this.vertexGroup.children[j].position.set(
+                   this.center[0] + sideScale * sideSpacing * Math.sin(-angle),
+                   this.center[1] + sideScale * sideSpacing * Math.cos(-angle),
                    0
                  );
 
@@ -549,24 +448,246 @@ export function AssignVertexCoordinates (graph, layout, angle = 0) {
 
            } else {
 
-               for (let j = 0; j < graph.partitionSizes[i]; ++j) {
+               for (let j = 0; j < this.partitionSizes[0]; ++j) {
 
-                   let intraLevelSpacing = (j + ((1 - graph.partitionSizes[i]) / 2));
+                 let sideSpacing = (j + ((1 - this.partitionSizes[0]) / 2));
 
-                   graph.vertexGroup.children[count + j].position.set(
-                     levelScale * intraLevelSpacing,
-                     interLevelSpacing,
-                     0
-                   );
+                 this.vertexGroup.children[j].position.set(
+                   this.center[0] + sideScale * sideSpacing * Math.sin(-angle),
+                   this.center[1] + sideScale * sideSpacing * Math.cos(-angle),
+                   0
+                 );
 
                }
 
            }
 
-           count += graph.partitionSizes[i];
+         } else {
+
+           for (let i = 0; i < numSides; ++i) {
+
+               let sideAngle = phi(i, numSides) + angle;
+               let sideScale = (2 * this.radius * Math.sin(Math.PI / numSides) / (this.partitionSizes[i] + 1));
+
+               if (this.partitionSizes[i] % 2 === 1) {
+
+                   for (let j = 0; j < this.partitionSizes[i]; ++j) {
+
+                     let sideSpacing = j - Math.floor(this.partitionSizes[i] / 2)
+
+                     this.vertexGroup.children[count + j].position.set(
+                       this.center[0] + this.radius * Math.cos(sideAngle) + sideScale * sideSpacing * Math.sin(-sideAngle),
+                       this.center[1] + this.radius * Math.sin(sideAngle) + sideScale * sideSpacing * Math.cos(-sideAngle),
+                       0
+                     );
+
+                   }
+
+               } else {
+
+                   for (let j = 0; j < this.partitionSizes[i]; ++j) {
+
+                     let sideSpacing = (j + ((1 - this.partitionSizes[i]) / 2));
+
+                     this.vertexGroup.children[count + j].position.set(
+                       this.center[0] + this.radius * Math.cos(sideAngle) + sideScale * sideSpacing * Math.sin(-sideAngle),
+                       this.center[1] + this.radius * Math.sin(sideAngle) + sideScale * sideSpacing * Math.cos(-sideAngle),
+                       0
+                     );
+
+                   }
+
+               }
+
+               count += this.partitionSizes[i];
+
+           }
+
+         }
+
+     } else if (layout === 'concentric') {
+
+         let count = 0;
+
+         for (let i = 0; i < this.partitionSizes.length; ++i) {
+
+             for (let j = 0; j < this.partitionSizes[i]; ++j) {
+
+                 if (this.partitionSizes[i] !== 1) {
+
+                   this.vertexGroup.children[count + j].position.set(
+                     this.center[0] + this.radius * (this.radius + i) * Math.cos(phi(j, this.partitionSizes[i]) + angle) / this.partitionSizes.length,
+                     this.center[1] + this.radius * (this.radius + i) * Math.sin(phi(j, this.partitionSizes[i]) + angle) / this.partitionSizes.length,
+                     0
+                   );
+
+                 }
+
+             }
+
+             count += this.partitionSizes[i];
+
+         }
+
+     } else if (layout === 'grid') {
+
+         let count = 0;
+         let numLevels = this.partitionSizes.length;
+
+         for (let i = 0; i < numLevels; ++i) {
+
+             let levelScale = (2 * this.radius * Math.sin(Math.PI / numLevels) / (this.partitionSizes[i] + 1));
+             let interLevelSpacing = (i - Math.floor(numLevels / 2)) / numLevels;
+
+             if (this.partitionSizes[i] % 2 === 1) {
+
+                 for (let j = 0; j < this.partitionSizes[i]; ++j) {
+
+                   let intraLevelSpacing = j - Math.floor(this.partitionSizes[i] / 2)
+
+                   this.vertexGroup.children[count + j].position.set(
+                     levelScale * intraLevelSpacing,
+                     interLevelSpacing,
+                     0
+                   );
+
+                 }
+
+             } else {
+
+                 for (let j = 0; j < this.partitionSizes[i]; ++j) {
+
+                     let intraLevelSpacing = (j + ((1 - this.partitionSizes[i]) / 2));
+
+                     this.vertexGroup.children[count + j].position.set(
+                       levelScale * intraLevelSpacing,
+                       interLevelSpacing,
+                       0
+                     );
+
+                 }
+
+             }
+
+             count += this.partitionSizes[i];
+
+         }
+
+     }
+
+  }
+
+  addEdges (type) {
+
+    let n = this.numVertices;
+
+     if (type === 'complete') {
+
+         for (let i = 0; i < n - 1; ++i) {
+
+           for (let j = i + 1; j < n; ++j) {
+
+             let edgeGeometry = new THREE.Geometry();
+
+             let edgeMaterial = new THREE.LineBasicMaterial(
+               {
+              	color: 0xffffff
+               }
+             );
+
+             edgeGeometry.vertices.push(
+               this.vertexGroup.children[i].position,
+               this.vertexGroup.children[j].position
+             );
+
+             let edge = new THREE.Line(edgeGeometry, edgeMaterial);
+
+             this.edgeGroup.add(edge);
+
+           }
+
+         }
+
+     } else if (type === 'cycle') {
+
+       for (let i = 0; i < n; ++i) {
+
+         let edgeGeometry = new THREE.Geometry();
+
+         let edgeMaterial = new THREE.LineBasicMaterial({
+            color: 0xffffff
+          });
+
+          if (i < n - 1) {
+            edgeGeometry.vertices.push(
+              this.vertexGroup.children[i].position,
+              this.vertexGroup.children[i + 1].position
+            );
+          } else {
+            edgeGeometry.vertices.push(
+              this.vertexGroup.children[i].position,
+              this.vertexGroup.children[0].position
+            );
+          }
+
+         let edge = new THREE.Line(edgeGeometry, edgeMaterial);
+
+         this.edgeGroup.add(edge);
 
        }
 
-   }
+     } else if (type === 'path') {
+
+       for (let i = 0; i < n - 1; ++i) {
+
+         let edgeGeometry = new THREE.Geometry();
+
+         let edgeMaterial = new THREE.LineBasicMaterial({
+            color: 0xffffff
+          });
+
+         edgeGeometry.vertices.push(
+           this.vertexGroup.children[i].position,
+           this.vertexGroup.children[i + 1].position
+         );
+
+         let edge = new THREE.Line(edgeGeometry, edgeMaterial);
+
+         this.edgeGroup.add(edge);
+
+       }
+
+     } else if (type === 'wheel') {
+
+       for (let i = 1; i < n; ++i) {
+
+         let edgeGeometry = new THREE.Geometry();
+
+         let edgeMaterial = new THREE.LineBasicMaterial({
+            color: 0xffffff
+          });
+
+         edgeGeometry.vertices.push(
+           this.vertexGroup.children[0].position,
+           this.vertexGroup.children[i].position
+         );
+
+         let edge = new THREE.Line(edgeGeometry, edgeMaterial);
+
+         this.edgeGroup.add(edge);
+
+       }
+
+     }
+
+     this.numEdges = this.edgeGroup.length;
+
+  }
+
+  initialize (type = 'null', layout = 'polar', angle = 0, color = 'partite') {
+    this.createVertexSet(color);
+    this.assignVertexCoordinates(layout, angle);
+    this.addEdges(type);
+  }
 
 }

@@ -28,8 +28,8 @@ import WrigglingDonut from './humble_beginnings/art/wrigglingDonut';
 // math
 import Mosaic from './humble_beginnings/math/mosaic';
 import Mosaic2 from './humble_beginnings/math/mosaic2';
-import SacredCircles from './humble_beginnings/math/sacredCircles';
 import OffsetStar from './humble_beginnings/math/offsetStar';
+import SacredCircles from './humble_beginnings/math/sacredCircles';
 import Unoriginal from './humble_beginnings/math/unoriginal';
 
 // physics

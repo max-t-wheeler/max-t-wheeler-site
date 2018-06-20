@@ -3,8 +3,7 @@ import Animation from '../animation';
 import {
 
   phi,
-  Graph,
-  AssignVertexCoordinates
+  Graph
 
 } from '../../utils';
 
@@ -36,9 +35,8 @@ export default class Antigua extends Animation {
       0
     ]
 
-		this.graph = new Graph(partitionSizes, center, this.graphRadius, this.vertexRadius, 'ball', 'partite');
-
-    AssignVertexCoordinates(this.graph, 'concentric');
+    this.graph = new Graph(partitionSizes, center, this.graphRadius, this.vertexRadius, 'ball');
+    this.graph.initialize('null', 'concentric');
 
     this.scene.add(this.graph.vertexGroup);
 

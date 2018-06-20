@@ -2,8 +2,7 @@ import Animation from '../animation';
 
 import {
 
-  Graph,
-  AssignVertexCoordinates
+  Graph
 
 } from '../../utils';
 
@@ -35,9 +34,8 @@ export default class Wave extends Animation {
       0
     ]
 
-		this.graph = new Graph(partitionSizes, center, this.graphRadius, this.vertexRadius, 'ball', 'partite');
-
-    AssignVertexCoordinates(this.graph, 'grid');
+    this.graph = new Graph(partitionSizes, center, this.graphRadius, this.vertexRadius, 'ball');
+    this.graph.initialize('null', 'grid');
 
     this.scene.add(this.graph.vertexGroup);
 

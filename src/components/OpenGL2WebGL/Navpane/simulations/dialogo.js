@@ -35,7 +35,8 @@ export default class Dialogo extends Animation {
       0
     ]
 
-		this.graph = new Graph(partitionSizes, center, this.graphRadius, this.vertexRadius, 'ball', 'partite');
+    this.graph = new Graph(partitionSizes, center, this.graphRadius, this.vertexRadius, 'ball');
+    this.graph.initialize();
 
     this.scene.add(this.graph.vertexGroup);
 
