@@ -1,12 +1,12 @@
 <template>
 
   <div>
-    <div v-for="category in categories" :key="category.name" class="opengl2webgl-navpane-category" >
+    <div v-for="category in categories" v-if='!category.hidden' :key="category.name" class="opengl2webgl-navpane-category" >
       <p v-b-toggle="'category-' + category.name" class="opengl2webgl-navpane-category-text"> {{ category.name }} </p>
       <b-collapse :id="'category-' + category.name">
         <ul class="opengl2webgl-navpane-list">
           <li
-            v-if='item.category == category.name'
+            v-if='item.category == category.name && !item.hidden'
             v-for='item in filter'
             :key='item.name'
             class = "opengl2webgl-navpane-item"
@@ -50,22 +50,27 @@ export default {
       categories: [
         {
           active: false,
+          hidden: false,
           name: 'art'
         },
         {
           active: false,
+          hidden: false,
           name: 'math'
         },
         {
           active: false,
+          hidden: true,
           name: 'physics'
         },
         {
           active: false,
+          hidden: true,
           name: 'shapes'
         },
         {
           active: false,
+          hidden: false,
           name: 'simulations'
         }
       ],
@@ -76,6 +81,7 @@ export default {
           category: 'art',
           controllable: false,
           dynamic: false,
+          hidden: false,
           name: 'blanket',
           parameters: {
             numPolygons: {
@@ -97,6 +103,7 @@ export default {
           category: 'art',
           controllable: false,
           dynamic: true,
+          hidden: false,
           name: 'bounce ripple',
           parameters: {
             numPolygons: {
@@ -118,6 +125,7 @@ export default {
           category: 'art',
           controllable: false,
           dynamic: true,
+          hidden: false,
           name: 'chrysanthedad',
           parameters: {
             numCenters: {
@@ -159,6 +167,7 @@ export default {
           category: 'art',
           controllable: false,
           dynamic: true,
+          hidden: false,
           name: 'chrysanthemum',
           parameters: {
             numNodes: {
@@ -190,6 +199,7 @@ export default {
           category: 'art',
           controllable: true,
           dynamic: true,
+          hidden: false,
           name: 'chrysanthemum2',
           parameters: {
             numNodes: {
@@ -216,6 +226,7 @@ export default {
           category: 'art',
           controllable: false,
           dynamic: true,
+          hidden: false,
           name: 'chrysanthemum3',
           parameters: {
             numNodes: {
@@ -237,6 +248,7 @@ export default {
           category: 'art',
           controllable: false,
           dynamic: true,
+          hidden: false,
           name: 'chrysanthemum4',
           parameters: {
             numNodes: {
@@ -268,6 +280,7 @@ export default {
           category: 'art',
           controllable: false,
           dynamic: true,
+          hidden: false,
           name: 'chrysanthemum5',
           parameters: {
             numNodes: {
@@ -299,6 +312,7 @@ export default {
           category: 'art',
           controllable: false,
           dynamic: true,
+          hidden: false,
           name: 'chrysanthemum6',
           parameters: {
             numNodes: {
@@ -330,6 +344,7 @@ export default {
           category: 'art',
           controllable: true,
           dynamic: true,
+          hidden: false,
           name: 'chrysanthemum7',
           parameters: {
             numNodes: {
@@ -361,6 +376,7 @@ export default {
           category: 'art',
           controllable: true,
           dynamic: true,
+          hidden: true,
           name: 'chrysanthemum8',
           parameters: {
             numCenters: {
@@ -402,6 +418,7 @@ export default {
           category: 'art',
           controllable: true,
           dynamic: true,
+          hidden: true,
           name: 'chrysanthemum9',
           parameters: {
             numCenters: {
@@ -443,6 +460,7 @@ export default {
           category: 'art',
           controllable: true,
           dynamic: false,
+          hidden: true,
           name: 'clam',
           parameters: {
             numRidges: {
@@ -464,6 +482,7 @@ export default {
           category: 'art',
           controllable: true,
           dynamic: true,
+          hidden: false,
           name: 'collide',
           parameters: {
             numCircles: {
@@ -480,6 +499,7 @@ export default {
           category: 'art',
           controllable: false,
           dynamic: true,
+          hidden: false,
           name: 'concentric polygons',
           parameters: {
             numPolygons: {
@@ -501,6 +521,7 @@ export default {
           category: 'art',
           controllable: false,
           dynamic: true,
+          hidden: false,
           name: 'concentric polygons 2',
           parameters: {
             numPolygons: {
@@ -524,6 +545,7 @@ export default {
           category: 'art',
           controllable: false,
           dynamic: true,
+          hidden: false,
           name: 'fauxlidoscope',
           parameters: {
             numSteps: {
@@ -565,6 +587,7 @@ export default {
           category: 'art',
           controllable: true,
           dynamic: false,
+          hidden: false,
           name: 'flowers',
           parameters: {
             numFlowers: {
@@ -596,6 +619,7 @@ export default {
           category: 'art',
           controllable: true,
           dynamic: true,
+          hidden: false,
           name: 'gyro',
           parameters: {
             numCircles: {
@@ -612,6 +636,7 @@ export default {
           category: 'art',
           controllable: true,
           dynamic: false,
+          hidden: true,
           name: 'pearl',
           parameters: {
             numRidges: {
@@ -633,6 +658,7 @@ export default {
           category: 'art',
           controllable: false,
           dynamic: true,
+          hidden: false,
           name: 'pinwheel',
           parameters: {
             numPolygons: {
@@ -654,6 +680,7 @@ export default {
           category: 'art',
           controllable: true,
           dynamic: true,
+          hidden: false,
           name: 'snowflake',
           parameters: {
             numLayers: {
@@ -700,6 +727,7 @@ export default {
           category: 'art',
           controllable: false,
           dynamic: true,
+          hidden: false,
           name: 'slosh ripple',
           parameters: {
             numPolygons: {
@@ -721,6 +749,7 @@ export default {
           category: 'art',
           controllable: true,
           dynamic: false,
+          hidden: false,
           name: 'starry night',
           parameters: {
             numStars: {
@@ -752,6 +781,7 @@ export default {
           category: 'art',
           controllable: false,
           dynamic: true,
+          hidden: true,
           name: 'wriggling donut',
           parameters: {
             numNodes: {
@@ -783,6 +813,7 @@ export default {
           category: 'math',
           controllable: true,
           dynamic: true,
+          hidden: false,
           name: 'mosaic',
           parameters: {
             numNodes: {
@@ -819,6 +850,7 @@ export default {
           category: 'math',
           controllable: false,
           dynamic: true,
+          hidden: false,
           name: 'mosaic2',
           parameters: {
             numLayers: {
@@ -855,6 +887,7 @@ export default {
           category: 'math',
           controllable: true,
           dynamic: false,
+          hidden: false,
           name: 'sacred circles',
           parameters: {
             numLayers: {
@@ -886,6 +919,7 @@ export default {
           category: 'math',
           controllable: true,
           dynamic: false,
+          hidden: true,
           name: 'star',
           parameters: {
             numVertices: {
@@ -912,6 +946,7 @@ export default {
           category: 'math',
           controllable: true,
           dynamic: true,
+          hidden: false,
           name: 'unoriginal',
           parameters: {
             numNodes: {
@@ -948,6 +983,7 @@ export default {
           category: 'physics',
           controllable: true,
           dynamic: false,
+          hidden: true,
           name: 'sine wave',
           parameters: {
             amplitude: {
@@ -984,6 +1020,7 @@ export default {
           category: 'shapes',
           controllable: true,
           dynamic: false,
+          hidden: true,
           name: 'circle',
           parameters: {
             numSpokes: {
@@ -1005,6 +1042,7 @@ export default {
           category: 'shapes',
           controllable: true,
           dynamic: false,
+          hidden: true,
           name: 'cube',
           parameters: [],
           text: 'cube'
@@ -1015,6 +1053,7 @@ export default {
           category: 'shapes',
           controllable: true,
           dynamic: true,
+          hidden: true,
           name: 'polystarter',
           parameters: {
             radius: {
@@ -1041,6 +1080,7 @@ export default {
           category: 'shapes',
           controllable: true,
           dynamic: false,
+          hidden: true,
           name: 'rectangle',
           parameters: [],
           text: 'rectangle'
@@ -1051,6 +1091,7 @@ export default {
           category: 'shapes',
           controllable: true,
           dynamic: false,
+          hidden: true,
           name: 'triangle',
           parameters: [],
           text: 'triangle'
@@ -1061,6 +1102,7 @@ export default {
           category: 'simulations',
           controllable: true,
           dynamic: true,
+          hidden: false,
           name: 'amparo',
           parameters: {
             numPartitions: {
@@ -1097,6 +1139,7 @@ export default {
           category: 'simulations',
           controllable: true,
           dynamic: true,
+          hidden: false,
           name: 'andorinha',
           parameters: {
             numPartitions: {
@@ -1133,6 +1176,7 @@ export default {
           category: 'simulations',
           controllable: true,
           dynamic: true,
+          hidden: false,
           name: 'antigua',
           parameters: {
             numPartitions: {
@@ -1169,6 +1213,7 @@ export default {
           category: 'simulations',
           controllable: true,
           dynamic: true,
+          hidden: false,
           name: 'batidinha',
           parameters: {
             numPartitions: {
@@ -1205,6 +1250,7 @@ export default {
           category: 'simulations',
           controllable: true,
           dynamic: true,
+          hidden: false,
           name: 'bicardi',
           parameters: {
             numPartitions: {
@@ -1241,6 +1287,7 @@ export default {
           category: 'simulations',
           controllable: true,
           dynamic: true,
+          hidden: false,
           name: 'blouse',
           parameters: {
             numPartitions: {
@@ -1277,6 +1324,7 @@ export default {
           category: 'simulations',
           controllable: true,
           dynamic: true,
+          hidden: false,
           name: 'brazil',
           parameters: {
             numPartitions: {
@@ -1318,6 +1366,7 @@ export default {
           category: 'simulations',
           controllable: true,
           dynamic: true,
+          hidden: false,
           name: 'choro',
           parameters: {
             numPartitions: {
@@ -1354,6 +1403,7 @@ export default {
           category: 'simulations',
           controllable: true,
           dynamic: true,
+          hidden: false,
           name: 'dialogo',
           parameters: {
             numPartitions: {
@@ -1390,6 +1440,7 @@ export default {
           category: 'simulations',
           controllable: true,
           dynamic: true,
+          hidden: false,
           name: 'flower',
           parameters: {
             numPartitions: {
@@ -1426,6 +1477,7 @@ export default {
           category: 'simulations',
           controllable: true,
           dynamic: true,
+          hidden: false,
           name: 'games',
           parameters: {
             numPartitions: {
@@ -1462,6 +1514,7 @@ export default {
           category: 'simulations',
           controllable: true,
           dynamic: true,
+          hidden: false,
           name: 'lamento',
           parameters: {
             numPartitions: {
@@ -1498,6 +1551,7 @@ export default {
           category: 'simulations',
           controllable: true,
           dynamic: true,
+          hidden: false,
           name: 'look',
           parameters: {
             numPartitions: {
@@ -1539,6 +1593,7 @@ export default {
           category: 'simulations',
           controllable: true,
           dynamic: true,
+          hidden: false,
           name: 'mojave',
           parameters: {
             numPartitions: {
@@ -1575,6 +1630,7 @@ export default {
           category: 'simulations',
           controllable: true,
           dynamic: true,
+          hidden: false,
           name: 'sabia',
           parameters: {
             numPartitions: {
@@ -1611,6 +1667,7 @@ export default {
           category: 'simulations',
           controllable: true,
           dynamic: true,
+          hidden: false,
           name: 'tereza',
           parameters: {
             numPartitions: {
@@ -1647,6 +1704,7 @@ export default {
           category: 'simulations',
           controllable: true,
           dynamic: true,
+          hidden: false,
           name: 'triste',
           parameters: {
             numPartitions: {
@@ -1688,6 +1746,7 @@ export default {
           category: 'simulations',
           controllable: true,
           dynamic: true,
+          hidden: false,
           name: 'wave',
           parameters: {
             numPartitions: {
