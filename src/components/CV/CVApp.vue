@@ -72,7 +72,7 @@ export default {
             },
             {
               type: 'cv-description',
-              text: 'Product Specialist (2016-)'
+              text: 'Product Developer (2016-)'
             },
             {
               type: 'cv-organization',
