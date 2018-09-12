@@ -624,8 +624,13 @@ export default {
           parameters: {
             numCircles: {
               label: 'Number of Circles',
-              defaultValue: 20,
-              currentValue: 20
+              defaultValue: 3,
+              currentValue: 3
+            },
+            rate: {
+              label: 'Rate',
+              defaultValue: 1,
+              currentValue: 1
             }
           },
           text: 'gyr0scope'
@@ -1149,8 +1154,8 @@ export default {
             },
             numVertices: {
               label: 'Number of Vertices',
-              defaultValue: 1000,
-              currentValue: 1000
+              defaultValue: 500,
+              currentValue: 500
             },
             graphRadius: {
               label: 'Graph Radius',
@@ -1164,8 +1169,8 @@ export default {
             },
             rate: {
               label: 'Rate',
-              defaultValue: 1,
-              currentValue: 1
+              defaultValue: 2,
+              currentValue: 2
             }
           },
           text: 'andorinha'

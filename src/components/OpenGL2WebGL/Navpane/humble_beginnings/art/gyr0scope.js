@@ -15,6 +15,7 @@ export default class Gyr0scope extends Animation {
 		super(scene, camera, animation);
 
 		this.numCircles = parseFloat(this.parameters.numCircles.currentValue);
+		this.rate = parseFloat(this.parameters.rate.currentValue);
 
   }
 
@@ -40,15 +41,13 @@ export default class Gyr0scope extends Animation {
 
       let r = 1;
 
-      if (i % 2 === 0) {
+			this.scene.children[i].scale.set(1, r * Math.cos(t / 2), i + 1);
 
-        this.scene.children[i].scale.set(1, r * Math.cos(t / 2), 2);
-        this.scene.children[i].rotation.z -= 0.01 * Math.cos(t);
+      if (i % 2 === 0) {
+        this.scene.children[i].rotation.z -= 1e-2 * this.rate * i * Math.cos(i * t);
 
       } else {
-
-        this.scene.children[i].scale.set(1, r * Math.sin(t / 2), 1);
-        this.scene.children[i].rotation.z += 0.01 * Math.sin(t);
+        this.scene.children[i].rotation.z += 1e-2 * this.rate * i * Math.sin(i * t);
 
       }
 
