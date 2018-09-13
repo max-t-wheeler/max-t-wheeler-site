@@ -47,7 +47,7 @@ export default class Temp extends Animation {
 			this.scene.add(flower.petalGroup);
 			this.scene.add(flower.pistol);
 
-			this.scene.position.set(0, 0, -2);
+			this.scene.position.set(0, 0, 1 - this.numFlowers);
 
 		}
 
