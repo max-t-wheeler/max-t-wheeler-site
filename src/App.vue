@@ -41,8 +41,8 @@ export default {
       },
       contents: [
         {
-          name: 'OpenGL2WebGL',
-          address: '#opengl2webgl',
+          name: 'WebGL Projects',
+          address: '#webgl-projects',
           display: false
         },
         {

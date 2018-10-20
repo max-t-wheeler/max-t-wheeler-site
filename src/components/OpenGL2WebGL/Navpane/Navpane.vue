@@ -167,7 +167,7 @@ export default {
           category: 'art',
           controllable: false,
           dynamic: true,
-          hidden: false,
+          hidden: true,
           name: 'chrysanthemum',
           parameters: {
             numNodes: {
@@ -199,7 +199,7 @@ export default {
           category: 'art',
           controllable: true,
           dynamic: true,
-          hidden: false,
+          hidden: true,
           name: 'chrysanthemum2',
           parameters: {
             numNodes: {
@@ -226,7 +226,7 @@ export default {
           category: 'art',
           controllable: false,
           dynamic: true,
-          hidden: false,
+          hidden: true,
           name: 'chrysanthemum3',
           parameters: {
             numNodes: {
@@ -248,7 +248,7 @@ export default {
           category: 'art',
           controllable: false,
           dynamic: true,
-          hidden: false,
+          hidden: true,
           name: 'chrysanthemum4',
           parameters: {
             numNodes: {
@@ -280,7 +280,7 @@ export default {
           category: 'art',
           controllable: false,
           dynamic: true,
-          hidden: false,
+          hidden: true,
           name: 'chrysanthemum5',
           parameters: {
             numNodes: {
@@ -308,7 +308,7 @@ export default {
         },
         {
           active: false,
-          address: '/opengl_webgl_conversion#art_chrysanthemum6',
+          address: '/opengl_webgl_conversion#art_chrysanthemum',
           category: 'art',
           controllable: false,
           dynamic: true,
@@ -336,7 +336,7 @@ export default {
               currentValue: 2
             }
           },
-          text: 'chrysanthemum 6'
+          text: 'chrysanthemum'
         },
         {
           active: false,
@@ -344,7 +344,7 @@ export default {
           category: 'art',
           controllable: true,
           dynamic: true,
-          hidden: false,
+          hidden: true,
           name: 'chrysanthemum7',
           parameters: {
             numNodes: {
