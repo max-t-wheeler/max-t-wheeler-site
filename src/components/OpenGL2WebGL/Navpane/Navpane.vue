@@ -1849,16 +1849,12 @@ export default {
 }
 
 .opengl2webgl-navpane-text {
-  color: blue;
+  color: purple;
   text-decoration: underline;
   font-family: "Arial";
   cursor: pointer;
   position: relative;
   margin: 0;
-}
-
-.active {
-  color: purple;
 }
 
 </style>
