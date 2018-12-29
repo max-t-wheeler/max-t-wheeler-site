@@ -69,6 +69,9 @@ export default {
   position: absolute;
   margin-top: 10px;
 }
+::-webkit-scrollbar {
+  background: transparent;
+}
 
 #opengl2webgl-navpane-menu.tablet, #opengl2webgl-navpane-menu.phone {
   height: 80%;
