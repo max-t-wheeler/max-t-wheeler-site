@@ -89,14 +89,14 @@ export default {
               defaultValue: 10,
               currentValue: 10,
               maxValue: 1000,
-              minValue: 0
+              minValue: 1
             },
             numFaces: {
               label: 'Number of Faces',
               defaultValue: 4,
               currentValue: 4,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 500,
+              minValue: 3
             }
           },
           text: 'blanket'
@@ -114,15 +114,15 @@ export default {
               label: 'Number of Polygons',
               defaultValue: 10,
               currentValue: 10,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 100,
+              minValue: 1
             },
             radius: {
               label: 'Radius',
               defaultValue: 3,
               currentValue: 3,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 6,
+              minValue: 1
             }
           },
           text: 'bounce ripple'
@@ -140,43 +140,43 @@ export default {
               label: 'Number of Centers',
               defaultValue: 4,
               currentValue: 4,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 32,
+              minValue: 2
             },
             numNodes: {
               label: 'Number of Nodes',
               defaultValue: 32,
               currentValue: 32,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 32,
+              minValue: 2
             },
             numPolygons: {
               label: 'Number of Polygons',
               defaultValue: 30,
               currentValue: 30,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 32,
+              minValue: 1
             },
             numLayers: {
               label: 'Number of Layers',
               defaultValue: 2,
               currentValue: 2,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 8,
+              minValue: 1
             },
             polygonRadius: {
               label: 'Polygon Radius',
               defaultValue: 1,
               currentValue: 1,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 10,
+              minValue: 1
             },
             globalRadius: {
               label: 'Global Radius',
               defaultValue: 2,
               currentValue: 2,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 8,
+              minValue: 1
             }
           },
           text: 'chrysanthedad'
@@ -192,31 +192,31 @@ export default {
           parameters: {
             numNodes: {
               label: 'Number of Nodes',
-              defaultValue: 4,
-              currentValue: 4,
-              maxValue: 1000,
-              minValue: 0
+              defaultValue: 8,
+              currentValue: 8,
+              maxValue: 120,
+              minValue: 4
             },
             numPolygons: {
               label: 'Number of Polygons',
-              defaultValue: 12,
-              currentValue: 12,
-              maxValue: 1000,
-              minValue: 0
+              defaultValue: 16,
+              currentValue: 16,
+              maxValue: 120,
+              minValue: 12
             },
             polygonRadius: {
               label: 'Polygon Radius',
               defaultValue: 1,
               currentValue: 1,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 6,
+              minValue: 1
             },
             globalRadius: {
               label: 'Global Radius',
               defaultValue: 2,
               currentValue: 2,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 6,
+              minValue: 1
             }
           },
           text: 'chrysanthemum'
@@ -373,29 +373,29 @@ export default {
               label: 'Number of Nodes',
               defaultValue: 8,
               currentValue: 8,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 120,
+              minValue: 4
             },
             numPolygons: {
               label: 'Number of Polygons',
               defaultValue: 16,
               currentValue: 16,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 120,
+              minValue: 12
             },
             polygonRadius: {
               label: 'Polygon Radius',
               defaultValue: 2,
               currentValue: 2,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 6,
+              minValue: 1
             },
             globalRadius: {
               label: 'Global Radius',
               defaultValue: 2,
               currentValue: 2,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 6,
+              minValue: 1
             }
           },
           text: 'chrysanthemum'
@@ -587,8 +587,8 @@ export default {
               label: 'Number of Circles',
               defaultValue: 20,
               currentValue: 20,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 100,
+              minValue: 2
             }
           },
           text: 'collide0scope'
@@ -606,15 +606,15 @@ export default {
               label: 'Number of Polygons',
               defaultValue: 10,
               currentValue: 10,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 100,
+              minValue: 3
             },
             numFaces: {
               label: 'Number of Faces',
               defaultValue: 4,
               currentValue: 4,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 48,
+              minValue: 3
             }
           },
           text: 'concentric polygons'
@@ -632,15 +632,15 @@ export default {
               label: 'Number of Polygons',
               defaultValue: 20,
               currentValue: 20,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 100,
+              minValue: 1
             },
             radius: {
               label: 'Radius',
               defaultValue: 5,
               currentValue: 5,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 20,
+              minValue: 1
             }
           },
           text: 'concentric polygons 2'
