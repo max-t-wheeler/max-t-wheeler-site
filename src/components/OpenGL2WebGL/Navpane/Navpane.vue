@@ -22,7 +22,7 @@
               v-if="item.parameters.length !== 0 && item.active"
               :animation="item"
               :screenType="screenType"
-              v-bind="{activate, resetAnimation, toFullScreen}"
+              v-bind="{activate, resetAnimation, toFullScreen, resetInput}"
               />
           </li>
         </ul>
@@ -87,12 +87,16 @@ export default {
             numPolygons: {
               label: 'Number of Polygons',
               defaultValue: 10,
-              currentValue: 10
+              currentValue: 10,
+              maxValue: 1000,
+              minValue: 0
             },
             numFaces: {
               label: 'Number of Faces',
               defaultValue: 4,
-              currentValue: 4
+              currentValue: 4,
+              maxValue: 1000,
+              minValue: 0
             }
           },
           text: 'blanket'
@@ -109,12 +113,16 @@ export default {
             numPolygons: {
               label: 'Number of Polygons',
               defaultValue: 10,
-              currentValue: 10
+              currentValue: 10,
+              maxValue: 1000,
+              minValue: 0
             },
             radius: {
               label: 'Radius',
               defaultValue: 3,
-              currentValue: 3
+              currentValue: 3,
+              maxValue: 1000,
+              minValue: 0
             }
           },
           text: 'bounce ripple'
@@ -131,32 +139,44 @@ export default {
             numCenters: {
               label: 'Number of Centers',
               defaultValue: 4,
-              currentValue: 4
+              currentValue: 4,
+              maxValue: 1000,
+              minValue: 0
             },
             numNodes: {
               label: 'Number of Nodes',
               defaultValue: 32,
-              currentValue: 32
+              currentValue: 32,
+              maxValue: 1000,
+              minValue: 0
             },
             numPolygons: {
               label: 'Number of Polygons',
               defaultValue: 30,
-              currentValue: 30
+              currentValue: 30,
+              maxValue: 1000,
+              minValue: 0
             },
             numLayers: {
               label: 'Number of Layers',
               defaultValue: 2,
-              currentValue: 2
+              currentValue: 2,
+              maxValue: 1000,
+              minValue: 0
             },
             polygonRadius: {
               label: 'Polygon Radius',
               defaultValue: 1,
-              currentValue: 1
+              currentValue: 1,
+              maxValue: 1000,
+              minValue: 0
             },
             globalRadius: {
               label: 'Global Radius',
               defaultValue: 2,
-              currentValue: 2
+              currentValue: 2,
+              maxValue: 1000,
+              minValue: 0
             }
           },
           text: 'chrysanthedad'
@@ -173,22 +193,30 @@ export default {
             numNodes: {
               label: 'Number of Nodes',
               defaultValue: 4,
-              currentValue: 4
+              currentValue: 4,
+              maxValue: 1000,
+              minValue: 0
             },
             numPolygons: {
               label: 'Number of Polygons',
               defaultValue: 12,
-              currentValue: 12
+              currentValue: 12,
+              maxValue: 1000,
+              minValue: 0
             },
             polygonRadius: {
               label: 'Polygon Radius',
               defaultValue: 1,
-              currentValue: 1
+              currentValue: 1,
+              maxValue: 1000,
+              minValue: 0
             },
             globalRadius: {
               label: 'Global Radius',
               defaultValue: 2,
-              currentValue: 2
+              currentValue: 2,
+              maxValue: 1000,
+              minValue: 0
             }
           },
           text: 'chrysanthemum'
@@ -205,17 +233,23 @@ export default {
             numNodes: {
               label: 'Number of Nodes',
               defaultValue: 12,
-              currentValue: 12
+              currentValue: 12,
+              maxValue: 1000,
+              minValue: 0
             },
             polygonRadius: {
               label: 'Polygon Radius',
               defaultValue: 2,
-              currentValue: 2
+              currentValue: 2,
+              maxValue: 1000,
+              minValue: 0
             },
             globalRadius: {
               label: 'Global Radius',
               defaultValue: 2,
-              currentValue: 2
+              currentValue: 2,
+              maxValue: 1000,
+              minValue: 0
             }
           },
           text: 'chrysanthemum 2'
@@ -232,12 +266,16 @@ export default {
             numNodes: {
               label: 'Number of Nodes',
               defaultValue: 12,
-              currentValue: 12
+              currentValue: 12,
+              maxValue: 1000,
+              minValue: 0
             },
             numPolygons: {
               label: 'Number of Polygons',
               defaultValue: 12,
-              currentValue: 12
+              currentValue: 12,
+              maxValue: 1000,
+              minValue: 0
             }
           },
           text: 'chrysanthemum 3'
@@ -254,22 +292,30 @@ export default {
             numNodes: {
               label: 'Number of Nodes',
               defaultValue: 12,
-              currentValue: 12
+              currentValue: 12,
+              maxValue: 1000,
+              minValue: 0
             },
             numPolygons: {
               label: 'Number of Polygons',
               defaultValue: 10,
-              currentValue: 10
+              currentValue: 10,
+              maxValue: 1000,
+              minValue: 0
             },
             polygonRadius: {
               label: 'Polygon Radius',
               defaultValue: 2,
-              currentValue: 2
+              currentValue: 2,
+              maxValue: 1000,
+              minValue: 0
             },
             globalRadius: {
               label: 'Global Radius',
               defaultValue: 2,
-              currentValue: 2
+              currentValue: 2,
+              maxValue: 1000,
+              minValue: 0
             }
           },
           text: 'chrysanthemum 4'
@@ -286,22 +332,30 @@ export default {
             numNodes: {
               label: 'Number of Nodes',
               defaultValue: 6,
-              currentValue: 6
+              currentValue: 6,
+              maxValue: 1000,
+              minValue: 0
             },
             numPolygons: {
               label: 'Number of Polygons',
               defaultValue: 6,
-              currentValue: 6
+              currentValue: 6,
+              maxValue: 1000,
+              minValue: 0
             },
             polygonRadius: {
               label: 'Polygon Radius',
               defaultValue: 2,
-              currentValue: 2
+              currentValue: 2,
+              maxValue: 1000,
+              minValue: 0
             },
             globalRadius: {
               label: 'Global Radius',
               defaultValue: 1,
-              currentValue: 1
+              currentValue: 1,
+              maxValue: 1000,
+              minValue: 0
             }
           },
           text: 'chrysanthemum 5'
@@ -318,22 +372,30 @@ export default {
             numNodes: {
               label: 'Number of Nodes',
               defaultValue: 8,
-              currentValue: 8
+              currentValue: 8,
+              maxValue: 1000,
+              minValue: 0
             },
             numPolygons: {
               label: 'Number of Polygons',
               defaultValue: 16,
-              currentValue: 16
+              currentValue: 16,
+              maxValue: 1000,
+              minValue: 0
             },
             polygonRadius: {
               label: 'Polygon Radius',
               defaultValue: 2,
-              currentValue: 2
+              currentValue: 2,
+              maxValue: 1000,
+              minValue: 0
             },
             globalRadius: {
               label: 'Global Radius',
               defaultValue: 2,
-              currentValue: 2
+              currentValue: 2,
+              maxValue: 1000,
+              minValue: 0
             }
           },
           text: 'chrysanthemum'
@@ -350,22 +412,30 @@ export default {
             numNodes: {
               label: 'Number of Nodes',
               defaultValue: 8,
-              currentValue: 8
+              currentValue: 8,
+              maxValue: 1000,
+              minValue: 0
             },
             numPolygons: {
               label: 'Number of Polygons',
               defaultValue: 8,
-              currentValue: 8
+              currentValue: 8,
+              maxValue: 1000,
+              minValue: 0
             },
             polygonRadius: {
               label: 'Polygon Radius',
               defaultValue: 2,
-              currentValue: 2
+              currentValue: 2,
+              maxValue: 1000,
+              minValue: 0
             },
             globalRadius: {
               label: 'Global Radius',
               defaultValue: 1,
-              currentValue: 1
+              currentValue: 1,
+              maxValue: 1000,
+              minValue: 0
             }
           },
           text: 'chrysanthemum 7'
@@ -382,32 +452,44 @@ export default {
             numCenters: {
               label: 'Number of Centers',
               defaultValue: 6,
-              currentValue: 6
+              currentValue: 6,
+              maxValue: 1000,
+              minValue: 0
             },
             numNodes: {
               label: 'Number of Nodes',
               defaultValue: 6,
-              currentValue: 6
+              currentValue: 6,
+              maxValue: 1000,
+              minValue: 0
             },
             numPolygons: {
               label: 'Number of Polygons',
               defaultValue: 30,
-              currentValue: 30
+              currentValue: 30,
+              maxValue: 1000,
+              minValue: 0
             },
             numLayers: {
               label: 'Number of Layers',
               defaultValue: 3,
-              currentValue: 3
+              currentValue: 3,
+              maxValue: 1000,
+              minValue: 0
             },
             polygonRadius: {
               label: 'Polygon Radius',
               defaultValue: 3,
-              currentValue: 3
+              currentValue: 3,
+              maxValue: 1000,
+              minValue: 0
             },
             globalRadius: {
               label: 'Global Radius',
               defaultValue: 2,
-              currentValue: 2
+              currentValue: 2,
+              maxValue: 1000,
+              minValue: 0
             }
           },
           text: 'chrysanthemum8'
@@ -424,32 +506,44 @@ export default {
             numCenters: {
               label: 'Number of Centers',
               defaultValue: 6,
-              currentValue: 6
+              currentValue: 6,
+              maxValue: 1000,
+              minValue: 0
             },
             numNodes: {
               label: 'Number of Nodes',
               defaultValue: 32,
-              currentValue: 32
+              currentValue: 32,
+              maxValue: 1000,
+              minValue: 0
             },
             numPolygons: {
               label: 'Number of Polygons',
               defaultValue: 30,
-              currentValue: 30
+              currentValue: 30,
+              maxValue: 1000,
+              minValue: 0
             },
             numLayers: {
               label: 'Number of Layers',
               defaultValue: 6,
-              currentValue: 6
+              currentValue: 6,
+              maxValue: 1000,
+              minValue: 0
             },
             polygonRadius: {
               label: 'Polygon Radius',
               defaultValue: 2,
-              currentValue: 2
+              currentValue: 2,
+              maxValue: 1000,
+              minValue: 0
             },
             globalRadius: {
               label: 'Global Radius',
               defaultValue: 2,
-              currentValue: 2
+              currentValue: 2,
+              maxValue: 1000,
+              minValue: 0
             }
           },
           text: 'chrysanthemum 9'
@@ -466,12 +560,16 @@ export default {
             numRidges: {
               label: 'Number of Ridges',
               defaultValue: 200,
-              currentValue: 200
+              currentValue: 200,
+              maxValue: 1000,
+              minValue: 0
             },
             radius: {
               label: 'Radius',
               defaultValue: 1,
-              currentValue: 1
+              currentValue: 1,
+              maxValue: 1000,
+              minValue: 0
             }
           },
           text: 'clam'
@@ -488,7 +586,9 @@ export default {
             numCircles: {
               label: 'Number of Circles',
               defaultValue: 20,
-              currentValue: 20
+              currentValue: 20,
+              maxValue: 1000,
+              minValue: 0
             }
           },
           text: 'collide0scope'
@@ -505,12 +605,16 @@ export default {
             numPolygons: {
               label: 'Number of Polygons',
               defaultValue: 10,
-              currentValue: 10
+              currentValue: 10,
+              maxValue: 1000,
+              minValue: 0
             },
             numFaces: {
               label: 'Number of Faces',
               defaultValue: 4,
-              currentValue: 4
+              currentValue: 4,
+              maxValue: 1000,
+              minValue: 0
             }
           },
           text: 'concentric polygons'
@@ -527,12 +631,16 @@ export default {
             numPolygons: {
               label: 'Number of Polygons',
               defaultValue: 20,
-              currentValue: 20
+              currentValue: 20,
+              maxValue: 1000,
+              minValue: 0
             },
             radius: {
               label: 'Radius',
               defaultValue: 5,
-              currentValue: 5
+              currentValue: 5,
+              maxValue: 1000,
+              minValue: 0
             }
           },
           text: 'concentric polygons 2'
@@ -551,32 +659,44 @@ export default {
             numSteps: {
               label: 'Number of Steps',
               defaultValue: 12,
-              currentValue: 12
+              currentValue: 12,
+              maxValue: 1000,
+              minValue: 0
             },
             numLayers: {
               label: 'Number of Layers',
               defaultValue: 20,
-              currentValue: 20
+              currentValue: 20,
+              maxValue: 1000,
+              minValue: 0
             },
             numNodes: {
               label: 'Number of Nodes',
               defaultValue: 6,
-              currentValue: 6
+              currentValue: 6,
+              maxValue: 1000,
+              minValue: 0
             },
             numLanes: {
               label: 'Number of Lanes',
               defaultValue: 6,
-              currentValue: 6
+              currentValue: 6,
+              maxValue: 1000,
+              minValue: 0
             },
             polygonRadius: {
               label: 'Polygon Radius',
               defaultValue: 1,
-              currentValue: 1
+              currentValue: 1,
+              maxValue: 1000,
+              minValue: 0
             },
             globalRadius: {
               label: 'Global Radius',
               defaultValue: 1,
-              currentValue: 1
+              currentValue: 1,
+              maxValue: 1000,
+              minValue: 0
             }
           },
           text: 'fauxlidoscope'
@@ -593,22 +713,30 @@ export default {
             numFlowers: {
               label: 'Number of Flowers',
               defaultValue: 3,
-              currentValue: 3
+              currentValue: 3,
+              maxValue: 1000,
+              minValue: 0
             },
             numPetals: {
               label: 'Number of Petals',
               defaultValue: 8,
-              currentValue: 8
+              currentValue: 8,
+              maxValue: 1000,
+              minValue: 0
             },
             numNodes: {
               label: 'Number of Nodes',
               defaultValue: 8,
-              currentValue: 8
+              currentValue: 8,
+              maxValue: 1000,
+              minValue: 0
             },
             petalRadius: {
               label: 'Petal Radius',
               defaultValue: 1,
-              currentValue: 1
+              currentValue: 1,
+              maxValue: 1000,
+              minValue: 0
             }
           },
           text: 'flowers'
@@ -625,12 +753,16 @@ export default {
             numCircles: {
               label: 'Number of Circles',
               defaultValue: 3,
-              currentValue: 3
+              currentValue: 3,
+              maxValue: 1000,
+              minValue: 0
             },
             rate: {
               label: 'Rate',
               defaultValue: 1,
-              currentValue: 1
+              currentValue: 1,
+              maxValue: 1000,
+              minValue: 0
             }
           },
           text: 'gyr0scope'
@@ -647,12 +779,16 @@ export default {
             numRidges: {
               label: 'Number of Ridges',
               defaultValue: 200,
-              currentValue: 200
+              currentValue: 200,
+              maxValue: 1000,
+              minValue: 0
             },
             radius: {
               label: 'Radius',
               defaultValue: 1,
-              currentValue: 1
+              currentValue: 1,
+              maxValue: 1000,
+              minValue: 0
             }
           },
           text: 'pearl'
@@ -669,12 +805,16 @@ export default {
             numPolygons: {
               label: 'Number of Polygons',
               defaultValue: 10,
-              currentValue: 10
+              currentValue: 10,
+              maxValue: 1000,
+              minValue: 0
             },
             numFaces: {
               label: 'Number of Faces',
               defaultValue: 4,
-              currentValue: 4
+              currentValue: 4,
+              maxValue: 1000,
+              minValue: 0
             }
           },
           text: 'pinwheel'
@@ -691,37 +831,51 @@ export default {
             numLayers: {
               label: 'Number of Layers',
               defaultValue: 1,
-              currentValue: 1
+              currentValue: 1,
+              maxValue: 1000,
+              minValue: 0
             },
             numLanes: {
               label: 'Number of Lanes',
               defaultValue: 12,
-              currentValue: 12
+              currentValue: 12,
+              maxValue: 1000,
+              minValue: 0
             },
             numPolygons: {
               label: 'Number of Polygons',
               defaultValue: 12,
-              currentValue: 12
+              currentValue: 12,
+              maxValue: 1000,
+              minValue: 0
             },
             numNodes: {
               label: 'Number of Nodes',
               defaultValue: 6,
-              currentValue: 6
+              currentValue: 6,
+              maxValue: 1000,
+              minValue: 0
             },
             polygonRadius: {
               label: 'Polygon Radius',
               defaultValue: 1,
-              currentValue: 1
+              currentValue: 1,
+              maxValue: 1000,
+              minValue: 0
             },
             globalRadius: {
               label: 'Global Radius',
               defaultValue: 2,
-              currentValue: 2
+              currentValue: 2,
+              maxValue: 1000,
+              minValue: 0
             },
             rate: {
               label: 'Rate',
               defaultValue: 10,
-              currentValue: 10
+              currentValue: 10,
+              maxValue: 1000,
+              minValue: 0
             }
           },
           text: 'snowflake'
@@ -738,12 +892,16 @@ export default {
             numPolygons: {
               label: 'Number of Polygons',
               defaultValue: 200,
-              currentValue: 200
+              currentValue: 200,
+              maxValue: 1000,
+              minValue: 0
             },
             radius: {
               label: 'Radius',
               defaultValue: 3,
-              currentValue: 3
+              currentValue: 3,
+              maxValue: 1000,
+              minValue: 0
             }
           },
           text: 'slosh ripple'
@@ -760,22 +918,30 @@ export default {
             numStars: {
               label: 'Number of Stars',
               defaultValue: 42,
-              currentValue: 42
+              currentValue: 42,
+              maxValue: 1000,
+              minValue: 0
             },
             numStems: {
               label: 'Number of Stems',
               defaultValue: 12,
-              currentValue: 12
+              currentValue: 12,
+              maxValue: 1000,
+              minValue: 0
             },
             numSplits: {
               label: 'Number of Splits',
               defaultValue: 8,
-              currentValue: 8
+              currentValue: 8,
+              maxValue: 1000,
+              minValue: 0
             },
             radius: {
               label: 'Radius',
               defaultValue: 42,
-              currentValue: 42
+              currentValue: 42,
+              maxValue: 1000,
+              minValue: 0
             }
           },
           text: 'starry night'
@@ -792,22 +958,30 @@ export default {
             numNodes: {
               label: 'Number of Nodes',
               defaultValue: 40,
-              currentValue: 40
+              currentValue: 40,
+              maxValue: 1000,
+              minValue: 0
             },
             numPolygons: {
               label: 'Number of Polygons',
               defaultValue: 10,
-              currentValue: 10
+              currentValue: 10,
+              maxValue: 1000,
+              minValue: 0
             },
             polygonRadius: {
               label: 'Polygon Radius',
               defaultValue: 1,
-              currentValue: 1
+              currentValue: 1,
+              maxValue: 1000,
+              minValue: 0
             },
             globalRadius: {
               label: 'Global Radius',
               defaultValue: 0.2,
-              currentValue: 0.2
+              currentValue: 0.2,
+              maxValue: 1000,
+              minValue: 0
             }
           },
           text: 'wriggling donut'
@@ -824,27 +998,37 @@ export default {
             numNodes: {
               label: 'Number of Nodes',
               defaultValue: 8,
-              currentValue: 8
+              currentValue: 8,
+              maxValue: 1000,
+              minValue: 0
             },
             numPolygons: {
               label: 'Number of Polygons',
               defaultValue: 6,
-              currentValue: 6
+              currentValue: 6,
+              maxValue: 1000,
+              minValue: 0
             },
             numLayers: {
               label: 'Number of Layers',
               defaultValue: 8,
-              currentValue: 8
+              currentValue: 8,
+              maxValue: 1000,
+              minValue: 0
             },
             polygonRadius: {
               label: 'Polygon Radius',
               defaultValue: 3,
-              currentValue: 3
+              currentValue: 3,
+              maxValue: 1000,
+              minValue: 0
             },
             globalRadius: {
               label: 'Global Radius',
               defaultValue: 2,
-              currentValue: 2
+              currentValue: 2,
+              maxValue: 1000,
+              minValue: 0
             }
           },
           text: 'mosaic'
@@ -861,27 +1045,37 @@ export default {
             numLayers: {
               label: 'Number of Layers',
               defaultValue: 40,
-              currentValue: 40
+              currentValue: 40,
+              maxValue: 1000,
+              minValue: 0
             },
             numNodes: {
               label: 'Number of Nodes',
               defaultValue: 40,
-              currentValue: 40
+              currentValue: 40,
+              maxValue: 1000,
+              minValue: 0
             },
             numLanes: {
               label: 'Number of Lanes',
               defaultValue: 24,
-              currentValue: 24
+              currentValue: 24,
+              maxValue: 1000,
+              minValue: 0
             },
             polygonRadius: {
               label: 'Polygon Radius',
               defaultValue: 1,
-              currentValue: 1
+              currentValue: 1,
+              maxValue: 1000,
+              minValue: 0
             },
             globalRadius: {
               label: 'Global Radius',
               defaultValue: 0.5,
-              currentValue: 0.5
+              currentValue: 0.5,
+              maxValue: 1000,
+              minValue: 0
             }
           },
           text: 'mosaic2'
@@ -898,22 +1092,30 @@ export default {
             numLayers: {
               label: 'Number of Layers',
               defaultValue: 12,
-              currentValue: 12
+              currentValue: 12,
+              maxValue: 1000,
+              minValue: 0
             },
             numCircles: {
               label: 'Number of Circles',
               defaultValue: 12,
-              currentValue: 12
+              currentValue: 12,
+              maxValue: 1000,
+              minValue: 0
             },
             circleRadius: {
               label: 'Circle Radius',
               defaultValue: 1,
-              currentValue: 1
+              currentValue: 1,
+              maxValue: 1000,
+              minValue: 0
             },
             globalRadius: {
               label: 'Global Radius',
               defaultValue: 1,
-              currentValue: 1
+              currentValue: 1,
+              maxValue: 1000,
+              minValue: 0
             }
           },
           text: 'sacred circles'
@@ -930,17 +1132,23 @@ export default {
             numVertices: {
               label: 'Number of Vertices',
               defaultValue: 10,
-              currentValue: 10
+              currentValue: 10,
+              maxValue: 1000,
+              minValue: 0
             },
             radius: {
               label: 'Radius',
               defaultValue: 1,
-              currentValue: 1
+              currentValue: 1,
+              maxValue: 1000,
+              minValue: 0
             },
             offset: {
               label: 'Offset',
               defaultValue: 2,
-              currentValue: 2
+              currentValue: 2,
+              maxValue: 1000,
+              minValue: 0
             }
           },
           text: 'star'
@@ -957,27 +1165,37 @@ export default {
             numNodes: {
               label: 'Number of Nodes',
               defaultValue: 24,
-              currentValue: 24
+              currentValue: 24,
+              maxValue: 1000,
+              minValue: 0
             },
             nodeRadius: {
               label: 'Node Radius',
               defaultValue: 1,
-              currentValue: 1
+              currentValue: 1,
+              maxValue: 1000,
+              minValue: 0
             },
             globalRadius: {
               label: 'Global Radius',
               defaultValue: 2,
-              currentValue: 2
+              currentValue: 2,
+              maxValue: 1000,
+              minValue: 0
             },
             rate: {
               label: 'Rate',
               defaultValue: 4,
-              currentValue: 4
+              currentValue: 4,
+              maxValue: 1000,
+              minValue: 0
             },
             divisor: {
               label: 'Divisor',
               defaultValue: 1,
-              currentValue: 1
+              currentValue: 1,
+              maxValue: 1000,
+              minValue: 0
             }
           },
           text: 'unoriginal'
@@ -994,27 +1212,37 @@ export default {
             amplitude: {
               label: 'Amplitude',
               defaultValue: 0.5,
-              currentValue: 0.5
+              currentValue: 0.5,
+              maxValue: 1000,
+              minValue: 0
             },
             frequency: {
               label: 'Frequency',
               defaultValue: 10,
-              currentValue: 10
+              currentValue: 10,
+              maxValue: 1000,
+              minValue: 0
             },
             phase: {
               label: 'Phase',
               defaultValue: 0,
-              currentValue: 0
+              currentValue: 0,
+              maxValue: 1000,
+              minValue: 0
             },
             displacement: {
               label: 'Displacement',
               defaultValue: 0,
-              currentValue: 0
+              currentValue: 0,
+              maxValue: 1000,
+              minValue: 0
             },
             numPoints: {
               label: 'Number of Points',
               defaultValue: 1500,
-              currentValue: 1500
+              currentValue: 1500,
+              maxValue: 1000,
+              minValue: 0
             }
           },
           text: 'sine wave'
@@ -1031,12 +1259,16 @@ export default {
             numSpokes: {
               label: 'Number of Spokes',
               defaultValue: 5,
-              currentValue: 5
+              currentValue: 5,
+              maxValue: 1000,
+              minValue: 0
             },
             radius: {
               label: 'Radius',
               defaultValue: 1,
-              currentValue: 1
+              currentValue: 1,
+              maxValue: 1000,
+              minValue: 0
             }
           },
           text: 'circle'
@@ -1064,17 +1296,23 @@ export default {
             radius: {
               label: 'Radius',
               defaultValue: 1,
-              currentValue: 1
+              currentValue: 1,
+              maxValue: 1000,
+              minValue: 0
             },
             numVertices: {
               label: 'Number of Vertices',
               defaultValue: 6,
-              currentValue: 6
+              currentValue: 6,
+              maxValue: 1000,
+              minValue: 0
             },
             theta: {
               label: 'Theta',
               defaultValue: 0,
-              currentValue: 0
+              currentValue: 0,
+              maxValue: 1000,
+              minValue: 0
             }
           },
           text: 'polystarter'
@@ -1113,27 +1351,37 @@ export default {
             numPartitions: {
               label: 'Number of Partitions',
               defaultValue: 10,
-              currentValue: 10
+              currentValue: 10,
+              maxValue: 1000,
+              minValue: 0
             },
             numVertices: {
               label: 'Number of Vertices',
               defaultValue: 1000,
-              currentValue: 1000
+              currentValue: 1000,
+              maxValue: 1000,
+              minValue: 0
             },
             graphRadius: {
               label: 'Graph Radius',
               defaultValue: 10,
-              currentValue: 10
+              currentValue: 10,
+              maxValue: 1000,
+              minValue: 0
             },
             vertexRadius: {
               label: 'Vertex Radius',
               defaultValue: 10,
-              currentValue: 10
+              currentValue: 10,
+              maxValue: 1000,
+              minValue: 0
             },
             rate: {
               label: 'Rate',
               defaultValue: 2,
-              currentValue: 2
+              currentValue: 2,
+              maxValue: 1000,
+              minValue: 0
             }
           },
           text: 'amparo'
@@ -1150,27 +1398,37 @@ export default {
             numPartitions: {
               label: 'Number of Partitions',
               defaultValue: 6,
-              currentValue: 6
+              currentValue: 6,
+              maxValue: 1000,
+              minValue: 0
             },
             numVertices: {
               label: 'Number of Vertices',
               defaultValue: 500,
-              currentValue: 500
+              currentValue: 500,
+              maxValue: 1000,
+              minValue: 0
             },
             graphRadius: {
               label: 'Graph Radius',
               defaultValue: 2.25,
-              currentValue: 2.25
+              currentValue: 2.25,
+              maxValue: 1000,
+              minValue: 0
             },
             vertexRadius: {
               label: 'Vertex Radius',
               defaultValue: 5,
-              currentValue: 5
+              currentValue: 5,
+              maxValue: 1000,
+              minValue: 0
             },
             rate: {
               label: 'Rate',
               defaultValue: 2,
-              currentValue: 2
+              currentValue: 2,
+              maxValue: 1000,
+              minValue: 0
             }
           },
           text: 'andorinha'
@@ -1187,27 +1445,37 @@ export default {
             numPartitions: {
               label: 'Number of Partitions',
               defaultValue: 50,
-              currentValue: 50
+              currentValue: 50,
+              maxValue: 1000,
+              minValue: 0
             },
             numVertices: {
               label: 'Number of Vertices',
               defaultValue: 1000,
-              currentValue: 1000
+              currentValue: 1000,
+              maxValue: 1000,
+              minValue: 0
             },
             graphRadius: {
               label: 'Graph Radius',
               defaultValue: 5,
-              currentValue: 5
+              currentValue: 5,
+              maxValue: 1000,
+              minValue: 0
             },
             vertexRadius: {
               label: 'Vertex Radius',
               defaultValue: 20,
-              currentValue: 20
+              currentValue: 20,
+              maxValue: 1000,
+              minValue: 0
             },
             rate: {
               label: 'Rate',
               defaultValue: 5,
-              currentValue: 5
+              currentValue: 5,
+              maxValue: 1000,
+              minValue: 0
             }
           },
           text: 'antigua'
@@ -1224,27 +1492,37 @@ export default {
             numPartitions: {
               label: 'Number of Partitions',
               defaultValue: 40,
-              currentValue: 40
+              currentValue: 40,
+              maxValue: 1000,
+              minValue: 0
             },
             numVertices: {
               label: 'Number of Vertices',
               defaultValue: 1000,
-              currentValue: 1000
+              currentValue: 1000,
+              maxValue: 1000,
+              minValue: 0
             },
             graphRadius: {
               label: 'Graph Radius',
               defaultValue: 2,
-              currentValue: 2
+              currentValue: 2,
+              maxValue: 1000,
+              minValue: 0
             },
             vertexRadius: {
               label: 'Vertex Radius',
               defaultValue: 10,
-              currentValue: 10
+              currentValue: 10,
+              maxValue: 1000,
+              minValue: 0
             },
             rate: {
               label: 'Rate',
               defaultValue: 2,
-              currentValue: 2
+              currentValue: 2,
+              maxValue: 1000,
+              minValue: 0
             }
           },
           text: 'batidinha'
@@ -1261,27 +1539,37 @@ export default {
             numPartitions: {
               label: 'Number of Partitions',
               defaultValue: 8,
-              currentValue: 8
+              currentValue: 8,
+              maxValue: 1000,
+              minValue: 0
             },
             numVertices: {
               label: 'Number of Vertices',
               defaultValue: 1000,
-              currentValue: 1000
+              currentValue: 1000,
+              maxValue: 1000,
+              minValue: 0
             },
             graphRadius: {
               label: 'Graph Radius',
               defaultValue: 2,
-              currentValue: 2
+              currentValue: 2,
+              maxValue: 1000,
+              minValue: 0
             },
             vertexRadius: {
               label: 'Vertex Radius',
               defaultValue: 10,
-              currentValue: 10
+              currentValue: 10,
+              maxValue: 1000,
+              minValue: 0
             },
             rate: {
               label: 'Rate',
               defaultValue: 5,
-              currentValue: 5
+              currentValue: 5,
+              maxValue: 1000,
+              minValue: 0
             }
           },
           text: 'bicardi'
@@ -1298,27 +1586,37 @@ export default {
             numPartitions: {
               label: 'Number of Partitions',
               defaultValue: 6,
-              currentValue: 6
+              currentValue: 6,
+              maxValue: 1000,
+              minValue: 0
             },
             numVertices: {
               label: 'Number of Vertices',
               defaultValue: 1000,
-              currentValue: 1000
+              currentValue: 1000,
+              maxValue: 1000,
+              minValue: 0
             },
             graphRadius: {
               label: 'Graph Radius',
               defaultValue: 2,
-              currentValue: 2
+              currentValue: 2,
+              maxValue: 1000,
+              minValue: 0
             },
             vertexRadius: {
               label: 'Vertex Radius',
               defaultValue: 5,
-              currentValue: 5
+              currentValue: 5,
+              maxValue: 1000,
+              minValue: 0
             },
             rate: {
               label: 'Rate',
               defaultValue: 100,
-              currentValue: 100
+              currentValue: 100,
+              maxValue: 1000,
+              minValue: 0
             }
           },
           text: 'blouse'
@@ -1335,32 +1633,44 @@ export default {
             numPartitions: {
               label: 'Number of Partitions',
               defaultValue: 6,
-              currentValue: 6
+              currentValue: 6,
+              maxValue: 1000,
+              minValue: 0
             },
             numVertices: {
               label: 'Number of Vertices',
               defaultValue: 1000,
-              currentValue: 1000
+              currentValue: 1000,
+              maxValue: 1000,
+              minValue: 0
             },
             graphRadius: {
               label: 'Graph Radius',
               defaultValue: 2,
-              currentValue: 2
+              currentValue: 2,
+              maxValue: 1000,
+              minValue: 0
             },
             vertexRadius: {
               label: 'Vertex Radius',
               defaultValue: 5,
-              currentValue: 5
+              currentValue: 5,
+              maxValue: 1000,
+              minValue: 0
             },
             divisor: {
               label: 'Divisor',
               defaultValue: 20,
-              currentValue: 20
+              currentValue: 20,
+              maxValue: 1000,
+              minValue: 0
             },
             rate: {
               label: 'Rate',
               defaultValue: 1,
-              currentValue: 1
+              currentValue: 1,
+              maxValue: 1000,
+              minValue: 0
             }
           },
           text: 'brazil'
@@ -1377,27 +1687,37 @@ export default {
             numPartitions: {
               label: 'Number of Partitions',
               defaultValue: 5,
-              currentValue: 5
+              currentValue: 5,
+              maxValue: 1000,
+              minValue: 0
             },
             numVertices: {
               label: 'Number of Vertices',
               defaultValue: 200,
-              currentValue: 200
+              currentValue: 200,
+              maxValue: 1000,
+              minValue: 0
             },
             graphRadius: {
               label: 'Graph Radius',
               defaultValue: 2,
-              currentValue: 2
+              currentValue: 2,
+              maxValue: 1000,
+              minValue: 0
             },
             vertexRadius: {
               label: 'Vertex Radius',
               defaultValue: 5,
-              currentValue: 5
+              currentValue: 5,
+              maxValue: 1000,
+              minValue: 0
             },
             rate: {
               label: 'Rate',
               defaultValue: 1,
-              currentValue: 1
+              currentValue: 1,
+              maxValue: 1000,
+              minValue: 0
             }
           },
           text: 'choro'
@@ -1414,27 +1734,37 @@ export default {
             numPartitions: {
               label: 'Number of Partitions',
               defaultValue: 40,
-              currentValue: 40
+              currentValue: 40,
+              maxValue: 1000,
+              minValue: 0
             },
             numVertices: {
               label: 'Number of Vertices',
               defaultValue: 1000,
-              currentValue: 1000
+              currentValue: 1000,
+              maxValue: 1000,
+              minValue: 0
             },
             graphRadius: {
               label: 'Graph Radius',
               defaultValue: 2,
-              currentValue: 2
+              currentValue: 2,
+              maxValue: 1000,
+              minValue: 0
             },
             vertexRadius: {
               label: 'Vertex Radius',
               defaultValue: 10,
-              currentValue: 10
+              currentValue: 10,
+              maxValue: 1000,
+              minValue: 0
             },
             rate: {
               label: 'Rate',
               defaultValue: 2,
-              currentValue: 2
+              currentValue: 2,
+              maxValue: 1000,
+              minValue: 0
             }
           },
           text: 'dialogo'
@@ -1451,27 +1781,37 @@ export default {
             numPartitions: {
               label: 'Number of Partitions',
               defaultValue: 6,
-              currentValue: 6
+              currentValue: 6,
+              maxValue: 1000,
+              minValue: 0
             },
             numVertices: {
               label: 'Number of Vertices',
               defaultValue: 200,
-              currentValue: 200
+              currentValue: 200,
+              maxValue: 1000,
+              minValue: 0
             },
             graphRadius: {
               label: 'Graph Radius',
               defaultValue: 2,
-              currentValue: 2
+              currentValue: 2,
+              maxValue: 1000,
+              minValue: 0
             },
             vertexRadius: {
               label: 'Vertex Radius',
               defaultValue: 2,
-              currentValue: 2
+              currentValue: 2,
+              maxValue: 1000,
+              minValue: 0
             },
             rate: {
               label: 'Rate',
               defaultValue: 20,
-              currentValue: 20
+              currentValue: 20,
+              maxValue: 1000,
+              minValue: 0
             }
           },
           text: 'flower'
@@ -1488,27 +1828,37 @@ export default {
             numPartitions: {
               label: 'Number of Partitions',
               defaultValue: 6,
-              currentValue: 6
+              currentValue: 6,
+              maxValue: 1000,
+              minValue: 0
             },
             numVertices: {
               label: 'Number of Vertices',
               defaultValue: 1000,
-              currentValue: 1000
+              currentValue: 1000,
+              maxValue: 1000,
+              minValue: 0
             },
             graphRadius: {
               label: 'Graph Radius',
               defaultValue: 1,
-              currentValue: 1
+              currentValue: 1,
+              maxValue: 1000,
+              minValue: 0
             },
             vertexRadius: {
               label: 'Vertex Radius',
               defaultValue: 5,
-              currentValue: 5
+              currentValue: 5,
+              maxValue: 1000,
+              minValue: 0
             },
             rate: {
               label: 'Rate',
               defaultValue: 10,
-              currentValue: 10
+              currentValue: 10,
+              maxValue: 1000,
+              minValue: 0
             }
           },
           text: 'games'
@@ -1525,27 +1875,37 @@ export default {
             numPartitions: {
               label: 'Number of Partitions',
               defaultValue: 6,
-              currentValue: 6
+              currentValue: 6,
+              maxValue: 1000,
+              minValue: 0
             },
             numVertices: {
               label: 'Number of Vertices',
               defaultValue: 1000,
-              currentValue: 1000
+              currentValue: 1000,
+              maxValue: 1000,
+              minValue: 0
             },
             graphRadius: {
               label: 'Graph Radius',
               defaultValue: 2,
-              currentValue: 2
+              currentValue: 2,
+              maxValue: 1000,
+              minValue: 0
             },
             vertexRadius: {
               label: 'Vertex Radius',
               defaultValue: 5,
-              currentValue: 5
+              currentValue: 5,
+              maxValue: 1000,
+              minValue: 0
             },
             rate: {
               label: 'Rate',
               defaultValue: 100,
-              currentValue: 100
+              currentValue: 100,
+              maxValue: 1000,
+              minValue: 0
             }
           },
           text: 'lamento'
@@ -1562,32 +1922,44 @@ export default {
             numPartitions: {
               label: 'Number of Partitions',
               defaultValue: 6,
-              currentValue: 6
+              currentValue: 6,
+              maxValue: 1000,
+              minValue: 0
             },
             numVertices: {
               label: 'Number of Vertices',
               defaultValue: 1000,
-              currentValue: 1000
+              currentValue: 1000,
+              maxValue: 1000,
+              minValue: 0
             },
             graphRadius: {
               label: 'Graph Radius',
               defaultValue: 2,
-              currentValue: 2
+              currentValue: 2,
+              maxValue: 1000,
+              minValue: 0
             },
             vertexRadius: {
               label: 'Vertex Radius',
               defaultValue: 10,
-              currentValue: 10
+              currentValue: 10,
+              maxValue: 1000,
+              minValue: 0
             },
             dampening: {
               label: 'Dampening',
               defaultValue: 10,
-              currentValue: 10
+              currentValue: 10,
+              maxValue: 1000,
+              minValue: 0
             },
             rate: {
               label: 'Rate',
               defaultValue: 10,
-              currentValue: 10
+              currentValue: 10,
+              maxValue: 1000,
+              minValue: 0
             }
           },
           text: 'look'
@@ -1604,27 +1976,37 @@ export default {
             numPartitions: {
               label: 'Number of Partitions',
               defaultValue: 8,
-              currentValue: 8
+              currentValue: 8,
+              maxValue: 1000,
+              minValue: 0
             },
             numVertices: {
               label: 'Number of Vertices',
               defaultValue: 200,
-              currentValue: 200
+              currentValue: 200,
+              maxValue: 1000,
+              minValue: 0
             },
             graphRadius: {
               label: 'Graph Radius',
               defaultValue: 2,
-              currentValue: 2
+              currentValue: 2,
+              maxValue: 1000,
+              minValue: 0
             },
             vertexRadius: {
               label: 'Vertex Radius',
               defaultValue: 2,
-              currentValue: 2
+              currentValue: 2,
+              maxValue: 1000,
+              minValue: 0
             },
             rate: {
               label: 'Rate',
               defaultValue: 10,
-              currentValue: 10
+              currentValue: 10,
+              maxValue: 1000,
+              minValue: 0
             }
           },
           text: 'mojave'
@@ -1641,27 +2023,37 @@ export default {
             numPartitions: {
               label: 'Number of Partitions',
               defaultValue: 8,
-              currentValue: 8
+              currentValue: 8,
+              maxValue: 1000,
+              minValue: 0
             },
             numVertices: {
               label: 'Number of Vertices',
               defaultValue: 200,
-              currentValue: 200
+              currentValue: 200,
+              maxValue: 1000,
+              minValue: 0
             },
             graphRadius: {
               label: 'Graph Radius',
               defaultValue: 1,
-              currentValue: 1
+              currentValue: 1,
+              maxValue: 1000,
+              minValue: 0
             },
             vertexRadius: {
               label: 'Vertex Radius',
               defaultValue: 2,
-              currentValue: 2
+              currentValue: 2,
+              maxValue: 1000,
+              minValue: 0
             },
             rate: {
               label: 'Rate',
               defaultValue: 10,
-              currentValue: 10
+              currentValue: 10,
+              maxValue: 1000,
+              minValue: 0
             }
           },
           text: 'sabia'
@@ -1678,27 +2070,37 @@ export default {
             numPartitions: {
               label: 'Number of Partitions',
               defaultValue: 8,
-              currentValue: 8
+              currentValue: 8,
+              maxValue: 1000,
+              minValue: 0
             },
             numVertices: {
               label: 'Number of Vertices',
               defaultValue: 200,
-              currentValue: 200
+              currentValue: 200,
+              maxValue: 1000,
+              minValue: 0
             },
             graphRadius: {
               label: 'Graph Radius',
               defaultValue: 2,
-              currentValue: 2
+              currentValue: 2,
+              maxValue: 1000,
+              minValue: 0
             },
             vertexRadius: {
               label: 'Vertex Radius',
               defaultValue: 2,
-              currentValue: 2
+              currentValue: 2,
+              maxValue: 1000,
+              minValue: 0
             },
             rate: {
               label: 'Rate',
               defaultValue: 1,
-              currentValue: 1
+              currentValue: 1,
+              maxValue: 1000,
+              minValue: 0
             }
           },
           text: 'tereza'
@@ -1715,32 +2117,44 @@ export default {
             numPartitions: {
               label: 'Number of Partitions',
               defaultValue: 100,
-              currentValue: 100
+              currentValue: 100,
+              maxValue: 1000,
+              minValue: 0
             },
             numVertices: {
               label: 'Number of Vertices',
               defaultValue: 200,
-              currentValue: 200
+              currentValue: 200,
+              maxValue: 1000,
+              minValue: 0
             },
             graphRadius: {
               label: 'Graph Radius',
               defaultValue: 1,
-              currentValue: 1
+              currentValue: 1,
+              maxValue: 1000,
+              minValue: 0
             },
             vertexRadius: {
               label: 'Vertex Radius',
               defaultValue: 2,
-              currentValue: 2
+              currentValue: 2,
+              maxValue: 1000,
+              minValue: 0
             },
             divisor: {
               label: 'Divisor',
               defaultValue: 20,
-              currentValue: 20
+              currentValue: 20,
+              maxValue: 1000,
+              minValue: 0
             },
             rate: {
               label: 'Rate',
               defaultValue: 3,
-              currentValue: 3
+              currentValue: 3,
+              maxValue: 1000,
+              minValue: 0
             }
           },
           text: 'triste'
@@ -1757,27 +2171,37 @@ export default {
             numPartitions: {
               label: 'Number of Partitions',
               defaultValue: 2,
-              currentValue: 2
+              currentValue: 2,
+              maxValue: 1000,
+              minValue: 0
             },
             numVertices: {
               label: 'Number of Vertices',
               defaultValue: 120,
-              currentValue: 120
+              currentValue: 120,
+              maxValue: 1000,
+              minValue: 0
             },
             graphRadius: {
               label: 'Graph Radius',
               defaultValue: 4,
-              currentValue: 4
+              currentValue: 4,
+              maxValue: 1000,
+              minValue: 0
             },
             vertexRadius: {
               label: 'Vertex Radius',
               defaultValue: 10,
-              currentValue: 10
+              currentValue: 10,
+              maxValue: 1000,
+              minValue: 0
             },
             rate: {
               label: 'Rate',
               defaultValue: 5,
-              currentValue: 5
+              currentValue: 5,
+              maxValue: 1000,
+              minValue: 0
             }
           },
           text: 'wave'
@@ -1817,6 +2241,13 @@ export default {
       	canvas.mozRequestFullScreen();
       } else if (canvas.msRequestFullscreen) {
       	canvas.msRequestFullscreen();
+      }
+    },
+    resetInput: function (parameter) {
+      if (parameter.currentValue > parameter.maxValue) {
+        parameter.currentValue = parameter.maxValue
+      } else if (parameter.currentValue < parameter.minValue) {
+        parameter.currentValue = parameter.minValue
       }
     }
   },

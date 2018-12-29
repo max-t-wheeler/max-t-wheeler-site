@@ -4,7 +4,13 @@
     <br>
     <div v-for="parameter in animation.parameters" :key="parameter.label" class="opengl2webgl-navpane-controls" :class='screenType'>
       <p> {{parameter.label }} </p>
-      <input class="opengl2webgl-navpane-input" type="number" v-model="parameter.currentValue"/>
+      <input
+        class="opengl2webgl-navpane-input"
+        type="number"
+        :max="parameter.maxValue"
+        :min="parameter.minValue"
+        v-on:blur="resetInput(parameter)"
+        v-model="parameter.currentValue"/>
       <br>
     </div>
     <br>
@@ -27,7 +33,7 @@
 <script>
 
 export default {
-  props: ['animation', 'screenType', 'activate', 'resetAnimation', 'toFullScreen']
+  props: ['animation', 'screenType', 'activate', 'resetAnimation', 'toFullScreen', 'resetInput']
 }
 
 </script>
