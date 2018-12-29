@@ -660,42 +660,42 @@ export default {
               label: 'Number of Steps',
               defaultValue: 12,
               currentValue: 12,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 120,
+              minValue: 1
             },
             numLayers: {
               label: 'Number of Layers',
               defaultValue: 20,
               currentValue: 20,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 120,
+              minValue: 2
             },
             numNodes: {
               label: 'Number of Nodes',
               defaultValue: 6,
               currentValue: 6,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 64,
+              minValue: 3
             },
             numLanes: {
               label: 'Number of Lanes',
               defaultValue: 6,
               currentValue: 6,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 60,
+              minValue: 2
             },
             polygonRadius: {
               label: 'Polygon Radius',
               defaultValue: 1,
               currentValue: 1,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 64,
+              minValue: 1
             },
             globalRadius: {
               label: 'Global Radius',
               defaultValue: 1,
               currentValue: 1,
-              maxValue: 1000,
+              maxValue: 10,
               minValue: 0
             }
           },
@@ -714,29 +714,29 @@ export default {
               label: 'Number of Flowers',
               defaultValue: 3,
               currentValue: 3,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 10,
+              minValue: 1
             },
             numPetals: {
               label: 'Number of Petals',
               defaultValue: 8,
               currentValue: 8,
-              maxValue: 1000,
+              maxValue: 256,
               minValue: 0
             },
             numNodes: {
               label: 'Number of Nodes',
               defaultValue: 8,
               currentValue: 8,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 64,
+              minValue: 2
             },
             petalRadius: {
               label: 'Petal Radius',
               defaultValue: 1,
               currentValue: 1,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 1,
+              minValue: 1
             }
           },
           text: 'flowers'
@@ -754,14 +754,14 @@ export default {
               label: 'Number of Circles',
               defaultValue: 3,
               currentValue: 3,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 100,
+              minValue: 1
             },
             rate: {
               label: 'Rate',
               defaultValue: 1,
               currentValue: 1,
-              maxValue: 1000,
+              maxValue: 100,
               minValue: 0
             }
           },
@@ -806,15 +806,15 @@ export default {
               label: 'Number of Polygons',
               defaultValue: 10,
               currentValue: 10,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 20,
+              minValue: 1
             },
             numFaces: {
               label: 'Number of Faces',
               defaultValue: 4,
               currentValue: 4,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 32,
+              minValue: 3
             }
           },
           text: 'pinwheel'
@@ -832,29 +832,29 @@ export default {
               label: 'Number of Layers',
               defaultValue: 1,
               currentValue: 1,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 12,
+              minValue: 1
             },
             numLanes: {
               label: 'Number of Lanes',
               defaultValue: 12,
               currentValue: 12,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 64,
+              minValue: 8
             },
             numPolygons: {
               label: 'Number of Polygons',
               defaultValue: 12,
               currentValue: 12,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 100,
+              minValue: 3
             },
             numNodes: {
               label: 'Number of Nodes',
               defaultValue: 6,
               currentValue: 6,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 64,
+              minValue: 2
             },
             polygonRadius: {
               label: 'Polygon Radius',
@@ -874,7 +874,7 @@ export default {
               label: 'Rate',
               defaultValue: 10,
               currentValue: 10,
-              maxValue: 1000,
+              maxValue: 500,
               minValue: 0
             }
           },
@@ -893,15 +893,15 @@ export default {
               label: 'Number of Polygons',
               defaultValue: 200,
               currentValue: 200,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 500,
+              minValue: 10
             },
             radius: {
               label: 'Radius',
               defaultValue: 3,
               currentValue: 3,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 10,
+              minValue: 1
             }
           },
           text: 'slosh ripple'
@@ -920,28 +920,28 @@ export default {
               defaultValue: 42,
               currentValue: 42,
               maxValue: 1000,
-              minValue: 0
+              minValue: 1
             },
             numStems: {
               label: 'Number of Stems',
               defaultValue: 12,
               currentValue: 12,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 64,
+              minValue: 2
             },
             numSplits: {
               label: 'Number of Splits',
               defaultValue: 8,
               currentValue: 8,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 8,
+              minValue: 1
             },
             radius: {
               label: 'Radius',
               defaultValue: 42,
               currentValue: 42,
               maxValue: 1000,
-              minValue: 0
+              minValue: 1
             }
           },
           text: 'starry night'
@@ -992,7 +992,7 @@ export default {
           category: 'math',
           controllable: true,
           dynamic: true,
-          hidden: false,
+          hidden: true,
           name: 'mosaic',
           parameters: {
             numNodes: {
@@ -1000,7 +1000,7 @@ export default {
               defaultValue: 8,
               currentValue: 8,
               maxValue: 1000,
-              minValue: 0
+              minValue: 3
             },
             numPolygons: {
               label: 'Number of Polygons',
@@ -1013,21 +1013,21 @@ export default {
               label: 'Number of Layers',
               defaultValue: 8,
               currentValue: 8,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 100,
+              minValue: 2
             },
             polygonRadius: {
               label: 'Polygon Radius',
               defaultValue: 3,
               currentValue: 3,
-              maxValue: 1000,
+              maxValue: 50,
               minValue: 0
             },
             globalRadius: {
               label: 'Global Radius',
               defaultValue: 2,
               currentValue: 2,
-              maxValue: 1000,
+              maxValue: 50,
               minValue: 0
             }
           },
@@ -1046,39 +1046,39 @@ export default {
               label: 'Number of Layers',
               defaultValue: 40,
               currentValue: 40,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 120,
+              minValue: 1
             },
             numNodes: {
               label: 'Number of Nodes',
-              defaultValue: 40,
-              currentValue: 40,
-              maxValue: 1000,
-              minValue: 0
+              defaultValue: 64,
+              currentValue: 64,
+              maxValue: 64,
+              minValue: 3
             },
             numLanes: {
               label: 'Number of Lanes',
               defaultValue: 24,
               currentValue: 24,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 120,
+              minValue: 4
             },
             polygonRadius: {
               label: 'Polygon Radius',
               defaultValue: 1,
               currentValue: 1,
-              maxValue: 1000,
+              maxValue: 20,
               minValue: 0
             },
             globalRadius: {
               label: 'Global Radius',
               defaultValue: 0.5,
               currentValue: 0.5,
-              maxValue: 1000,
+              maxValue: 5,
               minValue: 0
             }
           },
-          text: 'mosaic2'
+          text: 'mosaic'
         },
         {
           active: false,
@@ -1093,28 +1093,28 @@ export default {
               label: 'Number of Layers',
               defaultValue: 12,
               currentValue: 12,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 64,
+              minValue: 3
             },
             numCircles: {
               label: 'Number of Circles',
               defaultValue: 12,
               currentValue: 12,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 64,
+              minValue: 1
             },
             circleRadius: {
               label: 'Circle Radius',
               defaultValue: 1,
               currentValue: 1,
-              maxValue: 1000,
+              maxValue: 5,
               minValue: 0
             },
             globalRadius: {
               label: 'Global Radius',
               defaultValue: 1,
               currentValue: 1,
-              maxValue: 1000,
+              maxValue: 10,
               minValue: 0
             }
           },
@@ -1167,20 +1167,20 @@ export default {
               defaultValue: 24,
               currentValue: 24,
               maxValue: 1000,
-              minValue: 0
+              minValue: 3
             },
             nodeRadius: {
               label: 'Node Radius',
               defaultValue: 1,
               currentValue: 1,
-              maxValue: 1000,
+              maxValue: 10,
               minValue: 0
             },
             globalRadius: {
               label: 'Global Radius',
               defaultValue: 2,
               currentValue: 2,
-              maxValue: 1000,
+              maxValue: 10,
               minValue: 0
             },
             rate: {
@@ -1194,8 +1194,8 @@ export default {
               label: 'Divisor',
               defaultValue: 1,
               currentValue: 1,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 100,
+              minValue: 1
             }
           },
           text: 'unoriginal'
