@@ -1352,36 +1352,36 @@ export default {
               label: 'Number of Partitions',
               defaultValue: 10,
               currentValue: 10,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 100,
+              minValue: 1
             },
             numVertices: {
               label: 'Number of Vertices',
               defaultValue: 1000,
               currentValue: 1000,
               maxValue: 1000,
-              minValue: 0
+              minValue: 100
             },
             graphRadius: {
               label: 'Graph Radius',
               defaultValue: 10,
               currentValue: 10,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 100,
+              minValue: 1
             },
             vertexRadius: {
               label: 'Vertex Radius',
               defaultValue: 10,
               currentValue: 10,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 100,
+              minValue: 1
             },
             rate: {
               label: 'Rate',
               defaultValue: 2,
               currentValue: 2,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 100,
+              minValue: 1
             }
           },
           text: 'amparo'
@@ -1400,35 +1400,35 @@ export default {
               defaultValue: 6,
               currentValue: 6,
               maxValue: 1000,
-              minValue: 0
+              minValue: 1
             },
             numVertices: {
               label: 'Number of Vertices',
               defaultValue: 500,
               currentValue: 500,
               maxValue: 1000,
-              minValue: 0
+              minValue: 100
             },
             graphRadius: {
               label: 'Graph Radius',
               defaultValue: 2.25,
               currentValue: 2.25,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 100,
+              minValue: 1
             },
             vertexRadius: {
               label: 'Vertex Radius',
               defaultValue: 5,
               currentValue: 5,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 100,
+              minValue: 1
             },
             rate: {
               label: 'Rate',
               defaultValue: 2,
               currentValue: 2,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 100,
+              minValue: 1
             }
           },
           text: 'andorinha'
@@ -1447,35 +1447,35 @@ export default {
               defaultValue: 50,
               currentValue: 50,
               maxValue: 1000,
-              minValue: 0
+              minValue: 10
             },
             numVertices: {
               label: 'Number of Vertices',
               defaultValue: 1000,
               currentValue: 1000,
               maxValue: 1000,
-              minValue: 0
+              minValue: 100
             },
             graphRadius: {
               label: 'Graph Radius',
               defaultValue: 5,
               currentValue: 5,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 10,
+              minValue: 1
             },
             vertexRadius: {
               label: 'Vertex Radius',
               defaultValue: 20,
               currentValue: 20,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 100,
+              minValue: 1
             },
             rate: {
               label: 'Rate',
               defaultValue: 5,
               currentValue: 5,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 50,
+              minValue: 1
             }
           },
           text: 'antigua'
@@ -1494,35 +1494,35 @@ export default {
               defaultValue: 40,
               currentValue: 40,
               maxValue: 1000,
-              minValue: 0
+              minValue: 1
             },
             numVertices: {
               label: 'Number of Vertices',
               defaultValue: 1000,
               currentValue: 1000,
               maxValue: 1000,
-              minValue: 0
+              minValue: 100
             },
             graphRadius: {
               label: 'Graph Radius',
               defaultValue: 2,
               currentValue: 2,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 100,
+              minValue: 1
             },
             vertexRadius: {
               label: 'Vertex Radius',
               defaultValue: 10,
               currentValue: 10,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 100,
+              minValue: 1
             },
             rate: {
               label: 'Rate',
               defaultValue: 2,
               currentValue: 2,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 100,
+              minValue: 1
             }
           },
           text: 'batidinha'
@@ -1540,36 +1540,36 @@ export default {
               label: 'Number of Partitions',
               defaultValue: 8,
               currentValue: 8,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 10,
+              minValue: 2
             },
             numVertices: {
               label: 'Number of Vertices',
               defaultValue: 1000,
               currentValue: 1000,
               maxValue: 1000,
-              minValue: 0
+              minValue: 100
             },
             graphRadius: {
               label: 'Graph Radius',
               defaultValue: 2,
               currentValue: 2,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 10,
+              minValue: 1
             },
             vertexRadius: {
               label: 'Vertex Radius',
               defaultValue: 10,
               currentValue: 10,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 100,
+              minValue: 1
             },
             rate: {
               label: 'Rate',
               defaultValue: 5,
               currentValue: 5,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 100,
+              minValue: 2
             }
           },
           text: 'bicardi'
@@ -1587,36 +1587,36 @@ export default {
               label: 'Number of Partitions',
               defaultValue: 6,
               currentValue: 6,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 100,
+              minValue: 2
             },
             numVertices: {
               label: 'Number of Vertices',
               defaultValue: 1000,
               currentValue: 1000,
               maxValue: 1000,
-              minValue: 0
+              minValue: 100
             },
             graphRadius: {
               label: 'Graph Radius',
               defaultValue: 2,
               currentValue: 2,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 5,
+              minValue: 1
             },
             vertexRadius: {
               label: 'Vertex Radius',
               defaultValue: 5,
               currentValue: 5,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 100,
+              minValue: 1
             },
             rate: {
               label: 'Rate',
               defaultValue: 100,
               currentValue: 100,
               maxValue: 1000,
-              minValue: 0
+              minValue: 1
             }
           },
           text: 'blouse'
@@ -1634,43 +1634,43 @@ export default {
               label: 'Number of Partitions',
               defaultValue: 6,
               currentValue: 6,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 100,
+              minValue: 2
             },
             numVertices: {
               label: 'Number of Vertices',
               defaultValue: 1000,
               currentValue: 1000,
               maxValue: 1000,
-              minValue: 0
+              minValue: 100
             },
             graphRadius: {
               label: 'Graph Radius',
               defaultValue: 2,
               currentValue: 2,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 5,
+              minValue: 1
             },
             vertexRadius: {
               label: 'Vertex Radius',
               defaultValue: 5,
               currentValue: 5,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 100,
+              minValue: 1
             },
             divisor: {
               label: 'Divisor',
               defaultValue: 20,
               currentValue: 20,
               maxValue: 1000,
-              minValue: 0
+              minValue: 1
             },
             rate: {
               label: 'Rate',
               defaultValue: 1,
               currentValue: 1,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 100,
+              minValue: 1
             }
           },
           text: 'brazil'
@@ -1689,35 +1689,35 @@ export default {
               defaultValue: 5,
               currentValue: 5,
               maxValue: 1000,
-              minValue: 0
+              minValue: 1
             },
             numVertices: {
               label: 'Number of Vertices',
               defaultValue: 200,
               currentValue: 200,
               maxValue: 1000,
-              minValue: 0
+              minValue: 100
             },
             graphRadius: {
               label: 'Graph Radius',
               defaultValue: 2,
               currentValue: 2,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 5,
+              minValue: 1
             },
             vertexRadius: {
               label: 'Vertex Radius',
               defaultValue: 5,
               currentValue: 5,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 100,
+              minValue: 1
             },
             rate: {
               label: 'Rate',
               defaultValue: 1,
               currentValue: 1,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 50,
+              minValue: 1
             }
           },
           text: 'choro'
@@ -1736,35 +1736,35 @@ export default {
               defaultValue: 40,
               currentValue: 40,
               maxValue: 1000,
-              minValue: 0
+              minValue: 1
             },
             numVertices: {
               label: 'Number of Vertices',
               defaultValue: 1000,
               currentValue: 1000,
               maxValue: 1000,
-              minValue: 0
+              minValue: 100
             },
             graphRadius: {
               label: 'Graph Radius',
               defaultValue: 2,
               currentValue: 2,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 10,
+              minValue: 1
             },
             vertexRadius: {
               label: 'Vertex Radius',
               defaultValue: 10,
               currentValue: 10,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 100,
+              minValue: 1
             },
             rate: {
               label: 'Rate',
               defaultValue: 2,
               currentValue: 2,
               maxValue: 1000,
-              minValue: 0
+              minValue: 1
             }
           },
           text: 'dialogo'
@@ -1783,35 +1783,35 @@ export default {
               defaultValue: 6,
               currentValue: 6,
               maxValue: 1000,
-              minValue: 0
+              minValue: 1
             },
             numVertices: {
               label: 'Number of Vertices',
               defaultValue: 200,
               currentValue: 200,
               maxValue: 1000,
-              minValue: 0
+              minValue: 100
             },
             graphRadius: {
               label: 'Graph Radius',
               defaultValue: 2,
               currentValue: 2,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 10,
+              minValue: 1
             },
             vertexRadius: {
               label: 'Vertex Radius',
               defaultValue: 2,
               currentValue: 2,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 100,
+              minValue: 1
             },
             rate: {
               label: 'Rate',
               defaultValue: 20,
               currentValue: 20,
               maxValue: 1000,
-              minValue: 0
+              minValue: 1
             }
           },
           text: 'flower'
@@ -1829,36 +1829,36 @@ export default {
               label: 'Number of Partitions',
               defaultValue: 6,
               currentValue: 6,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 100,
+              minValue: 1
             },
             numVertices: {
               label: 'Number of Vertices',
               defaultValue: 1000,
               currentValue: 1000,
               maxValue: 1000,
-              minValue: 0
+              minValue: 100
             },
             graphRadius: {
               label: 'Graph Radius',
               defaultValue: 1,
               currentValue: 1,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 5,
+              minValue: 1
             },
             vertexRadius: {
               label: 'Vertex Radius',
               defaultValue: 5,
               currentValue: 5,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 100,
+              minValue: 1
             },
             rate: {
               label: 'Rate',
               defaultValue: 10,
               currentValue: 10,
               maxValue: 1000,
-              minValue: 0
+              minValue: 1
             }
           },
           text: 'games'
@@ -1876,36 +1876,36 @@ export default {
               label: 'Number of Partitions',
               defaultValue: 6,
               currentValue: 6,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 100,
+              minValue: 1
             },
             numVertices: {
               label: 'Number of Vertices',
               defaultValue: 1000,
               currentValue: 1000,
               maxValue: 1000,
-              minValue: 0
+              minValue: 100
             },
             graphRadius: {
               label: 'Graph Radius',
               defaultValue: 2,
               currentValue: 2,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 5,
+              minValue: 1
             },
             vertexRadius: {
               label: 'Vertex Radius',
               defaultValue: 5,
               currentValue: 5,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 100,
+              minValue: 1
             },
             rate: {
               label: 'Rate',
               defaultValue: 100,
               currentValue: 100,
               maxValue: 1000,
-              minValue: 0
+              minValue: 1
             }
           },
           text: 'lamento'
@@ -1923,43 +1923,43 @@ export default {
               label: 'Number of Partitions',
               defaultValue: 6,
               currentValue: 6,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 100,
+              minValue: 1
             },
             numVertices: {
               label: 'Number of Vertices',
               defaultValue: 1000,
               currentValue: 1000,
               maxValue: 1000,
-              minValue: 0
+              minValue: 100
             },
             graphRadius: {
               label: 'Graph Radius',
               defaultValue: 2,
               currentValue: 2,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 5,
+              minValue: 1
             },
             vertexRadius: {
               label: 'Vertex Radius',
               defaultValue: 10,
               currentValue: 10,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 100,
+              minValue: 1
             },
             dampening: {
               label: 'Dampening',
               defaultValue: 10,
               currentValue: 10,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 100,
+              minValue: 1
             },
             rate: {
               label: 'Rate',
               defaultValue: 10,
               currentValue: 10,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 100,
+              minValue: 1
             }
           },
           text: 'look'
@@ -1978,35 +1978,35 @@ export default {
               defaultValue: 8,
               currentValue: 8,
               maxValue: 1000,
-              minValue: 0
+              minValue: 1
             },
             numVertices: {
               label: 'Number of Vertices',
               defaultValue: 200,
               currentValue: 200,
               maxValue: 1000,
-              minValue: 0
+              minValue: 100
             },
             graphRadius: {
               label: 'Graph Radius',
               defaultValue: 2,
               currentValue: 2,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 5,
+              minValue: 1
             },
             vertexRadius: {
               label: 'Vertex Radius',
               defaultValue: 2,
               currentValue: 2,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 100,
+              minValue: 1
             },
             rate: {
               label: 'Rate',
               defaultValue: 10,
               currentValue: 10,
               maxValue: 1000,
-              minValue: 0
+              minValue: 1
             }
           },
           text: 'mojave'
@@ -2025,35 +2025,35 @@ export default {
               defaultValue: 8,
               currentValue: 8,
               maxValue: 1000,
-              minValue: 0
+              minValue: 1
             },
             numVertices: {
               label: 'Number of Vertices',
               defaultValue: 200,
               currentValue: 200,
               maxValue: 1000,
-              minValue: 0
+              minValue: 100
             },
             graphRadius: {
               label: 'Graph Radius',
               defaultValue: 1,
               currentValue: 1,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 5,
+              minValue: 1
             },
             vertexRadius: {
               label: 'Vertex Radius',
               defaultValue: 2,
               currentValue: 2,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 100,
+              minValue: 1
             },
             rate: {
               label: 'Rate',
               defaultValue: 10,
               currentValue: 10,
               maxValue: 1000,
-              minValue: 0
+              minValue: 1
             }
           },
           text: 'sabia'
@@ -2072,35 +2072,35 @@ export default {
               defaultValue: 8,
               currentValue: 8,
               maxValue: 1000,
-              minValue: 0
+              minValue: 1
             },
             numVertices: {
               label: 'Number of Vertices',
               defaultValue: 200,
               currentValue: 200,
               maxValue: 1000,
-              minValue: 0
+              minValue: 100
             },
             graphRadius: {
               label: 'Graph Radius',
               defaultValue: 2,
               currentValue: 2,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 5,
+              minValue: 1
             },
             vertexRadius: {
               label: 'Vertex Radius',
               defaultValue: 2,
               currentValue: 2,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 100,
+              minValue: 1
             },
             rate: {
               label: 'Rate',
               defaultValue: 1,
               currentValue: 1,
               maxValue: 1000,
-              minValue: 0
+              minValue: 1
             }
           },
           text: 'tereza'
@@ -2119,42 +2119,42 @@ export default {
               defaultValue: 100,
               currentValue: 100,
               maxValue: 1000,
-              minValue: 0
+              minValue: 1
             },
             numVertices: {
               label: 'Number of Vertices',
               defaultValue: 200,
               currentValue: 200,
               maxValue: 1000,
-              minValue: 0
+              minValue: 100
             },
             graphRadius: {
               label: 'Graph Radius',
               defaultValue: 1,
               currentValue: 1,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 5,
+              minValue: 1
             },
             vertexRadius: {
               label: 'Vertex Radius',
               defaultValue: 2,
               currentValue: 2,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 100,
+              minValue: 1
             },
             divisor: {
               label: 'Divisor',
               defaultValue: 20,
               currentValue: 20,
               maxValue: 1000,
-              minValue: 0
+              minValue: 3
             },
             rate: {
               label: 'Rate',
               defaultValue: 3,
               currentValue: 3,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 100,
+              minValue: 1
             }
           },
           text: 'triste'
@@ -2172,36 +2172,36 @@ export default {
               label: 'Number of Partitions',
               defaultValue: 2,
               currentValue: 2,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 100,
+              minValue: 2
             },
             numVertices: {
               label: 'Number of Vertices',
               defaultValue: 120,
               currentValue: 120,
               maxValue: 1000,
-              minValue: 0
+              minValue: 10
             },
             graphRadius: {
               label: 'Graph Radius',
               defaultValue: 4,
               currentValue: 4,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 100,
+              minValue: 1
             },
             vertexRadius: {
               label: 'Vertex Radius',
               defaultValue: 10,
               currentValue: 10,
-              maxValue: 1000,
-              minValue: 0
+              maxValue: 100,
+              minValue: 1
             },
             rate: {
               label: 'Rate',
               defaultValue: 5,
               currentValue: 5,
               maxValue: 1000,
-              minValue: 0
+              minValue: 1
             }
           },
           text: 'wave'
