@@ -44,7 +44,7 @@ export default {
         },
         {
           name: 'facebook',
-          src: 'https://www.facebook.com/max.wheeler.9',
+          src: 'https://www.facebook.com/max.t.wheeler',
           icon: 'fa-facebook',
           tooltip: 'right'
         },

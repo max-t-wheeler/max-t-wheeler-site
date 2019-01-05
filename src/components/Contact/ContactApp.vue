@@ -54,7 +54,7 @@ export default {
           icon: 'fa-linkedin'
         },
         {
-          src: 'https://www.facebook.com/max.wheeler.9',
+          src: 'https://www.facebook.com/max.t.wheeler',
           icon: 'fa-facebook'
         },
         {
