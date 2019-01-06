@@ -26,7 +26,7 @@ export default class Temp extends Animation {
   draw () {
 
 		let geometry = new THREE.CircleBufferGeometry(this.globalRadius, this.numNodes);
-		let material = new THREE.MeshBasicMaterial({color: 0xffffff, wireframe: true});
+		let material = new THREE.MeshBasicMaterial({ color: 0xffffff, wireframe: true });
 		let mesh = new THREE.Mesh(geometry, material);
 
 		this.scene.add(mesh);
@@ -38,7 +38,7 @@ export default class Temp extends Animation {
 		for (let i = 0; i < this.numNodes; ++i) {
 
 			let geometry = new THREE.CircleBufferGeometry(this.nodeRadius / 10, 32);
-			let material = new THREE.MeshBasicMaterial({color: colorNodes(i), wireframe: false});
+			let material = new THREE.MeshBasicMaterial({ color: colorNodes(i), wireframe: false });
 			let mesh = new THREE.Mesh(geometry, material);
 
 			mesh.position.set(

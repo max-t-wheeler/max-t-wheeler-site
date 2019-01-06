@@ -39,7 +39,7 @@ export default class CanvasManager {
 
   setRenderer (backgroundColor) {
 
-    this.renderer = new THREE.WebGLRenderer({canvas: this.canvas, antialias: true});
+    this.renderer = new THREE.WebGLRenderer({ canvas: this.canvas, antialias: true });
     this.renderer.setClearColor(backgroundColor);
     this.renderer.setPixelRatio(window.devicePixelRatio);
 

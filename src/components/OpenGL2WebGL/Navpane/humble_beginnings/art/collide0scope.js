@@ -23,7 +23,7 @@ export default class Collide0scope extends Animation {
     for (let i = 0; i < this.numCircles; ++i) {
 
       let geometry = new THREE.CircleBufferGeometry(1 + (i / (10 * this.numCircles)), 10);
-      let material = new THREE.MeshBasicMaterial({color: colorNodes(i), wireframe: true});
+      let material = new THREE.MeshBasicMaterial({ color: colorNodes(i), wireframe: true });
       let mesh = new THREE.Mesh(geometry, material);
 
       this.scene.add(mesh);

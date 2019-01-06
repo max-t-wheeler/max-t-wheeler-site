@@ -24,7 +24,7 @@ export default class Blanket extends Animation {
     for (let i = 2 * this.numPolygons; i >= 1; i--) {
 
       let geometry = new THREE.CircleBufferGeometry((10 / (2 * this.numPolygons - i + 1)), this.numFaces);
-      let material = new THREE.MeshBasicMaterial({color: colorNodes(i), wireframe: false});
+      let material = new THREE.MeshBasicMaterial({ color: colorNodes(i), wireframe: false });
       let mesh = new THREE.Mesh(geometry, material);
 
       mesh.rotateZ(Math.PI * i / 4);

@@ -292,7 +292,7 @@ export function Flower (rootPosition, pistolPosition, petalRadius, numPetals, nu
   }
 
   let pistolGeometry = new THREE.CircleBufferGeometry(this.petalRadius / 3, 32);
-  let pistolMaterial = new THREE.MeshBasicMaterial({color: this.pistolColor, wireframe: false});
+  let pistolMaterial = new THREE.MeshBasicMaterial({ color: this.pistolColor, wireframe: false });
 
   this.pistol = new THREE.Mesh(pistolGeometry, pistolMaterial);
   this.pistol.position.set(
@@ -361,7 +361,7 @@ export class Graph {
         if (this.type === 'ball') {
 
           let vertexGeometry = new THREE.CircleBufferGeometry(this.vertexRadius, 32);
-          let vertexMaterial = new THREE.MeshBasicMaterial({color: colorNodes(i), wireframe: false});
+          let vertexMaterial = new THREE.MeshBasicMaterial({ color: colorNodes(i), wireframe: false });
           let vertex = new THREE.Mesh(vertexGeometry, vertexMaterial);
 
           this.vertexGroup.add(vertex);
@@ -385,7 +385,7 @@ export class Graph {
           if (this.type === 'ball') {
 
             let vertexGeometry = new THREE.CircleBufferGeometry(this.vertexRadius / this.numVertices, 32);
-            let vertexMaterial = new THREE.MeshBasicMaterial({color: colorNodes(i), wireframe: false});
+            let vertexMaterial = new THREE.MeshBasicMaterial({ color: colorNodes(i), wireframe: false });
             let vertex = new THREE.Mesh(vertexGeometry, vertexMaterial);
 
             this.vertexGroup.add(vertex);

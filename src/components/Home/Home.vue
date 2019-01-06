@@ -12,18 +12,6 @@
 
 </template>
 
-<script>
-
-import Canvas from './Canvas/Canvas';
-
-export default {
-  components: {
-    'home-canvas': Canvas
-  }
-}
-
-</script>
-
 <style>
 
 #home-container {

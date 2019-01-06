@@ -18,7 +18,7 @@
             </b-btn>
           </b-col>
           <b-col cols="8">
-              <div v-for="cvSection in cvContents" :key="cvSection.header" v-if="cvSection.display" class="cv-section-content">
+              <div v-for="cvSection in visibleCvContents" :key="cvSection.header" class="cv-section-content">
                 <h1>{{cvSection.header}}</h1> <br>
                 <p v-for="detail in cvSection.details" :key="detail.text" :class="detail.type">{{detail.text}}</p>
               </div>
@@ -151,6 +151,17 @@ export default {
       }
       this.currentSlide = (slide + 1) % this.cvContents.length;
       this.cvContents[this.currentSlide].display = true;
+    }
+  },
+  computed: {
+    visibleCvContents () {
+      return this.cvContents.filter(
+        cvContents => {
+          if (cvContents.display) {
+            return cvContents
+          }
+        }
+      );
     }
   }
 }

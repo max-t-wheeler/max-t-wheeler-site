@@ -1,29 +1,30 @@
 <template>
 
   <div>
-    <div v-for="category in categories" v-if='!category.hidden' :key="category.name" class="opengl2webgl-navpane-category" >
+    <div v-for="category in visibleCategories" :key="category.name" class="opengl2webgl-navpane-category" >
       <p v-b-toggle="'category-' + category.name" class="opengl2webgl-navpane-category-text"> {{ category.name }} </p>
       <b-collapse :id="'category-' + category.name">
         <ul class="opengl2webgl-navpane-list">
           <li
-            v-if='item.category == category.name && !item.hidden'
-            v-for='item in filter'
+            v-for='item in visibleAnimations'
             :key='item.name'
             class = "opengl2webgl-navpane-item"
             >
-            <p
-              v-b-toggle="item.name"
-              class="opengl2webgl-navpane-text"
-              :class='{active: item.active}'
-              v-on:click='activate(item)'
-              > {{ item.text }}
-            </p>
-            <opengl2webgl-navpane-controls
-              v-if="item.parameters.length !== 0 && item.active"
-              :animation="item"
-              :screenType="screenType"
-              v-bind="{activate, resetAnimation, toFullScreen, resetInput}"
-              />
+            <div v-if='item.category == category.name'>
+              <p
+                v-b-toggle="item.name"
+                class="opengl2webgl-navpane-text"
+                :class='{active: item.active}'
+                v-on:click='activate(item)'
+                > {{ item.text }}
+              </p>
+              <opengl2webgl-navpane-controls
+                v-if="item.parameters.length !== 0 && item.active"
+                :animation="item"
+                :screenType="screenType"
+                v-bind="{activate, resetAnimation, toFullScreen, resetInput}"
+                />
+            </div>
           </li>
         </ul>
       </b-collapse>
@@ -2252,10 +2253,21 @@ export default {
     }
   },
   computed: {
-    filter () {
+    visibleAnimations () {
       return this.animations.filter(
         animation => {
-          return animation.text.toLowerCase().includes(this.searchedText.toLowerCase())
+          if (!animation.hidden) {
+            return animation.text.toLowerCase().includes(this.searchedText.toLowerCase())
+          }
+        }
+      );
+    },
+    visibleCategories () {
+      return this.categories.filter(
+        category => {
+          if (!category.hidden) {
+            return category
+          }
         }
       );
     }

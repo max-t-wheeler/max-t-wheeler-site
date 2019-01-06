@@ -16,7 +16,7 @@ export default class Circle extends Animation {
 	draw () {
 
 		  let geometry = new THREE.CircleBufferGeometry(this.radius, this.numSpokes);
-		  let material = new THREE.MeshBasicMaterial({color: 0x00ffff, wireframe: true});
+		  let material = new THREE.MeshBasicMaterial({ color: 0x00ffff, wireframe: true });
 		  let mesh = new THREE.Mesh(geometry, material);
 
 		  this.scene.add(mesh);
