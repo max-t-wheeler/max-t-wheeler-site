@@ -111,6 +111,10 @@ body {
 .application {
   height: 90vh;
   overflow: auto;
+  overflow-x: hidden;
+}
+::-webkit-scrollbar {
+  background: transparent;
 }
 
 .fade-enter-active, .fade-leave-active {
