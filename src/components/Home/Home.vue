@@ -15,6 +15,10 @@ export default {
     return {
       attributes: [
         {
+          text: 'addict',
+          size: 1
+        },
+        {
           text: 'artist',
           size: 5
         },
@@ -32,6 +36,10 @@ export default {
         },
         {
           text: 'geek',
+          size: 2
+        },
+        {
+          text: 'glutton',
           size: 3
         },
         {
@@ -52,7 +60,7 @@ export default {
         },
         {
           text: 'nerd',
-          size: 4
+          size: 3
         },
         {
           text: 'poet',
@@ -69,11 +77,22 @@ export default {
         {
           text: 'scientist',
           size: 4
+        },
+        {
+          text: 'taoist',
+          size: 2
         }
       ]
     }
   },
   mounted () {
+
+    let appContainer = document.querySelector('.application');
+    let homeContainer = document.getElementById('home-container')
+    let containerWidth = window.innerWidth;
+    let containerHeight = window.innerHeight;
+
+    appContainer.style.overflow = 'hidden';
 
     function moveAttributes () {
       var elems = document.querySelectorAll('.home-attribute');
@@ -84,17 +103,13 @@ export default {
           clearInterval(id);
         } else {
           for (let i = 0; i < elems.length; ++i) {
-            elems[i].style.top = displayWidth / 10 + Math.cos(i + t / 1000) * displayWidth / 6 + 'px';
-            elems[i].style.left = displayHeight / 20 + Math.sin(i + t / 1000) * displayHeight / 2 + 'px';
+            elems[i].style.top = containerWidth / 5 + Math.cos(i + t / 1000) * containerWidth / 5 + 'px';
+            elems[i].style.left = containerHeight / 15 + Math.sin(i + t / 1000) * containerHeight / 2 + 'px';
           }
           t++;
         }
       }
     }
-
-    let homeDisplay = document.getElementById('home-container')
-    let displayWidth = window.innerWidth;
-    let displayHeight = window.innerHeight;
 
     for (let i = 0; i < this.attributes.length; ++i) {
 
@@ -103,10 +118,9 @@ export default {
       elem.classList.add('home-attribute')
       elem.textContent = this.attributes[i].text;
       elem.style.fontSize = 10 * this.attributes[i].size + 'px';
-      elem.style.position = 'relative';
       elem.style.zIndex = i;
 
-      homeDisplay.appendChild(elem);
+      homeContainer.appendChild(elem);
     }
 
     moveAttributes();
@@ -117,12 +131,6 @@ export default {
 </script>
 
 <style>
-
-#home-container {
-  position: relative;
-  text-align: center;
-  top: 15%;
-}
 
 .home-attribute {
   backface-visibility: hidden;
