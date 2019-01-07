@@ -86,7 +86,7 @@ export default {
         } else {
           for (let i = 0; i < elems.length; ++i) {
             elems[i].style.top = displayWidth / 10 + Math.cos(i + t / 1000) * displayWidth / 6 + 'px';
-            elems[i].style.left = displayHeight / 10 + Math.sin(i + t / 1000) * displayHeight / 2 + 'px';
+            elems[i].style.left = displayHeight / 20 + Math.sin(i + t / 1000) * displayHeight / 2 + 'px';
           }
           t++;
         }
@@ -126,10 +126,11 @@ export default {
 }
 
 .home-attribute {
-  float:left;
-  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   filter: blur(0);
+  float:left;
+  position: relative;
+  -webkit-backface-visibility: hidden;
 }
 
 </style>

@@ -2,7 +2,7 @@
 
   <div>
     <b-container align-h="center" id="media-container">
-      <h1>Not for laptop speakers</h1>
+      <h1>Sounds I Make</h1>
       <div id="media-players">
         <div v-for="player in mediaPlayers" :key="player.name" class="media-player">
           <b-row class="justify-content-md-center">
