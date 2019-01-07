@@ -70,8 +70,7 @@ export default {
           text: 'scientist',
           size: 4
         }
-      ],
-      name: 'max t. wheeler'
+      ]
     }
   },
   mounted () {
