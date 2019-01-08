@@ -15,12 +15,12 @@ export default {
     return {
       attributes: [
         {
-          text: 'addict',
-          size: 1
-        },
-        {
           text: 'artist',
           size: 5
+        },
+        {
+          text: 'designer',
+          size: 3
         },
         {
           text: 'dreamer',
@@ -29,6 +29,10 @@ export default {
         {
           text: 'engineer',
           size: 4
+        },
+        {
+          text: 'entrepreneur',
+          size: 3
         },
         {
           text: 'fighter',
@@ -95,16 +99,16 @@ export default {
     appContainer.style.overflow = 'hidden';
 
     function moveAttributes () {
-      var elems = document.querySelectorAll('.home-attribute');
-      var t = 0;
-      var id = setInterval(frame, 5);
+      let elems = document.querySelectorAll('.home-attribute');
+      let t = 0;
+      let id = setInterval(frame, 5);
       function frame () {
         if (t === 35000000) {
           clearInterval(id);
         } else {
           for (let i = 0; i < elems.length; ++i) {
-            elems[i].style.top = containerWidth / 5 + Math.cos(i + t / 1000) * containerWidth / 5 + 'px';
-            elems[i].style.left = containerHeight / 15 + Math.sin(i + t / 1000) * containerHeight / 2 + 'px';
+            elems[i].style.top = containerHeight / 2 + Math.cos(i + t / 1000) * containerHeight / 2 + 'px';
+            elems[i].style.left = containerWidth / 20 + Math.sin(i + t / 1000) * containerWidth / 3 + 'px';
           }
           t++;
         }
