@@ -41,13 +41,13 @@ export default {
       },
       contents: [
         {
-          name: 'WebGL Projects',
-          address: '#webgl-projects',
+          name: 'Sights',
+          address: '#sights',
           display: false
         },
         {
-          name: 'Media',
-          address: '#media',
+          name: 'Sounds',
+          address: '#sounds',
           display: false
         },
         {
