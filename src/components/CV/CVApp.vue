@@ -68,7 +68,7 @@ export default {
             },
             {
               type: 'cv-organization',
-              text: 'Portfolio & Quant, Analytics Solutions'
+              text: 'Risk and Quantitative Analytics'
             },
             {
               type: 'cv-description',
