@@ -82,7 +82,7 @@ export default {
           category: 'art',
           controllable: false,
           dynamic: false,
-          hidden: false,
+          hidden: true,
           name: 'blanket',
           parameters: {
             numPolygons: {
@@ -581,7 +581,7 @@ export default {
           category: 'art',
           controllable: true,
           dynamic: true,
-          hidden: false,
+          hidden: true,
           name: 'collide',
           parameters: {
             numCircles: {
@@ -708,7 +708,7 @@ export default {
           category: 'art',
           controllable: true,
           dynamic: false,
-          hidden: false,
+          hidden: true,
           name: 'flowers',
           parameters: {
             numFlowers: {
@@ -748,7 +748,7 @@ export default {
           category: 'art',
           controllable: true,
           dynamic: true,
-          hidden: false,
+          hidden: true,
           name: 'gyro',
           parameters: {
             numCircles: {
