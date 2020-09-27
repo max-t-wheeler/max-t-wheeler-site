@@ -32,17 +32,17 @@ export default class Snowflake extends Animation {
 
     for (let i = 1; i <= this.numLayers; ++i) {
 
-			let layerGroup = new THREE.Group();
+			const layerGroup = new THREE.Group();
 
 			for (let j = 0; j < i * this.numLanes; ++j) {
 
-				let polyCenter = [
+				const polyCenter = [
 						2 * i * this.globalRadius * Math.cos(phi(j, this.numLanes * i) + phi(1, 2 * this.numLanes)),
 						2 * i * this.globalRadius * Math.sin(phi(j, this.numLanes * i) + phi(1, 2 * this.numLanes)),
 						0
 				];
 
-				let geom = new sacredGeometry(polyCenter, this.numPolygons, this.numNodes, this.polygonRadius, this.globalRadius, colorNodes(3));
+				const geom = new sacredGeometry(polyCenter, this.numPolygons, this.numNodes, this.polygonRadius, this.globalRadius, colorNodes(3));
 
 				layerGroup.add(geom.geomGroup);
 
@@ -60,11 +60,11 @@ export default class Snowflake extends Animation {
 
 			for (let j = 0; j < this.scene.children[i].children.length; ++j) {
 
-	      if (j % 2 === 0) {
+				if (j % 2 === 0) {
 					this.scene.children[i].children[j].rotation.set(0, 0, this.rate * 1e-2 * t);
-	      } else {
+				} else {
 					this.scene.children[i].children[j].rotation.set(0, 0, -this.rate * 1e-2 * t);
-	      }
+				}
 
 			}
 

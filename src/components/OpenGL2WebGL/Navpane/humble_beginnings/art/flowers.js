@@ -22,7 +22,7 @@ export default class Temp extends Animation {
 
   draw () {
 
-		let root = [0, -this.numFlowers, 0];
+		const root = [0, -this.numFlowers, 0];
 
 		let pistol = [0, 0, 0];
 
@@ -42,7 +42,7 @@ export default class Temp extends Animation {
 				];
 			}
 
-			let flower = new Flower(root, pistol, this.petalRadius, this.numPetals, this.numNodes, colorNodes(i), colorNodes(2));
+			const flower = new Flower(root, pistol, this.petalRadius, this.numPetals, this.numNodes, colorNodes(i), colorNodes(2));
 			this.scene.add(flower.stem);
 			this.scene.add(flower.petalGroup);
 			this.scene.add(flower.pistol);

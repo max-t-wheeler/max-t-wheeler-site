@@ -27,11 +27,11 @@ export default class Chrysanthemum9 extends Animation {
 
   draw () {
 
-		let center = [-0.1, 0.1, 0];
+		const center = [-0.1, 0.1, 0];
 
 		for (let i = 0; i < this.numCenters; ++i) {
 
-			let polyCenterOffset = [
+			const polyCenterOffset = [
 					this.globalRadius * Math.cos(phi(i, this.numCenters)),
 					this.globalRadius * Math.sin(phi(i, this.numCenters)),
 					0
@@ -39,24 +39,24 @@ export default class Chrysanthemum9 extends Animation {
 
 			for (let j = 0; j < this.numLayers; ++j) {
 
-				let polyClusterCenter = [
+				const polyClusterCenter = [
 					j * center[0],
 					j * center[1]
 				];
 
-		    for (let k = 0; k < this.numPolygons; ++k) {
+				for (let k = 0; k < this.numPolygons; ++k) {
 
-					let polyCenter = [
+					const polyCenter = [
 						polyClusterCenter[0] * Math.sin(phi(k, this.numPolygons)) + polyCenterOffset[0],
 						polyClusterCenter[1] * Math.cos(phi(k, this.numPolygons)) + polyCenterOffset[1],
 						0
 					];
 
-		      let poly = new polygon(polyCenter, this.polygonRadius, this.numNodes, 0, colorNodes(j));
+					const poly = new polygon(polyCenter, this.polygonRadius, this.numNodes, 0, colorNodes(j));
 
 					this.scene.add(poly.line);
 
-		    }
+				}
 
 			}
 

@@ -26,25 +26,25 @@ export default class SacredCircles extends Animation {
 
 	draw () {
 
-	  let center = [0, 0, 0];
+		let center = [0, 0, 0];
 
-	  for (let i = 0; i < this.numCircles; ++i) {
+		for (let i = 0; i < this.numCircles; ++i) {
 
-	    for (let j = 0; j < this.numLayers; ++j) {
+			for (let j = 0; j < this.numLayers; ++j) {
 
 				center = [
-	      	this.globalRadius * (Math.cos(phi(i, this.numCircles)) + Math.sin(phi(j, this.numLayers))),
-	      	this.globalRadius * (Math.sin(phi(i, this.numCircles)) + Math.cos(phi(j, this.numLayers))),
+					this.globalRadius * (Math.cos(phi(i, this.numCircles)) + Math.sin(phi(j, this.numLayers))),
+					this.globalRadius * (Math.sin(phi(i, this.numCircles)) + Math.cos(phi(j, this.numLayers))),
 					0
 				];
 
-	      let poly = new polygon(center, this.circleRadius, 100, 0, this.color);
+				const poly = new polygon(center, this.circleRadius, 100, 0, this.color);
 
-	      this.scene.add(poly.line);
+				this.scene.add(poly.line);
 
-	    }
+			}
 
-	  }
+		}
 
 	}
 

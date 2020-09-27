@@ -23,9 +23,9 @@ export default class Gyr0scope extends Animation {
 
     for (let i = 0; i < this.numCircles; ++i) {
 
-      let geometry = new THREE.CircleBufferGeometry(1 + (i / (10 * this.numCircles)), 10);
-      let material = new THREE.MeshBasicMaterial({ color: colorNodes(i), wireframe: true });
-      let mesh = new THREE.Mesh(geometry, material);
+      const geometry = new THREE.CircleBufferGeometry(1 + (i / (10 * this.numCircles)), 10);
+      const material = new THREE.MeshBasicMaterial({ color: colorNodes(i), wireframe: true });
+      const mesh = new THREE.Mesh(geometry, material);
 
       this.scene.add(mesh);
 
@@ -39,7 +39,7 @@ export default class Gyr0scope extends Animation {
 
     for (let i = 0; i < this.scene.children.length; ++i) {
 
-      let r = 1;
+      const r = 1;
 
 			this.scene.children[i].scale.set(1, r * Math.cos(t / 2), i + 1);
 

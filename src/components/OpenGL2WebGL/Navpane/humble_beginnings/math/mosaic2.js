@@ -26,20 +26,20 @@ export default class Mosaic2 extends Animation {
 
   draw () {
 
-		let group1 = new THREE.Group();
-		let group2 = new THREE.Group();
+		const group1 = new THREE.Group();
+		const group2 = new THREE.Group();
 
     for (let i = 1; i <= this.numLayers; ++i) {
 
 			for (let j = 0; j < this.numLanes; ++j) {
 
-				let polyCenter = [
+				const polyCenter = [
 						2 * i * this.globalRadius * Math.cos(phi(j, this.numLanes)),
 						2 * i * this.globalRadius * Math.sin(phi(j, this.numLanes)),
 						0
 				];
 
-				let poly = new polygon(polyCenter, this.polygonRadius, this.numNodes, Math.PI / 2, colorNodes(3), 'relative');
+				const poly = new polygon(polyCenter, this.polygonRadius, this.numNodes, Math.PI / 2, colorNodes(3), 'relative');
 
 				group1.add(poly.line);
 
@@ -51,13 +51,13 @@ export default class Mosaic2 extends Animation {
 
 			for (let j = 0; j < this.numLanes; ++j) {
 
-				let polyCenter = [
+				const polyCenter = [
 						2 * i * this.globalRadius * Math.cos(phi(j, this.numLanes)),
 						2 * i * this.globalRadius * Math.sin(phi(j, this.numLanes)),
 						0
 				];
 
-				let poly = new polygon(polyCenter, this.polygonRadius, this.numNodes, Math.PI / 2, colorNodes(4));
+				const poly = new polygon(polyCenter, this.polygonRadius, this.numNodes, Math.PI / 2, colorNodes(4));
 
 				group2.add(poly.line);
 
@@ -70,7 +70,7 @@ export default class Mosaic2 extends Animation {
 
   }
 
-  update (t) {
+  update () {
 
     for (let i = 0; i < this.scene.children[0].children.length; ++i) {
 

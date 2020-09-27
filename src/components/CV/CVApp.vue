@@ -13,8 +13,8 @@
       <div v-if="screenType === 'monitor'" id="cv-slider">
         <b-row>
           <b-col cols="2">
-            <b-btn class="cv-slider-arrow" v-on:click="onSlideLeft(currentSlide)">
-              <span class="glyphicon glyphicon-chevron-left"></span>
+            <b-btn class="cv-slider-arrow" @click="onSlideLeft(currentSlide)">
+              <span class="fa fa-chevron-left"></span>
             </b-btn>
           </b-col>
           <b-col cols="8">
@@ -24,8 +24,8 @@
               </div>
           </b-col>
           <b-col cols="2">
-            <b-btn class="cv-slider-arrow" v-on:click="onSlideRight(currentSlide)">
-              <span class="glyphicon glyphicon-chevron-right"></span>
+            <b-btn class="cv-slider-arrow" @click="onSlideRight(currentSlide)">
+              <span class="fa fa-chevron-right"></span>
             </b-btn>
           </b-col>
         </b-row>
@@ -64,15 +64,19 @@ export default {
           details: [
             {
               type: 'cv-organization',
-              text: 'FactSet Research Systems, Inc.'
-            },
-            {
-              type: 'cv-organization',
-              text: 'Risk and Quantitative Analytics'
+              text: 'Crux Informatics'
             },
             {
               type: 'cv-description',
-              text: 'Senior Product Developer (2016-)'
+              text: 'Data Integration Engineer (2019-)'
+            },
+            {
+              type: 'cv-organization',
+              text: 'FactSet Research Systems, Inc.'
+            },
+            {
+              type: 'cv-description',
+              text: 'Product Manager, Risk and Quantitative Analytics (2016-2019)'
             },
             {
               type: 'cv-organization',
@@ -80,7 +84,7 @@ export default {
             },
             {
               type: 'cv-description',
-              text: 'Chief Technical Officer, Head of Public Relations, Studio Musician (2015-2016)'
+              text: 'Chief Technology Officer, Head of Public Relations, Studio Musician (2015-2016)'
             },
             {
               type: 'cv-organization',

@@ -2225,23 +2225,23 @@ export default {
       }
       canvasManager = new CanvasManager(canvas, animation);
     },
-    resetAnimation: function (animation, parameters) {
-      for (let parameter in animation.parameters) {
-        let param = animation.parameters[parameter];
+    resetAnimation: function (animation) {
+      for (const parameter in animation.parameters) {
+        const param = animation.parameters[parameter];
         param.currentValue = param.defaultValue;
       }
       this.activate(animation);
     },
     toFullScreen: function () {
-      let canvas = document.getElementById('opengl2webgl-canvas');
+      const canvas = document.getElementById('opengl2webgl-canvas');
       if (canvas.requestFullscreen) {
-      	canvas.requestFullscreen();
+        canvas.requestFullscreen();
       } else if (canvas.webkitRequestFullscreen) {
-      	canvas.webkitRequestFullscreen();
+        canvas.webkitRequestFullscreen();
       } else if (canvas.mozRequestFullScreen) {
-      	canvas.mozRequestFullScreen();
+        canvas.mozRequestFullScreen();
       } else if (canvas.msRequestFullscreen) {
-      	canvas.msRequestFullscreen();
+        canvas.msRequestFullscreen();
       }
     },
     resetInput: function (parameter) {
@@ -2286,6 +2286,10 @@ export default {
   margin: 0;
 }
 
+.opengl2webgl-navpane-category-text:focus {
+  outline: none;
+}
+
 .opengl2webgl-navpane-list {
   list-style-type: none;
   padding: 0;
@@ -2298,6 +2302,10 @@ export default {
   cursor: pointer;
   position: relative;
   margin: 0;
+}
+
+.opengl2webgl-navpane-text:focus {
+  outline: none;
 }
 
 </style>

@@ -22,10 +22,10 @@ export default class OffsetStar extends Animation {
 
 	draw () {
 
-	  let x = [0, 0, 0];
-	  let star = new offsetStar(this.numVertices, x, this.radius, 0, this.offset, this.color);
+		const x = [0, 0, 0];
+		const star = new offsetStar(this.numVertices, x, this.radius, 0, this.offset, this.color);
 
-	  this.scene.add(star.line);
+		this.scene.add(star.line);
 
 	}
 

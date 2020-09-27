@@ -30,12 +30,12 @@ export default class WrigglingDonut extends Animation {
         for (let j = 0; j < this.numNodes; ++j) {
 
 					x = [
-          	this.globalRadius * (Math.cos(phi(i, this.numNodes)) + Math.cos(phi(j, this.numNodes)) * Math.sin(phi(i, this.numPolygons))),
-          	this.globalRadius * (Math.sin(phi(i, this.numNodes)) + Math.sin(phi(j, this.numNodes)) * Math.cos(phi(i, this.numPolygons))),
-						0
+            this.globalRadius * (Math.cos(phi(i, this.numNodes)) + Math.cos(phi(j, this.numNodes)) * Math.sin(phi(i, this.numPolygons))),
+            this.globalRadius * (Math.sin(phi(i, this.numNodes)) + Math.sin(phi(j, this.numNodes)) * Math.cos(phi(i, this.numPolygons))),
+            0
 					];
 
-          let poly = new polygon(x, this.polygonRadius, this.numNodes, 0, colorNodes(1));
+          const poly = new polygon(x, this.polygonRadius, this.numNodes, 0, colorNodes(1));
           this.scene.add(poly.line);
 
       }

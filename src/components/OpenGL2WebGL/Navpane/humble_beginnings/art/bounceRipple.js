@@ -20,13 +20,13 @@ export default class BounceRipple extends Animation {
 
   draw () {
 
-    let x = [0, 0, 0];
-    let col = 0xf00a00;
+    const x = [0, 0, 0];
+    const col = 0xf00a00;
 
     for (let i = 1; i <= this.numPolygons; ++i) {
 
-      let r = this.radius * i / 10;
-      let poly = new polygon(x, r, 100, 0, col);
+      const r = this.radius * i / 10;
+      const poly = new polygon(x, r, 100, 0, col);
 
       this.scene.add(poly.line);
 

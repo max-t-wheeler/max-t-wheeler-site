@@ -21,12 +21,12 @@ export default class SloshRipple extends Animation {
 
   draw () {
 
-    let x = [0, 0, 0];
+    const x = [0, 0, 0];
 
     for (let i = 1; i <= this.numPolygons; ++i) {
 
-      let r = this.radius * i / 10;
-      let poly = new polygon(x, r, 100, 0, colorNodes(i - 1));
+      const r = this.radius * i / 10;
+      const poly = new polygon(x, r, 100, 0, colorNodes(i - 1));
 
       this.scene.add(poly.line);
 

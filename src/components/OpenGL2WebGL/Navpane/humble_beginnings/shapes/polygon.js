@@ -23,37 +23,37 @@ export default class Polygon extends Animation {
 
 	draw () {
 
-	  this.vertices = new Float32Array(this.numVertices * 3);
+		this.vertices = new Float32Array(this.numVertices * 3);
 
-	  for (let i = 0; i < this.numVertices; ++i) {
-	    this.vertices[3 * i + 0] = this.radius * Math.sin(phi(i, this.numVertices) + this.theta) + this.center[0];
-	    this.vertices[3 * i + 1] = this.radius * Math.cos(phi(i, this.numVertices) + this.theta) + this.center[1];
-	    this.vertices[3 * i + 2] = 0;
-	  }
+		for (let i = 0; i < this.numVertices; ++i) {
+			this.vertices[3 * i + 0] = this.radius * Math.sin(phi(i, this.numVertices) + this.theta) + this.center[0];
+			this.vertices[3 * i + 1] = this.radius * Math.cos(phi(i, this.numVertices) + this.theta) + this.center[1];
+			this.vertices[3 * i + 2] = 0;
+		}
 
-	  let geometry = new THREE.BufferGeometry();
+		const geometry = new THREE.BufferGeometry();
 
-	  geometry.addAttribute(
-	    'position',
-	    new THREE.BufferAttribute(this.vertices, 3)
-	  );
+		geometry.setAttribute(
+			'position',
+			new THREE.BufferAttribute(this.vertices, 3)
+		);
 
-	  let material = new THREE.LineBasicMaterial(
-	    {
-	      color: this.color
-	    }
-	  );
+		const material = new THREE.LineBasicMaterial(
+			{
+				color: this.color
+			}
+		);
 
-	  this.line = new THREE.LineLoop(geometry, material);
+		this.line = new THREE.LineLoop(geometry, material);
 
 		this.scene.add(this.line);
 	}
 
-	update (t) {
+	update () {
 
-	  for (let i = 0; i < this.scene.children.length; ++i) {
-	    this.scene.children[i].rotation.z += 1;
-	  }
+		for (let i = 0; i < this.scene.children.length; ++i) {
+			this.scene.children[i].rotation.z += 1;
+		}
 
 	}
 

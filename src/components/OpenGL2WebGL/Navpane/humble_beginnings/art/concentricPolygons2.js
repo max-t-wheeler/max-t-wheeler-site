@@ -19,14 +19,14 @@ export default class ConcentricPolygons2 extends Animation {
 
   draw () {
 
-    let x = [0, 0, 0];
-    let t = 0;
-    let col = 0xf00a00;
+    const x = [0, 0, 0];
+    const t = 0;
+    const col = 0xf00a00;
 
     for (let i = 1; i <= this.numPolygons; ++i) {
 
-      let r = this.radius * i / this.numPolygons;
-      let poly = new polygon(x, r, i + 2, t, col);
+      const r = this.radius * i / this.numPolygons;
+      const poly = new polygon(x, r, i + 2, t, col);
 
       this.scene.add(poly.line);
 

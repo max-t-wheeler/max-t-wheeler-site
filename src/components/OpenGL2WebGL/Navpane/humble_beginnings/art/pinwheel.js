@@ -23,9 +23,9 @@ export default class Pinwheel extends Animation {
 
     for (let i = 2 * this.numPolygons; i >= 1; i--) {
 
-      let geometry = new THREE.CircleBufferGeometry((20 / (2 * this.numPolygons - (i / 2) + 1)), this.numFaces);
-      let material = new THREE.MeshBasicMaterial({ color: colorNodes(i + 1), wireframe: false });
-      let mesh = new THREE.Mesh(geometry, material);
+      const geometry = new THREE.CircleBufferGeometry((20 / (2 * this.numPolygons - (i / 2) + 1)), this.numFaces);
+      const material = new THREE.MeshBasicMaterial({ color: colorNodes(i + 1), wireframe: false });
+      const mesh = new THREE.Mesh(geometry, material);
 
       this.scene.add(mesh);
 

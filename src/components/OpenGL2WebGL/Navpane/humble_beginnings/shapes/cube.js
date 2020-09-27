@@ -12,11 +12,11 @@ export default class Cube extends Animation {
 
 	draw () {
 
-	  let geometry = new THREE.BoxBufferGeometry(1, 1, 1);
-	  let material = new THREE.MeshBasicMaterial({ color: 0x00ffff, wireframe: false });
-	  let mesh = new THREE.Mesh(geometry, material);
+		const geometry = new THREE.BoxBufferGeometry(1, 1, 1);
+		const material = new THREE.MeshBasicMaterial({ color: 0x00ffff, wireframe: false });
+		const mesh = new THREE.Mesh(geometry, material);
 
-	  this.scene.add(mesh);
+		this.scene.add(mesh);
 
 	}
 

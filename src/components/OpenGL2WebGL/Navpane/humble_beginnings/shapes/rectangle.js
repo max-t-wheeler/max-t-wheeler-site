@@ -12,46 +12,47 @@ export default class Rectangle extends Animation {
 
 	draw () {
 
-	  let geometry = new THREE.BufferGeometry();
+		const geometry = new THREE.BufferGeometry();
 
-	  let vertices = new Float32Array([
-	    -0.5, -0.5, 0.0,
-	     0.5, -0.5, 0.0,
-	     0.5, 0.5, 0.0,
-	    -0.5, 0.5, 0.0,
-	    -0.5, -0.5, 0.0,
-	     0.5, 0.5, 0.0
-	  ]);
+		/* eslint-disable no-mixed-spaces-and-tabs */
+		const vertices = new Float32Array([
+			-0.5, -0.5, 0.0,
+			 0.5, -0.5, 0.0,
+			 0.5,  0.5, 0.0,
+			-0.5,  0.5, 0.0,
+			-0.5, -0.5, 0.0,
+			 0.5,  0.5, 0.0
+		]);
 
-	  let colors = new Float32Array([
-	    1.0, 0.0, 0.0,
-	    0.0, 1.0, 0.0,
-	    0.0, 0.0, 1.0,
-	    0.0, 1.0, 1.0,
-	    1.0, 0.0, 0.0,
-	    0.0, 0.0, 1.0
-	  ]);
+		const colors = new Float32Array([
+			1.0, 0.0, 0.0,
+			0.0, 1.0, 0.0,
+			0.0, 0.0, 1.0,
+			0.0, 1.0, 1.0,
+			1.0, 0.0, 0.0,
+			0.0, 0.0, 1.0
+		]);
 
-	  geometry.addAttribute(
-	    'position',
-	    new THREE.BufferAttribute(vertices, 3)
-	  );
+		geometry.setAttribute(
+			'position',
+			new THREE.BufferAttribute(vertices, 3)
+		);
 
-	  geometry.addAttribute(
-	    'color',
-	    new THREE.BufferAttribute(colors, 3)
-	  );
+		geometry.setAttribute(
+			'color',
+			new THREE.BufferAttribute(colors, 3)
+		);
 
-	  let material = new THREE.MeshBasicMaterial(
-	    {
-	      vertexColors: THREE.VertexColors,
-	      wireframe: false
-	    }
-	  );
+		const material = new THREE.MeshBasicMaterial(
+			{
+				vertexColors: THREE.VertexColors,
+				wireframe: false
+			}
+		);
 
-	  let mesh = new THREE.Mesh(geometry, material);
+		const mesh = new THREE.Mesh(geometry, material);
 
-	  this.scene.add(mesh);
+		this.scene.add(mesh);
 
 	}
 

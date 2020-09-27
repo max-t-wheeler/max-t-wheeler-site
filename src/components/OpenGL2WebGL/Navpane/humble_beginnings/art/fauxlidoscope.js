@@ -30,23 +30,23 @@ export default class Fauxlidoscope extends Animation {
 
   draw () {
 
-		let concentricPolygonGroup = new THREE.Group();
+		const concentricPolygonGroup = new THREE.Group();
 
     for (let i = 0; i < this.numLayers; ++i) {
 
-			let layerGroup = new THREE.Group();
+			const layerGroup = new THREE.Group();
 
 			for (let j = 0; j < this.numLanes; ++j) {
 
 				for (let k = 1; k <= this.numSteps; ++k) {
 
-					let polyCenter = [
+					const polyCenter = [
 							this.numSteps * i * (this.globalRadius / k) * Math.cos(phi(j, this.numLanes)),
 							this.numSteps * i * (this.globalRadius / k) * Math.sin(phi(j, this.numLanes)),
 							0
 					];
 
-					let poly = new polygon(polyCenter, this.polygonRadius / k, this.numNodes, Math.PI / 2, colorNodes(3));
+					const poly = new polygon(polyCenter, this.polygonRadius / k, this.numNodes, Math.PI / 2, colorNodes(3));
 
 					layerGroup.add(poly.line);
 

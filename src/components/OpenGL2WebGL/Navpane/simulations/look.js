@@ -25,13 +25,13 @@ export default class Look extends Animation {
 
   draw () {
 
-    let partitionSizes = [];
+    const partitionSizes = [];
 
     for (let i = 0; i < this.numPartitions; ++i) {
       partitionSizes.push(Math.floor(this.numVertices / this.numPartitions));
     }
 
-    let center = [
+    const center = [
       0,
       0,
       0
@@ -44,7 +44,7 @@ export default class Look extends Animation {
 
   }
 
-  update (t) {
+  update () {
 
 		for (let i = 0; i < this.graph.numVertices; ++i) {
 

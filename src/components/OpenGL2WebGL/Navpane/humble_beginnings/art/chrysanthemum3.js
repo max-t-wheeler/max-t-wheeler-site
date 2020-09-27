@@ -25,13 +25,13 @@ export default class Chrysanthemum3 extends Animation {
 
         for (let j = 0; j < i; ++j) {
 
-					let polyCenter = [
+					const polyCenter = [
 							2 * Math.cos(phi(i, this.numPolygons)),
 							2 * Math.sin(phi(i, this.numPolygons)),
 							0
 					];
 
-          let poly = new polygon(polyCenter, 2, this.numNodes, 0, colorNodes(i * j));
+          const poly = new polygon(polyCenter, 2, this.numNodes, 0, colorNodes(i * j));
           this.scene.add(poly.line);
 
       }
@@ -42,7 +42,7 @@ export default class Chrysanthemum3 extends Animation {
 
   }
 
-  update (t) {
+  update () {
 
     for (let i = 0; i < this.scene.children.length; ++i) {
 

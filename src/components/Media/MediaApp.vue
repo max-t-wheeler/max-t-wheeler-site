@@ -25,12 +25,16 @@ export default {
     return {
       mediaPlayers: [
         {
+          name: 'bandcamp-monkey',
+          embedref: '<iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=734807793/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/track=4110217143/transparent=true/" seamless><a href="https://barncatboys.bandcamp.com/album/baby-songs">Baby Songs by Barncat Productions</a></iframe>'
+        },
+        {
           name: 'bandcamp-dub',
           embedref: '<iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=916923795/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/track=3453975111/transparent=true/" seamless><a href="http://barncatboys.bandcamp.com/album/siblings-and-friends">Siblings and Friends by Siblings and Friends</a></iframe>'
         },
         {
           name: 'soundlcoud-cheerio',
-          embedref: '<iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/345594317&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true"></iframe>'
+          embedref: '<iframe width="100%" height="120px" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/713985979&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>'
         },
         {
           name: 'bandcamp-gross',

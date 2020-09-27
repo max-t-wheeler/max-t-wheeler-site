@@ -26,7 +26,7 @@ export default class Mosaic extends Animation {
 
 		for (let i = 0; i < this.numNodes; ++i) {
 
-			let polyClusterCenter = [
+			const polyClusterCenter = [
 				this.globalRadius * Math.cos(phi(i, this.numNodes)),
 				this.globalRadius * Math.sin(phi(i, this.numNodes)),
 				0
@@ -34,7 +34,7 @@ export default class Mosaic extends Animation {
 
 			for (let j = 0; j < this.numNodes; ++j) {
 
-				let polyCenterOffset = [
+				const polyCenterOffset = [
 					this.polygonRadius * Math.cos(phi(j, this.numNodes)),
 					this.polygonRadius * Math.sin(phi(j, this.numNodes)),
 					0
@@ -42,18 +42,18 @@ export default class Mosaic extends Animation {
 
 				for (let k = 0; k < this.numLayers; ++k) {
 
-			    for (let l = 0; l < this.numPolygons; ++l) {
+					for (let l = 0; l < this.numPolygons; ++l) {
 
-						let polyCenter = [
+						const polyCenter = [
 							k * (polyClusterCenter[0] + polyCenterOffset[0]) * Math.sin(phi(l, this.numPolygons)),
 							k * (polyClusterCenter[1] + polyCenterOffset[1]) * Math.cos(phi(l, this.numPolygons)),
 							0
 						];
 
-			      let poly = new polygon(polyCenter, this.polygonRadius, this.numNodes, 0, colorNodes(i, 'cool'), 'relative');
-			      this.scene.add(poly.line);
+					const poly = new polygon(polyCenter, this.polygonRadius, this.numNodes, 0, colorNodes(i, 'cool'), 'relative');
+					this.scene.add(poly.line);
 
-			    }
+					}
 
 				}
 			}

@@ -3,12 +3,13 @@
     <div>
       <b-navbar toggleable="md" type="dark">
         <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
-        <b-navbar-brand v-on:click="selectHome()">
-          <span class="glyphicon glyphicon-home"></span>
-          {{ homeContents.name }}</b-navbar-brand>
+        <b-navbar-brand @click="selectHome()">
+          <span class="fa fa-home"/>
+          {{ homeContents.name }}
+        </b-navbar-brand>
         <b-collapse is-nav id="nav_collapse">
           <b-navbar-nav>
-            <b-nav-item v-for="app in appContents" :key="app.name" v-on:click="selectApp(app)">{{ app.name }}</b-nav-item>
+            <b-nav-item v-for="app in appContents" :key="app.name" @click="selectApp(app)">{{ app.name }}</b-nav-item>
           </b-navbar-nav>
           <b-navbar-nav class="ml-auto">
             <b-nav-item right v-for="toolbarLink in toolbarLinks" :key="toolbarLink.name">
@@ -50,7 +51,7 @@ export default {
         },
         {
           name: 'soundcloud',
-          src: 'https://soundcloud.com/the-dopest-kind',
+          src: 'https://soundcloud.com/empty-dubs',
           icon: 'fa-soundcloud',
           tooltip: 'click'
         }
@@ -77,6 +78,16 @@ export default {
 </script>
 
 <style>
+
+.navbar-brand {
+  font-size: 1rem;
+  padding: 0;
+}
+
+.nav-link {
+  font-size: 1rem;
+  padding: 0;
+}
 
 .toolbar-icon {
 

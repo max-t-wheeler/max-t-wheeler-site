@@ -15,14 +15,14 @@
     </div>
     <br>
     <div class="opengl2webgl-navpane-controls" :class='screenType'>
-      <b-button v-on:click="activate(animation)">
-        <span class="glyphicon glyphicon-play-circle opengl2webgl-navpane-button"></span>
+      <b-button @click="activate(animation)">
+        <span class="fa fa-play-circle opengl2webgl-navpane-button"></span>
       </b-button>
-      <b-button v-on:click="resetAnimation(animation)">
-        <span class="glyphicon glyphicon-refresh opengl2webgl-navpane-button"></span>
+      <b-button @click="resetAnimation(animation)">
+        <span class="fa fa-refresh opengl2webgl-navpane-button"></span>
       </b-button>
-      <b-button v-on:click="toFullScreen()">
-        <span class="glyphicon glyphicon-move opengl2webgl-navpane-button"></span>
+      <b-button @click="toFullScreen()">
+        <span class="fa fa-arrows-alt opengl2webgl-navpane-button"></span>
       </b-button>
     </div>
     <br>

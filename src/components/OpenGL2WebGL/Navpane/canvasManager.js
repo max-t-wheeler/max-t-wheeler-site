@@ -2,7 +2,7 @@ import * as THREE from 'three';
 
 import { generateAnimation } from './index';
 
-let OrbitControls = require('three-orbit-controls')(THREE);
+const OrbitControls = require('three-orbit-controls')(THREE);
 
 export default class CanvasManager {
 
@@ -59,7 +59,7 @@ export default class CanvasManager {
 
   checkCanvasSize () {
 
-    let cv = document.getElementById('opengl2webgl-display');
+    const cv = document.getElementById('opengl2webgl-display');
 
     this.canvasWidth = cv.offsetWidth;
     this.canvasHeight = cv.offsetHeight;

@@ -91,17 +91,17 @@ export default {
   },
   mounted () {
 
-    let appContainer = document.querySelector('.application');
-    let homeContainer = document.getElementById('home-container')
-    let containerWidth = window.innerWidth;
-    let containerHeight = window.innerHeight;
+    const appContainer = document.querySelector('.application');
+    const homeContainer = document.getElementById('home-container')
+    const containerWidth = window.innerWidth;
+    const containerHeight = window.innerHeight;
 
     appContainer.style.overflow = 'hidden';
 
     function moveAttributes () {
-      let elems = document.querySelectorAll('.home-attribute');
+      const elems = document.querySelectorAll('.home-attribute');
       let t = 0;
-      let id = setInterval(frame, 5);
+      const id = setInterval(frame, 5);
       function frame () {
         if (t === 35000000) {
           clearInterval(id);
@@ -117,7 +117,7 @@ export default {
 
     for (let i = 0; i < this.attributes.length; ++i) {
 
-      let elem = document.createElement('div');
+      const elem = document.createElement('div');
 
       elem.classList.add('home-attribute')
       elem.textContent = this.attributes[i].text;

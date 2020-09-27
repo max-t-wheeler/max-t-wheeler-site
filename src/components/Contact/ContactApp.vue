@@ -58,7 +58,7 @@ export default {
           icon: 'fa-facebook'
         },
         {
-          src: 'https://soundcloud.com/the-dopest-kind',
+          src: 'https://soundcloud.com/empty-dubs',
           icon: 'fa-soundcloud'
         }
       ]

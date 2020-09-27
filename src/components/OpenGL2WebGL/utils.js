@@ -8,7 +8,7 @@ export function colorNodes (n, type) {
 
   if (type === 'cool') {
 
-    let mod = n % 4;
+    const mod = n % 4;
 
     switch (mod) {
 
@@ -29,7 +29,7 @@ export function colorNodes (n, type) {
 
   } else if (type === 'hot') {
 
-    let mod = n % 4;
+    const mod = n % 4;
 
     switch (mod) {
 
@@ -50,7 +50,7 @@ export function colorNodes (n, type) {
 
   } else {
 
-    let mod = n % 7;
+    const mod = n % 7;
 
     switch (mod) {
 
@@ -88,7 +88,7 @@ export function colorNodes (n, type) {
 
 export function phi (t, n) {
 
-  let p = 2 * Math.PI * t / n;
+  const p = 2 * Math.PI * t / n;
 
   return p;
 
@@ -112,14 +112,14 @@ export function polygon (center, radius, numVertices, theta, color, axis) {
 
   }
 
-  let geometry = new THREE.BufferGeometry();
+  const geometry = new THREE.BufferGeometry();
 
-  geometry.addAttribute(
+  geometry.setAttribute(
     'position',
     new THREE.BufferAttribute(this.vertices, 3)
   );
 
-  let material = new THREE.LineBasicMaterial(
+  const material = new THREE.LineBasicMaterial(
     {
       color: this.color
     }
@@ -151,14 +151,14 @@ export function offsetStar (numVertices, center, radius, theta, offset, color) {
 
   }
 
-  let geometry = new THREE.BufferGeometry();
+  const geometry = new THREE.BufferGeometry();
 
-  geometry.addAttribute(
+  geometry.setAttribute(
     'position',
     new THREE.BufferAttribute(this.vertices, 3)
   );
 
-  let material = new THREE.LineBasicMaterial(
+  const material = new THREE.LineBasicMaterial(
     {
       color: this.color
     }
@@ -190,20 +190,20 @@ export function Star (center, numStems, numSplits, radius, color) {
     this.stemVertices[4] = this.radius * Math.cos(phi(i, this.numStems)) + this.center[1];
     this.stemVertices[5] = this.center[2];
 
-    let stemGeometry = new THREE.BufferGeometry();
+    const stemGeometry = new THREE.BufferGeometry();
 
-    stemGeometry.addAttribute(
+    stemGeometry.setAttribute(
       'position',
       new THREE.BufferAttribute(this.stemVertices, 3)
     );
 
-    let stemMaterial = new THREE.LineBasicMaterial(
+    const stemMaterial = new THREE.LineBasicMaterial(
       {
         color: this.color
       }
     );
 
-    let line = new THREE.Line(stemGeometry, stemMaterial);
+    const line = new THREE.Line(stemGeometry, stemMaterial);
 
     this.stemGroup.add(line);
 
@@ -218,20 +218,20 @@ export function Star (center, numStems, numSplits, radius, color) {
       this.splitVertices[4] = this.radius * Math.cos(phi(i, this.numStems) + (j + 2) * Math.PI / 4) / 2 + this.center[1];
       this.splitVertices[5] = this.center[2];
 
-      let splitGeometry = new THREE.BufferGeometry();
+      const splitGeometry = new THREE.BufferGeometry();
 
-      splitGeometry.addAttribute(
+      splitGeometry.setAttribute(
         'position',
         new THREE.BufferAttribute(this.splitVertices, 3)
       );
 
-      let splitMaterial = new THREE.LineBasicMaterial(
+      const splitMaterial = new THREE.LineBasicMaterial(
         {
           color: this.color
         }
       );
 
-      let line = new THREE.Line(splitGeometry, splitMaterial);
+      const line = new THREE.Line(splitGeometry, splitMaterial);
 
       this.splitGroup.add(line);
 
@@ -260,14 +260,14 @@ export function Flower (rootPosition, pistolPosition, petalRadius, numPetals, nu
   this.stemVertices[4] = this.pistolPosition[1];
   this.stemVertices[5] = this.pistolPosition[2];
 
-  let stemGeometry = new THREE.BufferGeometry();
+  const stemGeometry = new THREE.BufferGeometry();
 
-  stemGeometry.addAttribute(
+  stemGeometry.setAttribute(
     'position',
     new THREE.BufferAttribute(this.stemVertices, 3)
   );
 
-  let stemMaterial = new THREE.LineBasicMaterial(
+  const stemMaterial = new THREE.LineBasicMaterial(
     {
       color: colorNodes(3)
     }
@@ -279,20 +279,20 @@ export function Flower (rootPosition, pistolPosition, petalRadius, numPetals, nu
 
   for (let i = 0; i < this.numPetals; ++i) {
 
-    let petalCenter = [
+    const petalCenter = [
       this.petalRadius * Math.cos(phi(i, this.numPetals)) + this.pistolPosition[0],
       this.petalRadius * Math.sin(phi(i, this.numPetals)) + this.pistolPosition[1],
       this.pistolPosition[2]
     ];
 
-    let petal = new polygon(petalCenter, this.petalRadius, this.numNodes, phi(i, this.numPetals), this.petalColor);
+    const petal = new polygon(petalCenter, this.petalRadius, this.numNodes, phi(i, this.numPetals), this.petalColor);
 
     this.petalGroup.add(petal.line);
 
   }
 
-  let pistolGeometry = new THREE.CircleBufferGeometry(this.petalRadius / 3, 32);
-  let pistolMaterial = new THREE.MeshBasicMaterial({ color: this.pistolColor, wireframe: false });
+  const pistolGeometry = new THREE.CircleBufferGeometry(this.petalRadius / 3, 32);
+  const pistolMaterial = new THREE.MeshBasicMaterial({ color: this.pistolColor, wireframe: false });
 
   this.pistol = new THREE.Mesh(pistolGeometry, pistolMaterial);
   this.pistol.position.set(
@@ -316,13 +316,13 @@ export function sacredGeometry (center, numPolygons, numNodes, polygonRadius, gl
 
   for (let i = 0; i < this.numPolygons; ++i) {
 
-    let polyCenter = [
+    const polyCenter = [
       this.globalRadius * Math.cos(phi(i, this.numPolygons)) + this.center[0],
       this.globalRadius * Math.sin(phi(i, this.numPolygons)) + this.center[1],
       this.center[2]
     ];
 
-    let poly = new polygon(polyCenter, this.polygonRadius, this.numNodes, phi(i, this.numNodes), this.color);
+    const poly = new polygon(polyCenter, this.polygonRadius, this.numNodes, phi(i, this.numNodes), this.color);
 
     this.geomGroup.add(poly.line);
 
@@ -352,7 +352,7 @@ export class Graph {
       this.numVertices = this.numVertices + this.partitionSizes[i];
     }
 
-    let vertexCenter = [0, 0, 0];
+    const vertexCenter = [0, 0, 0];
 
     if (color === 'sequence') {
 
@@ -360,15 +360,15 @@ export class Graph {
 
         if (this.type === 'ball') {
 
-          let vertexGeometry = new THREE.CircleBufferGeometry(this.vertexRadius, 32);
-          let vertexMaterial = new THREE.MeshBasicMaterial({ color: colorNodes(i), wireframe: false });
-          let vertex = new THREE.Mesh(vertexGeometry, vertexMaterial);
+          const vertexGeometry = new THREE.CircleBufferGeometry(this.vertexRadius, 32);
+          const vertexMaterial = new THREE.MeshBasicMaterial({ color: colorNodes(i), wireframe: false });
+          const vertex = new THREE.Mesh(vertexGeometry, vertexMaterial);
 
           this.vertexGroup.add(vertex);
 
         } else if (this.type === 'point') {
 
-          let vertex = new polygon(vertexCenter, this.vertexRadius, 100, phi(i, 100), colorNodes(i));
+          const vertex = new polygon(vertexCenter, this.vertexRadius, 100, phi(i, 100), colorNodes(i));
 
           this.vertexGroup.add(vertex.line);
 
@@ -384,15 +384,15 @@ export class Graph {
 
           if (this.type === 'ball') {
 
-            let vertexGeometry = new THREE.CircleBufferGeometry(this.vertexRadius / this.numVertices, 32);
-            let vertexMaterial = new THREE.MeshBasicMaterial({ color: colorNodes(i), wireframe: false });
-            let vertex = new THREE.Mesh(vertexGeometry, vertexMaterial);
+            const vertexGeometry = new THREE.CircleBufferGeometry(this.vertexRadius / this.numVertices, 32);
+            const vertexMaterial = new THREE.MeshBasicMaterial({ color: colorNodes(i), wireframe: false });
+            const vertex = new THREE.Mesh(vertexGeometry, vertexMaterial);
 
             this.vertexGroup.add(vertex);
 
           } else if (this.type === 'point') {
 
-            let vertex = new polygon(vertexCenter, this.vertexRadius, 100, phi(i, 100), colorNodes(i));
+            const vertex = new polygon(vertexCenter, this.vertexRadius, 100, phi(i, 100), colorNodes(i));
 
             this.vertexGroup.add(vertex.line);
 
@@ -411,7 +411,7 @@ export class Graph {
 
      if (layout === 'polar') {
 
-         let n = this.numVertices;
+         const n = this.numVertices;
 
          for (let i = 0; i < n; ++i) {
 
@@ -426,17 +426,17 @@ export class Graph {
      } else if (layout === 'partite') {
 
          let count = 0;
-         let numSides = this.partitionSizes.length;
+         const numSides = this.partitionSizes.length;
 
          if (numSides === 1) {
 
-           let sideScale = (2 * this.radius / (this.partitionSizes[0] + 1));
+           const sideScale = (2 * this.radius / (this.partitionSizes[0] + 1));
 
            if (this.partitionSizes[0] % 2 === 1) {
 
                for (let j = 0; j < this.partitionSizes[0]; ++j) {
 
-                 let sideSpacing = j - Math.floor(this.partitionSizes[0] / 2)
+                 const sideSpacing = j - Math.floor(this.partitionSizes[0] / 2)
 
                  this.vertexGroup.children[j].position.set(
                    this.center[0] + sideScale * sideSpacing * Math.sin(-angle),
@@ -450,7 +450,7 @@ export class Graph {
 
                for (let j = 0; j < this.partitionSizes[0]; ++j) {
 
-                 let sideSpacing = (j + ((1 - this.partitionSizes[0]) / 2));
+                 const sideSpacing = (j + ((1 - this.partitionSizes[0]) / 2));
 
                  this.vertexGroup.children[j].position.set(
                    this.center[0] + sideScale * sideSpacing * Math.sin(-angle),
@@ -466,14 +466,14 @@ export class Graph {
 
            for (let i = 0; i < numSides; ++i) {
 
-               let sideAngle = phi(i, numSides) + angle;
-               let sideScale = (2 * this.radius * Math.sin(Math.PI / numSides) / (this.partitionSizes[i] + 1));
+               const sideAngle = phi(i, numSides) + angle;
+               const sideScale = (2 * this.radius * Math.sin(Math.PI / numSides) / (this.partitionSizes[i] + 1));
 
                if (this.partitionSizes[i] % 2 === 1) {
 
                    for (let j = 0; j < this.partitionSizes[i]; ++j) {
 
-                     let sideSpacing = j - Math.floor(this.partitionSizes[i] / 2)
+                     const sideSpacing = j - Math.floor(this.partitionSizes[i] / 2)
 
                      this.vertexGroup.children[count + j].position.set(
                        this.center[0] + this.radius * Math.cos(sideAngle) + sideScale * sideSpacing * Math.sin(-sideAngle),
@@ -487,7 +487,7 @@ export class Graph {
 
                    for (let j = 0; j < this.partitionSizes[i]; ++j) {
 
-                     let sideSpacing = (j + ((1 - this.partitionSizes[i]) / 2));
+                     const sideSpacing = (j + ((1 - this.partitionSizes[i]) / 2));
 
                      this.vertexGroup.children[count + j].position.set(
                        this.center[0] + this.radius * Math.cos(sideAngle) + sideScale * sideSpacing * Math.sin(-sideAngle),
@@ -532,18 +532,18 @@ export class Graph {
      } else if (layout === 'grid') {
 
          let count = 0;
-         let numLevels = this.partitionSizes.length;
+         const numLevels = this.partitionSizes.length;
 
          for (let i = 0; i < numLevels; ++i) {
 
-             let levelScale = (2 * this.radius * Math.sin(Math.PI / numLevels) / (this.partitionSizes[i] + 1));
-             let interLevelSpacing = (i - Math.floor(numLevels / 2)) / numLevels;
+             const levelScale = (2 * this.radius * Math.sin(Math.PI / numLevels) / (this.partitionSizes[i] + 1));
+             const interLevelSpacing = (i - Math.floor(numLevels / 2)) / numLevels;
 
              if (this.partitionSizes[i] % 2 === 1) {
 
                  for (let j = 0; j < this.partitionSizes[i]; ++j) {
 
-                   let intraLevelSpacing = j - Math.floor(this.partitionSizes[i] / 2)
+                   const intraLevelSpacing = j - Math.floor(this.partitionSizes[i] / 2)
 
                    this.vertexGroup.children[count + j].position.set(
                      levelScale * intraLevelSpacing,
@@ -557,7 +557,7 @@ export class Graph {
 
                  for (let j = 0; j < this.partitionSizes[i]; ++j) {
 
-                     let intraLevelSpacing = (j + ((1 - this.partitionSizes[i]) / 2));
+                     const intraLevelSpacing = (j + ((1 - this.partitionSizes[i]) / 2));
 
                      this.vertexGroup.children[count + j].position.set(
                        levelScale * intraLevelSpacing,
@@ -579,7 +579,7 @@ export class Graph {
 
   addEdges (type) {
 
-    let n = this.numVertices;
+    const n = this.numVertices;
 
      if (type === 'complete') {
 
@@ -587,12 +587,12 @@ export class Graph {
 
            for (let j = i + 1; j < n; ++j) {
 
-             let edgeGeometry = new THREE.Geometry();
+             const edgeGeometry = new THREE.Geometry();
 
-             let edgeMaterial = new THREE.LineBasicMaterial(
-               {
-              	color: 0xffffff
-               }
+             const edgeMaterial = new THREE.LineBasicMaterial(
+              {
+                color: 0xffffff
+              }
              );
 
              edgeGeometry.vertices.push(
@@ -600,7 +600,7 @@ export class Graph {
                this.vertexGroup.children[j].position
              );
 
-             let edge = new THREE.Line(edgeGeometry, edgeMaterial);
+             const edge = new THREE.Line(edgeGeometry, edgeMaterial);
 
              this.edgeGroup.add(edge);
 
@@ -612,9 +612,9 @@ export class Graph {
 
        for (let i = 0; i < n; ++i) {
 
-         let edgeGeometry = new THREE.Geometry();
+         const edgeGeometry = new THREE.Geometry();
 
-         let edgeMaterial = new THREE.LineBasicMaterial({
+         const edgeMaterial = new THREE.LineBasicMaterial({
             color: 0xffffff
           });
 
@@ -630,7 +630,7 @@ export class Graph {
             );
           }
 
-         let edge = new THREE.Line(edgeGeometry, edgeMaterial);
+         const edge = new THREE.Line(edgeGeometry, edgeMaterial);
 
          this.edgeGroup.add(edge);
 
@@ -640,9 +640,9 @@ export class Graph {
 
        for (let i = 0; i < n - 1; ++i) {
 
-         let edgeGeometry = new THREE.Geometry();
+         const edgeGeometry = new THREE.Geometry();
 
-         let edgeMaterial = new THREE.LineBasicMaterial({
+         const edgeMaterial = new THREE.LineBasicMaterial({
             color: 0xffffff
           });
 
@@ -651,7 +651,7 @@ export class Graph {
            this.vertexGroup.children[i + 1].position
          );
 
-         let edge = new THREE.Line(edgeGeometry, edgeMaterial);
+         const edge = new THREE.Line(edgeGeometry, edgeMaterial);
 
          this.edgeGroup.add(edge);
 
@@ -661,9 +661,9 @@ export class Graph {
 
        for (let i = 1; i < n; ++i) {
 
-         let edgeGeometry = new THREE.Geometry();
+         const edgeGeometry = new THREE.Geometry();
 
-         let edgeMaterial = new THREE.LineBasicMaterial({
+         const edgeMaterial = new THREE.LineBasicMaterial({
             color: 0xffffff
           });
 
@@ -672,7 +672,7 @@ export class Graph {
            this.vertexGroup.children[i].position
          );
 
-         let edge = new THREE.Line(edgeGeometry, edgeMaterial);
+         const edge = new THREE.Line(edgeGeometry, edgeMaterial);
 
          this.edgeGroup.add(edge);
 

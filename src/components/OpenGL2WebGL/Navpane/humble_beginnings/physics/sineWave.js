@@ -18,8 +18,8 @@ export default class SineWave extends Animation {
 
   draw () {
 
-    let node_x = [];
-    let node_y = [];
+    const node_x = [];
+    const node_y = [];
 
     for (let i = -this.numPoints; i <= this.numPoints; ++i) {
       node_x.push(i / 1000);
@@ -27,7 +27,7 @@ export default class SineWave extends Animation {
 
     }
 
-    let vertices = new Float32Array(node_x.length * 3);
+    const vertices = new Float32Array(node_x.length * 3);
 
     for (let i = 0; i < node_x.length; ++i) {
       vertices[3 * i + 0] = node_x[i];
@@ -35,20 +35,20 @@ export default class SineWave extends Animation {
       vertices[3 * i + 2] = 0;
     }
 
-    let geometry = new THREE.BufferGeometry();
+    const geometry = new THREE.BufferGeometry();
 
-    geometry.addAttribute(
+    geometry.setAttribute(
       'position',
       new THREE.BufferAttribute(vertices, 3)
     );
 
-    let material = new THREE.LineBasicMaterial(
+    const material = new THREE.LineBasicMaterial(
       {
         color: 0x00ffff
       }
     );
 
-    let line = new THREE.Line(geometry, material);
+    const line = new THREE.Line(geometry, material);
 
     this.scene.add(line);
 
