@@ -36,7 +36,7 @@
 <script>
 
 import NavpaneControls from './NavpaneControls';
-import CanvasManager from './canvasManager';
+import CanvasManager from '../animations/canvasManager';
 
 let canvasManager;
 
