@@ -16,13 +16,13 @@
     <br>
     <div class="opengl2webgl-navpane-controls" :class='screenType'>
       <b-button @click="activate(animation)">
-        <span class="fa fa-play-circle opengl2webgl-navpane-button"></span>
+        <font-awesome-icon icon='play-circle' class='opengl2webgl-navpane-button'></font-awesome-icon>
       </b-button>
       <b-button @click="resetAnimation(animation)">
-        <span class="fa fa-refresh opengl2webgl-navpane-button"></span>
+        <font-awesome-icon icon='sync' class='opengl2webgl-navpane-button'></font-awesome-icon>
       </b-button>
       <b-button @click="toFullScreen()">
-        <span class="fa fa-arrows-alt opengl2webgl-navpane-button"></span>
+        <font-awesome-icon icon='expand-arrows-alt' class='opengl2webgl-navpane-button'></font-awesome-icon>
       </b-button>
     </div>
     <br>
@@ -32,8 +32,19 @@
 
 <script>
 
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faExpandArrowsAlt, faPlayCircle, faSync } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+
+library.add(faExpandArrowsAlt);
+library.add(faPlayCircle);
+library.add(faSync);
+
 export default {
-  props: ['animation', 'screenType', 'activate', 'resetAnimation', 'toFullScreen', 'resetInput']
+  props: ['animation', 'screenType', 'activate', 'resetAnimation', 'toFullScreen', 'resetInput'],
+  components: {
+    'font-awesome-icon': FontAwesomeIcon,
+  }
 }
 
 </script>
