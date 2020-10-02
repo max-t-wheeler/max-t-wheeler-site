@@ -51,6 +51,11 @@ export default {
 
 <style>
 
+p {
+  margin-top: 8px;
+  margin-bottom: 0;
+}
+
 .opengl2webgl-navpane-controls {
   text-align: left;
 }
