@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 
-import { generateAnimation } from './index';
+import { generateAnimation } from '../animations/index';
 
 const OrbitControls = require('three-orbit-controls')(THREE);
 
