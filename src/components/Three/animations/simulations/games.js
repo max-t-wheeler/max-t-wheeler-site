@@ -6,6 +6,54 @@ import {
 
 } from '../utils';
 
+export const metadata = {
+  active: false,
+  address: '/three#simulations_games',
+  category: 'simulations',
+  controllable: true,
+  dynamic: true,
+  hidden: false,
+  name: 'games',
+  parameters: {
+    numPartitions: {
+      label: 'Number of Partitions',
+      defaultValue: 6,
+      currentValue: 6,
+      maxValue: 100,
+      minValue: 1
+    },
+    numVertices: {
+      label: 'Number of Vertices',
+      defaultValue: 1000,
+      currentValue: 1000,
+      maxValue: 1000,
+      minValue: 100
+    },
+    graphRadius: {
+      label: 'Graph Radius',
+      defaultValue: 1,
+      currentValue: 1,
+      maxValue: 5,
+      minValue: 1
+    },
+    vertexRadius: {
+      label: 'Vertex Radius',
+      defaultValue: 5,
+      currentValue: 5,
+      maxValue: 100,
+      minValue: 1
+    },
+    rate: {
+      label: 'Rate',
+      defaultValue: 10,
+      currentValue: 10,
+      maxValue: 1000,
+      minValue: 1
+    }
+  },
+  text: 'games'
+}
+
 export default class Games extends Animation {
 
 	constructor (scene, camera, animation) {

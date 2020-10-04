@@ -7,6 +7,33 @@ import {
 
 } from '../utils';
 
+export const metadata = {
+  active: false,
+  address: '/three#art_bounce_ripple',
+  category: 'art',
+  controllable: false,
+  dynamic: true,
+  hidden: false,
+  name: 'bounce ripple',
+  parameters: {
+    numPolygons: {
+      label: 'Number of Polygons',
+      defaultValue: 10,
+      currentValue: 10,
+      maxValue: 100,
+      minValue: 1
+    },
+    radius: {
+      label: 'Radius',
+      defaultValue: 3,
+      currentValue: 3,
+      maxValue: 6,
+      minValue: 1
+    }
+  },
+  text: 'bounce ripple'
+}
+
 export default class BounceRipple extends Animation {
 
 	constructor (scene, camera, animation) {

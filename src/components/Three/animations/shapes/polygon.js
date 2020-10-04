@@ -7,6 +7,40 @@ import {
 
 } from '../utils';
 
+export const metadata = {
+	active: false,
+	address: '/three#polystarter',
+	category: 'shapes',
+	controllable: true,
+	dynamic: true,
+	hidden: true,
+	name: 'polystarter',
+	parameters: {
+		radius: {
+			label: 'Radius',
+			defaultValue: 1,
+			currentValue: 1,
+			maxValue: 1000,
+			minValue: 0
+		},
+		numVertices: {
+			label: 'Number of Vertices',
+			defaultValue: 6,
+			currentValue: 6,
+			maxValue: 1000,
+			minValue: 0
+		},
+		theta: {
+			label: 'Theta',
+			defaultValue: 0,
+			currentValue: 0,
+			maxValue: 1000,
+			minValue: 0
+		}
+	},
+	text: 'polystarter'
+}
+
 export default class Polygon extends Animation {
 
 	constructor (scene, camera, animation) {

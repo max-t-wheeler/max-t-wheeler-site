@@ -8,6 +8,33 @@ import {
 
 } from '../utils';
 
+export const metadata = {
+  active: false,
+  address: '/three_conversion#art_blanket',
+  category: 'art',
+  controllable: false,
+  dynamic: false,
+  hidden: true,
+  name: 'blanket',
+  parameters: {
+    numPolygons: {
+      label: 'Number of Polygons',
+      defaultValue: 10,
+      currentValue: 10,
+      maxValue: 1000,
+      minValue: 1
+    },
+    numFaces: {
+      label: 'Number of Faces',
+      defaultValue: 4,
+      currentValue: 4,
+      maxValue: 500,
+      minValue: 3
+    }
+  },
+  text: 'blanket'
+}
+
 export default class Blanket extends Animation {
 
 	constructor (scene, camera, animation) {

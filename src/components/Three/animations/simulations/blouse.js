@@ -6,6 +6,54 @@ import {
 
 } from '../utils';
 
+export const metadata = {
+  active: false,
+  address: '/three#simulations_blouse',
+  category: 'simulations',
+  controllable: true,
+  dynamic: true,
+  hidden: false,
+  name: 'blouse',
+  parameters: {
+    numPartitions: {
+      label: 'Number of Partitions',
+      defaultValue: 6,
+      currentValue: 6,
+      maxValue: 100,
+      minValue: 2
+    },
+    numVertices: {
+      label: 'Number of Vertices',
+      defaultValue: 1000,
+      currentValue: 1000,
+      maxValue: 1000,
+      minValue: 100
+    },
+    graphRadius: {
+      label: 'Graph Radius',
+      defaultValue: 2,
+      currentValue: 2,
+      maxValue: 5,
+      minValue: 1
+    },
+    vertexRadius: {
+      label: 'Vertex Radius',
+      defaultValue: 5,
+      currentValue: 5,
+      maxValue: 100,
+      minValue: 1
+    },
+    rate: {
+      label: 'Rate',
+      defaultValue: 100,
+      currentValue: 100,
+      maxValue: 1000,
+      minValue: 1
+    }
+  },
+  text: 'blouse'
+}
+
 export default class Blouse extends Animation {
 
 	constructor (scene, camera, animation) {

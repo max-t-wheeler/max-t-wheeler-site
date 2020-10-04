@@ -8,6 +8,33 @@ import {
 
 } from '../utils';
 
+export const metadata = {
+  active: false,
+  address: '/three#art_chrysanthemum3',
+  category: 'art',
+  controllable: false,
+  dynamic: true,
+  hidden: true,
+  name: 'chrysanthemum3',
+  parameters: {
+    numNodes: {
+      label: 'Number of Nodes',
+      defaultValue: 12,
+      currentValue: 12,
+      maxValue: 1000,
+      minValue: 0
+    },
+    numPolygons: {
+      label: 'Number of Polygons',
+      defaultValue: 12,
+      currentValue: 12,
+      maxValue: 1000,
+      minValue: 0
+    }
+  },
+  text: 'chrysanthemum 3'
+}
+
 export default class Chrysanthemum3 extends Animation {
 
 	constructor (scene, camera, animation) {

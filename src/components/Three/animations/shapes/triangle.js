@@ -2,6 +2,18 @@ import * as THREE from 'three';
 
 import Animation from '../animation';
 
+export const metadata = {
+	active: false,
+	address: '/three#shapes_triangle',
+	category: 'shapes',
+	controllable: true,
+	dynamic: false,
+	hidden: true,
+	name: 'triangle',
+	parameters: [],
+	text: 'triangle'
+}
+
 export default class Triangle extends Animation {
 
 	constructor (scene, camera, animation) {

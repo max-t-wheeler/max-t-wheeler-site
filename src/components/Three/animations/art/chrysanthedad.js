@@ -8,6 +8,61 @@ import {
 
 } from '../utils';
 
+export const metadata = {
+	active: false,
+	address: '/three#art_chrysanthedad',
+	category: 'art',
+	controllable: false,
+	dynamic: true,
+	hidden: false,
+	name: 'chrysanthedad',
+	parameters: {
+		numCenters: {
+			label: 'Number of Centers',
+			defaultValue: 4,
+			currentValue: 4,
+			maxValue: 32,
+			minValue: 2
+		},
+		numNodes: {
+			label: 'Number of Nodes',
+			defaultValue: 32,
+			currentValue: 32,
+			maxValue: 32,
+			minValue: 2
+		},
+		numPolygons: {
+			label: 'Number of Polygons',
+			defaultValue: 30,
+			currentValue: 30,
+			maxValue: 32,
+			minValue: 1
+		},
+		numLayers: {
+			label: 'Number of Layers',
+			defaultValue: 2,
+			currentValue: 2,
+			maxValue: 8,
+			minValue: 1
+		},
+		polygonRadius: {
+			label: 'Polygon Radius',
+			defaultValue: 1,
+			currentValue: 1,
+			maxValue: 10,
+			minValue: 1
+		},
+		globalRadius: {
+			label: 'Global Radius',
+			defaultValue: 2,
+			currentValue: 2,
+			maxValue: 8,
+			minValue: 1
+		}
+	},
+	text: 'chrysanthedad'
+}
+
 export default class Chrysanthedad extends Animation {
 
 	constructor (scene, camera, animation) {

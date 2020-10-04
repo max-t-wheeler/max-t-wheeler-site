@@ -8,6 +8,40 @@ import {
 
 } from '../utils';
 
+export const metadata = {
+  active: false,
+  address: '/three#art_chrysanthemum2',
+  category: 'art',
+  controllable: true,
+  dynamic: true,
+  hidden: true,
+  name: 'chrysanthemum2',
+  parameters: {
+    numNodes: {
+      label: 'Number of Nodes',
+      defaultValue: 12,
+      currentValue: 12,
+      maxValue: 1000,
+      minValue: 0
+    },
+    polygonRadius: {
+      label: 'Polygon Radius',
+      defaultValue: 2,
+      currentValue: 2,
+      maxValue: 1000,
+      minValue: 0
+    },
+    globalRadius: {
+      label: 'Global Radius',
+      defaultValue: 2,
+      currentValue: 2,
+      maxValue: 1000,
+      minValue: 0
+    }
+  },
+  text: 'chrysanthemum 2'
+}
+
 export default class Chrysanthemum2 extends Animation {
 
 	constructor (scene, camera, animation) {

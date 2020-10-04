@@ -6,6 +6,61 @@ import {
 
 } from '../utils';
 
+export const metadata = {
+  active: false,
+  address: '/three#simulations_look',
+  category: 'simulations',
+  controllable: true,
+  dynamic: true,
+  hidden: false,
+  name: 'look',
+  parameters: {
+    numPartitions: {
+      label: 'Number of Partitions',
+      defaultValue: 6,
+      currentValue: 6,
+      maxValue: 100,
+      minValue: 1
+    },
+    numVertices: {
+      label: 'Number of Vertices',
+      defaultValue: 1000,
+      currentValue: 1000,
+      maxValue: 1000,
+      minValue: 100
+    },
+    graphRadius: {
+      label: 'Graph Radius',
+      defaultValue: 2,
+      currentValue: 2,
+      maxValue: 5,
+      minValue: 1
+    },
+    vertexRadius: {
+      label: 'Vertex Radius',
+      defaultValue: 10,
+      currentValue: 10,
+      maxValue: 100,
+      minValue: 1
+    },
+    dampening: {
+      label: 'Dampening',
+      defaultValue: 10,
+      currentValue: 10,
+      maxValue: 100,
+      minValue: 1
+    },
+    rate: {
+      label: 'Rate',
+      defaultValue: 10,
+      currentValue: 10,
+      maxValue: 100,
+      minValue: 1
+    }
+  },
+  text: 'look'
+}
+
 export default class Look extends Animation {
 
 	constructor (scene, camera, animation) {

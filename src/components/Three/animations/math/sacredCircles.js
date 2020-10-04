@@ -8,6 +8,47 @@ import {
 
 } from '../utils';
 
+export const metadata = {
+	active: false,
+	address: '/three#math_sacred_circles',
+	category: 'math',
+	controllable: true,
+	dynamic: false,
+	hidden: false,
+	name: 'sacred circles',
+	parameters: {
+		numLayers: {
+			label: 'Number of Layers',
+			defaultValue: 12,
+			currentValue: 12,
+			maxValue: 64,
+			minValue: 3
+		},
+		numCircles: {
+			label: 'Number of Circles',
+			defaultValue: 12,
+			currentValue: 12,
+			maxValue: 64,
+			minValue: 1
+		},
+		circleRadius: {
+			label: 'Circle Radius',
+			defaultValue: 1,
+			currentValue: 1,
+			maxValue: 5,
+			minValue: 0
+		},
+		globalRadius: {
+			label: 'Global Radius',
+			defaultValue: 1,
+			currentValue: 1,
+			maxValue: 10,
+			minValue: 0
+		}
+	},
+	text: 'sacred circles'
+}
+
 export default class SacredCircles extends Animation {
 
 	constructor (scene, camera, animation) {

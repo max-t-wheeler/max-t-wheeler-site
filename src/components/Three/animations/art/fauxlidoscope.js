@@ -10,6 +10,63 @@ import {
 
 } from '../utils';
 
+export const metadata = {
+	active: false,
+	address: '/three#art_fauxlidoscope',
+	cameraZoomMax: 100,
+	cameraZoomMin: 1,
+	category: 'art',
+	controllable: false,
+	dynamic: true,
+	hidden: false,
+	name: 'fauxlidoscope',
+	parameters: {
+		numSteps: {
+			label: 'Number of Steps',
+			defaultValue: 12,
+			currentValue: 12,
+			maxValue: 120,
+			minValue: 1
+		},
+		numLayers: {
+			label: 'Number of Layers',
+			defaultValue: 20,
+			currentValue: 20,
+			maxValue: 120,
+			minValue: 2
+		},
+		numNodes: {
+			label: 'Number of Nodes',
+			defaultValue: 6,
+			currentValue: 6,
+			maxValue: 64,
+			minValue: 3
+		},
+		numLanes: {
+			label: 'Number of Lanes',
+			defaultValue: 6,
+			currentValue: 6,
+			maxValue: 60,
+			minValue: 2
+		},
+		polygonRadius: {
+			label: 'Polygon Radius',
+			defaultValue: 1,
+			currentValue: 1,
+			maxValue: 64,
+			minValue: 1
+		},
+		globalRadius: {
+			label: 'Global Radius',
+			defaultValue: 1,
+			currentValue: 1,
+			maxValue: 10,
+			minValue: 0
+		}
+	},
+	text: 'fauxlidoscope'
+}
+
 export default class Fauxlidoscope extends Animation {
 
 	constructor (scene, camera, animation) {

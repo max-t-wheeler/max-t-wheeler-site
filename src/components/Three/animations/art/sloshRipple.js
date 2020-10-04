@@ -8,6 +8,33 @@ import {
 
 } from '../utils';
 
+export const metadata = {
+  active: false,
+  address: '/three#art_slosh_ripple',
+  category: 'art',
+  controllable: false,
+  dynamic: true,
+  hidden: false,
+  name: 'slosh ripple',
+  parameters: {
+    numPolygons: {
+      label: 'Number of Polygons',
+      defaultValue: 200,
+      currentValue: 200,
+      maxValue: 500,
+      minValue: 10
+    },
+    radius: {
+      label: 'Radius',
+      defaultValue: 3,
+      currentValue: 3,
+      maxValue: 10,
+      minValue: 1
+    }
+  },
+  text: 'slosh ripple'
+}
+
 export default class SloshRipple extends Animation {
 
 	constructor (scene, camera, animation) {
