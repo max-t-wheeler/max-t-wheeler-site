@@ -1,24 +1,24 @@
 <template>
 
   <div>
-    <div v-for="category in visibleCategories" :key="category.name" class="opengl2webgl-navpane-category" >
-      <p v-b-toggle="'category-' + category.name" class="opengl2webgl-navpane-category-text"> {{ category.name }} </p>
+    <div v-for="category in visibleCategories" :key="category.name" class="three-navpane-category" >
+      <p v-b-toggle="'category-' + category.name" class="three-navpane-category-text"> {{ category.name }} </p>
       <b-collapse :id="'category-' + category.name">
-        <ul class="opengl2webgl-navpane-list">
+        <ul class="three-navpane-list">
           <li
             v-for='item in visibleAnimations'
             :key='item.name'
-            class = "opengl2webgl-navpane-item"
+            class = "three-navpane-item"
             >
             <div v-if='item.category == category.name'>
               <p
                 v-b-toggle="item.name"
-                class="opengl2webgl-navpane-text"
+                class="three-navpane-text"
                 :class='{active: item.active}'
                 v-on:click='activate(item)'
                 > {{ item.text }}
               </p>
-              <opengl2webgl-navpane-controls
+              <three-navpane-controls
                 v-if="item.parameters.length !== 0 && item.active"
                 :animation="item"
                 :screenType="screenType"
@@ -45,7 +45,7 @@ let canvasManager;
 export default {
   props: ['screenType', 'searchedText'],
   components: {
-    'opengl2webgl-navpane-controls': NavpaneControls
+    'three-navpane-controls': NavpaneControls
   },
   data () {
     return {
@@ -61,7 +61,7 @@ export default {
       }
       animation.active = true;
       this.display = true;
-      const canvas = document.getElementById('opengl2webgl-canvas');
+      const canvas = document.getElementById('three-canvas');
       if (canvasManager) {
         if (canvasManager.animationId > 0) {
           cancelAnimationFrame(canvasManager.animationId);
@@ -77,7 +77,7 @@ export default {
       this.activate(animation);
     },
     toFullScreen: function () {
-      const canvas = document.getElementById('opengl2webgl-canvas');
+      const canvas = document.getElementById('three-canvas');
       if (canvas.requestFullscreen) {
         canvas.requestFullscreen();
       } else if (canvas.webkitRequestFullscreen) {
@@ -122,7 +122,7 @@ export default {
 
 <style>
 
-.opengl2webgl-navpane-category-text {
+.three-navpane-category-text {
   font-family: "Arial";
   font-weight: bold;
   cursor: pointer;
@@ -130,16 +130,16 @@ export default {
   margin: 0;
 }
 
-.opengl2webgl-navpane-category-text:focus {
+.three-navpane-category-text:focus {
   outline: none;
 }
 
-.opengl2webgl-navpane-list {
+.three-navpane-list {
   list-style-type: none;
   padding: 0;
 }
 
-.opengl2webgl-navpane-text {
+.three-navpane-text {
   color: purple;
   text-decoration: underline;
   font-family: "Arial";
@@ -148,7 +148,7 @@ export default {
   margin: 0;
 }
 
-.opengl2webgl-navpane-text:focus {
+.three-navpane-text:focus {
   outline: none;
 }
 
