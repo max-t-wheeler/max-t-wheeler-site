@@ -8,6 +8,54 @@ import {
 
 } from '../utils';
 
+export const metadata = {
+	active: false,
+	address: '/three#math_mosaic',
+	category: 'math',
+	controllable: true,
+	dynamic: true,
+	hidden: true,
+	name: 'mosaic',
+	parameters: {
+		numNodes: {
+			label: 'Number of Nodes',
+			defaultValue: 8,
+			currentValue: 8,
+			maxValue: 1000,
+			minValue: 3
+		},
+		numPolygons: {
+			label: 'Number of Polygons',
+			defaultValue: 6,
+			currentValue: 6,
+			maxValue: 1000,
+			minValue: 0
+		},
+		numLayers: {
+			label: 'Number of Layers',
+			defaultValue: 8,
+			currentValue: 8,
+			maxValue: 100,
+			minValue: 2
+		},
+		polygonRadius: {
+			label: 'Polygon Radius',
+			defaultValue: 3,
+			currentValue: 3,
+			maxValue: 50,
+			minValue: 0
+		},
+		globalRadius: {
+			label: 'Global Radius',
+			defaultValue: 2,
+			currentValue: 2,
+			maxValue: 50,
+			minValue: 0
+		}
+	},
+	text: 'mosaic'
+}
+
 export default class Mosaic extends Animation {
 
 	constructor (scene, camera, animation) {

@@ -2,6 +2,18 @@ import * as THREE from 'three';
 
 import Animation from '../animation';
 
+export const metadata = {
+	active: false,
+	address: '/three#shapes_rectangle',
+	category: 'shapes',
+	controllable: true,
+	dynamic: false,
+	hidden: true,
+	name: 'rectangle',
+	parameters: [],
+	text: 'rectangle'
+}
+
 export default class Rectangle extends Animation {
 
 	constructor (scene, camera, animation) {

@@ -2,6 +2,54 @@ import * as THREE from 'three';
 
 import Animation from '../animation';
 
+export const metadata = {
+  active: false,
+  address: '/three#physics_sine_wave',
+  category: 'physics',
+  controllable: true,
+  dynamic: false,
+  hidden: true,
+  name: 'sine wave',
+  parameters: {
+    amplitude: {
+      label: 'Amplitude',
+      defaultValue: 0.5,
+      currentValue: 0.5,
+      maxValue: 1000,
+      minValue: 0
+    },
+    frequency: {
+      label: 'Frequency',
+      defaultValue: 10,
+      currentValue: 10,
+      maxValue: 1000,
+      minValue: 0
+    },
+    phase: {
+      label: 'Phase',
+      defaultValue: 0,
+      currentValue: 0,
+      maxValue: 1000,
+      minValue: 0
+    },
+    displacement: {
+      label: 'Displacement',
+      defaultValue: 0,
+      currentValue: 0,
+      maxValue: 1000,
+      minValue: 0
+    },
+    numPoints: {
+      label: 'Number of Points',
+      defaultValue: 1500,
+      currentValue: 1500,
+      maxValue: 1000,
+      minValue: 0
+    }
+  },
+  text: 'sine wave'
+}
+
 export default class SineWave extends Animation {
 
   constructor (scene, camera, animation) {

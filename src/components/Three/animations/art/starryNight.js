@@ -8,6 +8,47 @@ import {
 
 } from '../utils';
 
+export const metadata = {
+	active: false,
+	address: '/three#art_starry_night',
+	category: 'art',
+	controllable: true,
+	dynamic: false,
+	hidden: false,
+	name: 'starry night',
+	parameters: {
+		numStars: {
+			label: 'Number of Stars',
+			defaultValue: 42,
+			currentValue: 42,
+			maxValue: 1000,
+			minValue: 1
+		},
+		numStems: {
+			label: 'Number of Stems',
+			defaultValue: 12,
+			currentValue: 12,
+			maxValue: 64,
+			minValue: 2
+		},
+		numSplits: {
+			label: 'Number of Splits',
+			defaultValue: 8,
+			currentValue: 8,
+			maxValue: 8,
+			minValue: 1
+		},
+		radius: {
+			label: 'Radius',
+			defaultValue: 42,
+			currentValue: 42,
+			maxValue: 1000,
+			minValue: 1
+		}
+	},
+	text: 'starry night'
+}
+
 export default class StarryNight extends Animation {
 
 	constructor (scene, camera, animation) {

@@ -8,6 +8,26 @@ import {
 
 } from '../utils';
 
+export const metadata = {
+  active: false,
+  address: '/three#art_collide0scope',
+  category: 'art',
+  controllable: true,
+  dynamic: true,
+  hidden: true,
+  name: 'collide',
+  parameters: {
+    numCircles: {
+      label: 'Number of Circles',
+      defaultValue: 20,
+      currentValue: 20,
+      maxValue: 100,
+      minValue: 2
+    }
+  },
+  text: 'collide0scope'
+}
+
 export default class Collide0scope extends Animation {
 
 	constructor (scene, camera, animation) {

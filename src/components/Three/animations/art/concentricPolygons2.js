@@ -6,6 +6,33 @@ import {
 
 } from '../utils';
 
+export const metadata = {
+  active: false,
+  address: '/three#art_concentric_polygons2',
+  category: 'art',
+  controllable: false,
+  dynamic: true,
+  hidden: false,
+  name: 'concentric polygons 2',
+  parameters: {
+    numPolygons: {
+      label: 'Number of Polygons',
+      defaultValue: 20,
+      currentValue: 20,
+      maxValue: 100,
+      minValue: 1
+    },
+    radius: {
+      label: 'Radius',
+      defaultValue: 5,
+      currentValue: 5,
+      maxValue: 20,
+      minValue: 1
+    }
+  },
+  text: 'concentric polygons 2'
+}
+
 export default class ConcentricPolygons2 extends Animation {
 
 	constructor (scene, camera, animation) {

@@ -7,6 +7,54 @@ import {
 
 } from '../utils';
 
+export const metadata = {
+  active: false,
+  address: '/three#simulations_antigua',
+  category: 'simulations',
+  controllable: true,
+  dynamic: true,
+  hidden: false,
+  name: 'antigua',
+  parameters: {
+    numPartitions: {
+      label: 'Number of Partitions',
+      defaultValue: 50,
+      currentValue: 50,
+      maxValue: 1000,
+      minValue: 10
+    },
+    numVertices: {
+      label: 'Number of Vertices',
+      defaultValue: 1000,
+      currentValue: 1000,
+      maxValue: 1000,
+      minValue: 100
+    },
+    graphRadius: {
+      label: 'Graph Radius',
+      defaultValue: 5,
+      currentValue: 5,
+      maxValue: 10,
+      minValue: 1
+    },
+    vertexRadius: {
+      label: 'Vertex Radius',
+      defaultValue: 20,
+      currentValue: 20,
+      maxValue: 100,
+      minValue: 1
+    },
+    rate: {
+      label: 'Rate',
+      defaultValue: 5,
+      currentValue: 5,
+      maxValue: 50,
+      minValue: 1
+    }
+  },
+  text: 'antigua'
+}
+
 export default class Antigua extends Animation {
 
 	constructor (scene, camera, animation) {

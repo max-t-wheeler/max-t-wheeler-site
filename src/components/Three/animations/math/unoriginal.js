@@ -9,6 +9,54 @@ import {
 
 } from '../utils';
 
+export const metadata = {
+	active: false,
+	address: '/three#math_unoriginal',
+	category: 'math',
+	controllable: true,
+	dynamic: true,
+	hidden: false,
+	name: 'unoriginal',
+	parameters: {
+		numNodes: {
+			label: 'Number of Nodes',
+			defaultValue: 24,
+			currentValue: 24,
+			maxValue: 1000,
+			minValue: 3
+		},
+		nodeRadius: {
+			label: 'Node Radius',
+			defaultValue: 1,
+			currentValue: 1,
+			maxValue: 10,
+			minValue: 0
+		},
+		globalRadius: {
+			label: 'Global Radius',
+			defaultValue: 2,
+			currentValue: 2,
+			maxValue: 10,
+			minValue: 0
+		},
+		rate: {
+			label: 'Rate',
+			defaultValue: 4,
+			currentValue: 4,
+			maxValue: 1000,
+			minValue: 0
+		},
+		divisor: {
+			label: 'Divisor',
+			defaultValue: 1,
+			currentValue: 1,
+			maxValue: 100,
+			minValue: 1
+		}
+	},
+	text: 'unoriginal'
+}
+
 export default class Temp extends Animation {
 
 	constructor (scene, camera, animation) {

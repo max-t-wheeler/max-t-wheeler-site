@@ -8,6 +8,33 @@ import {
 
 } from '../utils';
 
+export const metadata = {
+  active: false,
+  address: '/three#art_pinwheel',
+  category: 'art',
+  controllable: false,
+  dynamic: true,
+  hidden: false,
+  name: 'pinwheel',
+  parameters: {
+    numPolygons: {
+      label: 'Number of Polygons',
+      defaultValue: 10,
+      currentValue: 10,
+      maxValue: 20,
+      minValue: 1
+    },
+    numFaces: {
+      label: 'Number of Faces',
+      defaultValue: 4,
+      currentValue: 4,
+      maxValue: 32,
+      minValue: 3
+    }
+  },
+  text: 'pinwheel'
+}
+
 export default class Pinwheel extends Animation {
 
 	constructor (scene, camera, animation) {

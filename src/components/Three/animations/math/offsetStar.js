@@ -7,6 +7,40 @@ import {
 
 } from '../utils';
 
+export const metadata = {
+	active: false,
+	address: '/three#math_star',
+	category: 'math',
+	controllable: true,
+	dynamic: false,
+	hidden: true,
+	name: 'star',
+	parameters: {
+		numVertices: {
+			label: 'Number of Vertices',
+			defaultValue: 10,
+			currentValue: 10,
+			maxValue: 1000,
+			minValue: 0
+		},
+		radius: {
+			label: 'Radius',
+			defaultValue: 1,
+			currentValue: 1,
+			maxValue: 1000,
+			minValue: 0
+		},
+		offset: {
+			label: 'Offset',
+			defaultValue: 2,
+			currentValue: 2,
+			maxValue: 1000,
+			minValue: 0
+		}
+	},
+	text: 'star'
+}
+
 export default class OffsetStar extends Animation {
 
 	constructor (scene, camera, animation) {

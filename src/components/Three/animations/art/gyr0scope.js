@@ -8,6 +8,33 @@ import {
 
 } from '../utils';
 
+export const metadata = {
+  active: false,
+  address: '/three#art_gyr0scope',
+  category: 'art',
+  controllable: true,
+  dynamic: true,
+  hidden: true,
+  name: 'gyro',
+  parameters: {
+    numCircles: {
+      label: 'Number of Circles',
+      defaultValue: 3,
+      currentValue: 3,
+      maxValue: 100,
+      minValue: 1
+    },
+    rate: {
+      label: 'Rate',
+      defaultValue: 1,
+      currentValue: 1,
+      maxValue: 100,
+      minValue: 0
+    }
+  },
+  text: 'gyr0scope'
+}
+
 export default class Gyr0scope extends Animation {
 
 	constructor (scene, camera, animation) {

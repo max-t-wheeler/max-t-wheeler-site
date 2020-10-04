@@ -10,6 +10,68 @@ import {
 
 } from '../utils';
 
+export const metadata = {
+	active: false,
+	address: '/three#art_snowflake',
+	category: 'art',
+	controllable: true,
+	dynamic: true,
+	hidden: false,
+	name: 'snowflake',
+	parameters: {
+		numLayers: {
+			label: 'Number of Layers',
+			defaultValue: 1,
+			currentValue: 1,
+			maxValue: 12,
+			minValue: 1
+		},
+		numLanes: {
+			label: 'Number of Lanes',
+			defaultValue: 12,
+			currentValue: 12,
+			maxValue: 64,
+			minValue: 8
+		},
+		numPolygons: {
+			label: 'Number of Polygons',
+			defaultValue: 12,
+			currentValue: 12,
+			maxValue: 100,
+			minValue: 3
+		},
+		numNodes: {
+			label: 'Number of Nodes',
+			defaultValue: 6,
+			currentValue: 6,
+			maxValue: 64,
+			minValue: 2
+		},
+		polygonRadius: {
+			label: 'Polygon Radius',
+			defaultValue: 1,
+			currentValue: 1,
+			maxValue: 1000,
+			minValue: 0
+		},
+		globalRadius: {
+			label: 'Global Radius',
+			defaultValue: 2,
+			currentValue: 2,
+			maxValue: 1000,
+			minValue: 0
+		},
+		rate: {
+			label: 'Rate',
+			defaultValue: 10,
+			currentValue: 10,
+			maxValue: 500,
+			minValue: 0
+		}
+	},
+	text: 'snowflake'
+}
+
 export default class Snowflake extends Animation {
 
 	constructor (scene, camera, animation) {

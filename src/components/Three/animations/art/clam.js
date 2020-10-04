@@ -2,6 +2,33 @@ import * as THREE from 'three';
 
 import Animation from '../animation';
 
+export const metadata = {
+	active: false,
+	address: '/three#art_clam',
+	category: 'art',
+	controllable: true,
+	dynamic: false,
+	hidden: true,
+	name: 'clam',
+	parameters: {
+		numRidges: {
+			label: 'Number of Ridges',
+			defaultValue: 200,
+			currentValue: 200,
+			maxValue: 1000,
+			minValue: 0
+		},
+		radius: {
+			label: 'Radius',
+			defaultValue: 1,
+			currentValue: 1,
+			maxValue: 1000,
+			minValue: 0
+		}
+	},
+	text: 'clam'
+}
+
 export default class Clam extends Animation {
 
 	constructor (scene, camera, animation) {

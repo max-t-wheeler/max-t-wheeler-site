@@ -2,6 +2,33 @@ import * as THREE from 'three';
 
 import Animation from '../animation';
 
+export const metadata = {
+	active: false,
+	address: '/three#art_pearl',
+	category: 'art',
+	controllable: true,
+	dynamic: false,
+	hidden: true,
+	name: 'pearl',
+	parameters: {
+		numRidges: {
+			label: 'Number of Ridges',
+			defaultValue: 200,
+			currentValue: 200,
+			maxValue: 1000,
+			minValue: 0
+		},
+		radius: {
+			label: 'Radius',
+			defaultValue: 1,
+			currentValue: 1,
+			maxValue: 1000,
+			minValue: 0
+		}
+	},
+	text: 'pearl'
+}
+
 export default class Pearl extends Animation {
 
 	constructor (scene, camera, animation) {
