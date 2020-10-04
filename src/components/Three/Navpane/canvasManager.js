@@ -59,7 +59,7 @@ export default class CanvasManager {
 
   checkCanvasSize () {
 
-    const cv = document.getElementById('opengl2webgl-display');
+    const cv = document.getElementById('three-display');
 
     this.canvasWidth = cv.offsetWidth;
     this.canvasHeight = cv.offsetHeight;

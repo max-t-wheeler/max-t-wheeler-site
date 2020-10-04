@@ -1,7 +1,7 @@
 <template>
 
   <div>
-    <canvas id='opengl2webgl-canvas'></canvas>
+    <canvas id='three-canvas'></canvas>
   </div>
 
 </template>
